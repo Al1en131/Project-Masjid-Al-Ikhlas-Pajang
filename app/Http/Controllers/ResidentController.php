@@ -58,7 +58,7 @@ class ResidentController extends Controller
         // Validate the incoming request data
         $request->validate([
             'nik' => 'required|string|max:20',
-            'user_id'=> 'nullable|string',
+            'user_id' => 'nullable|string',
             'name' => 'required|string|max:255',
             'gender' => 'required|string',
             'birth' => 'required|string',
@@ -156,6 +156,17 @@ class ResidentController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
+            'nik' => 'required|string|max:20',
+            'user_id' => 'nullable|string',
+            'name' => 'required|string|max:255',
+            'gender' => 'required|string',
+            'birth' => 'required|string',
+            'status' => 'required|string',
+            'religion' => 'required|string',
+            'blood' => 'required|string',
+            'phone' => 'required|string',
+            'job' => 'required|string',
+            'last_education' => 'required|string',
             'name_wife' => 'required|string|max:255',
             'birth_wife' => 'required|string|max:255',
             'gender_wife' => 'required|string|max:10',
@@ -177,6 +188,21 @@ class ResidentController extends Controller
 
         $resident = Resident::findOrFail($id);
 
+        $resident->update([
+            'nik' => $request->input('nik'),
+            'user_id' => $request->input('user_id'),
+            'name' => $request->input('name'),
+            'gender' => $request->input('gender'),
+            'birth' => $request->input('birth'),
+            'status' => $request->input('status'),
+            'religion' => $request->input('religion'),
+            'blood' => $request->input('blood'),
+            'phone' => $request->input('phone'),
+            'job' => $request->input('job'),
+            'last_education' => $request->input('last_education'),
+        ]);
+
+        // Update wife information
         $resident->wife()->update([
             'name_wife' => $request->input('name_wife'),
             'birth_wife' => $request->input('birth_wife'),
@@ -188,9 +214,15 @@ class ResidentController extends Controller
             'last_education_wife' => $request->input('last_education_wife'),
         ]);
 
+        // Get current children
+        $currentChildren = $resident->children()->get();
+        $currentChildrenIds = $currentChildren->pluck('id')->toArray();
+
         $children = $request->input('name_child', []);
+        $updatedChildrenIds = [];
+
         foreach ($children as $index => $name) {
-            $child = $resident->children()->get()[$index] ?? new Children();
+            $child = $currentChildren[$index] ?? new Children();
             $child->fill([
                 'name_child' => $request->input('name_child.' . $index),
                 'birth_child' => $request->input('birth_child.' . $index),
@@ -202,11 +234,22 @@ class ResidentController extends Controller
                 'job_child' => $request->input('job_child.' . $index),
                 'last_education_child' => $request->input('last_education_child.' . $index),
             ]);
+
+            // Assign resident_id
+            $child->resident_id = $resident->id;
+
             $child->save();
+
+            $updatedChildrenIds[] = $child->id;
         }
+
+        // Delete children that are no longer in the list
+        $childrenToDelete = array_diff($currentChildrenIds, $updatedChildrenIds);
+        Children::whereIn('id', $childrenToDelete)->delete();
 
         return redirect()->route('admin.resident.index')->with('success', 'Data updated successfully');
     }
+
 
     /**
      * Remove the specified resource from storage.

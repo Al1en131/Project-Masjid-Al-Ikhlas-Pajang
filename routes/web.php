@@ -16,12 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('/');
+Route::get('/', [HomeController::class, 'index'])->name('/');
 
 Route::middleware(['auth', 'verified', 'role:user'])->group(function () {
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/home/{user_id}/{resident_id}', [HomeController::class, 'home'])->name('home');
 });
 
 Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
@@ -35,8 +33,6 @@ Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
     Route::get('/resident/{id}/edit', [ResidentController::class, 'edit'])->name('admin.resident.edit');
     Route::put('/resident/{id}', [ResidentController::class, 'update'])->name('admin.resident.update');
     Route::get('/resident/{id}', [ResidentController::class, 'destroy'])->name('admin.resident.destroy');
-
-
 });
 
 

@@ -342,19 +342,14 @@
                         <div class="">
                             <button type="button" onclick="addChildField()"
                                 class="py-2 px-4 bg-[#d9d9ff] text-[#42348b] rounded-md flex items-center hover:bg-[#33297a] hover:text-[#d9d9ff] hover:border-2 hover:border-[#d9d9ff]">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                    stroke="currentColor" class="w-6 h-6 mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-3">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                                 </svg>
                                 <span>Tambah Anak</span>
                             </button>
                         </div>
                     </div>
-                    
-                    
-                    
-                    
-                   
                 </div>
             </div>
 
@@ -376,116 +371,105 @@
                 spouseAndChildrenFields.classList.add('hidden');
             }
         }
+        let childIndex = {{ $resident->children->count() }};
 
         function addChildField() {
             const childrenFields = document.getElementById('childrenFields');
-            const childFieldHtml = `
-            <div class="border-t-2 mt-16 border-[#42348b]">
-                 <div class="flex flex-wrap -mx-4 mb-6 pt-16">
-                        <div class="w-full md:w-1/2 px-4">
-                            <label for="name_child[]" class="block text-gray-700 font-medium mb-2">Nama Anak</label>
-                            <input type="text" id="name_child" name="name_child[]"
-                                class="form-input mt-1 block w-full text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50">
-                        </div>
+            const newChildHtml = `
+                       <div class="border-t-2 mt-16 border-[#42348b]">
+                <div class="flex flex-wrap -mx-4 mb-6 pt-16">
+                    <div class="w-full md:w-1/2 px-4">
+                        <label for="name_child_${childIndex}" class="block text-gray-700 font-medium mb-2">Nama Anak</label>
+                        <input type="text" id="name_child_${childIndex}" name="name_child[]"
+                            class="form-input mt-1 block w-full text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50">
+                    </div>
 
-                        <div class="w-full md:w-1/2 px-4">
-                            <label for="birth_child[]" class="block text-gray-700 font-medium mb-2">Tempat Tanggal
-                                Lahir</label>
-                            <input type="text" id="birth_child" name="birth_child[]"
-                                class="form-input mt-1 block w-full text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50">
-                        </div>
+                    <div class="w-full md:w-1/2 px-4">
+                        <label for="birth_child_${childIndex}" class="block text-gray-700 font-medium mb-2">Tempat Tanggal Lahir</label>
+                        <input type="text" id="birth_child_${childIndex}" name="birth_child[]"
+                            class="form-input mt-1 block w-full text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50">
                     </div>
-                    <div class="flex flex-wrap -mx-4 mb-6">
-                        <div class="w-full md:w-1/2 px-4">
-                            <label for="gender_child[]" class="block text-gray-700 font-medium mb-2">Jenis
-                                Kelamin</label>
-                            <select id="gender_child[]" name="gender_child[]"
-                                class="form-select mt-1 block w-full py-2 px-4 text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50"
-                                >
-                                <option value="">Pilih Jenis Kelamin</option>
-                                <option value="Laki-Laki">Laki-Laki</option>
-                                <option value="Perempuan">Perempuan</option>
-                            </select>
-                        </div>
-                        <div class="w-full md:w-1/2 px-4">
-                            <label for="status_child[]" class="block text-gray-700 font-medium mb-2">Status</label>
-                            <select id="status_child[]" name="status_child[]"
-                                onchange="toggleSpouseAndChildrenFields()"
-                                class="form-select mt-1 block w-full py-2 px-4 text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50"
-                                >
-                                <option value="">Pilih Status</option>
-                                <option value="Menikah">Menikah</option>
-                                <option value="Belum Menikah">Belum Menikah</option>
-                            </select>
-                        </div>
+                </div>
+                <div class="flex flex-wrap -mx-4 mb-6">
+                    <div class="w-full md:w-1/2 px-4">
+                        <label for="gender_child_${childIndex}" class="block text-gray-700 font-medium mb-2">Jenis Kelamin</label>
+                        <select id="gender_child_${childIndex}" name="gender_child[]"
+                            class="form-select mt-1 block w-full py-2 px-4 text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50">
+                            <option value="">Pilih Jenis Kelamin</option>
+                            <option value="Laki-Laki">Laki-Laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
                     </div>
-                    <div class="flex flex-wrap -mx-4 mb-6">
+                    <div class="w-full md:w-1/2 px-4">
+                        <label for="status_child_${childIndex}" class="block text-gray-700 font-medium mb-2">Status</label>
+                        <select id="status_child_${childIndex}" name="status_child[]"
+                            class="form-select mt-1 block w-full py-2 px-4 text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50">
+                            <option value="">Pilih Status</option>
+                            <option value="Menikah">Menikah</option>
+                            <option value="Belum Menikah">Belum Menikah</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex flex-wrap -mx-4 mb-6">
+                    <div class="w-full md:w-1/2 px-4">
+                        <label for="blood_child_${childIndex}" class="block text-gray-700 font-medium mb-2">Golongan Darah</label>
+                        <select id="blood_child_${childIndex}" name="blood_child[]"
+                            class="form-select mt-1 block w-full py-2 px-4 text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50">
+                            <option value="">Pilih Golongan Darah</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="AB">AB</option>
+                            <option value="O">O</option>
+                        </select>
+                    </div>
+                    <div class="w-full md:w-1/2 px-4">
+                        <label for="religion_child_${childIndex}" class="block text-gray-700 font-medium mb-2">Agama</label>
+                        <select id="religion_child_${childIndex}" name="religion_child[]"
+                            class="form-select mt-1 block w-full py-2 px-4 text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50">
+                            <option value="">Pilih Agama</option>
+                            <option value="Islam">Islam</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Katolik">Katolik</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Buddha">Buddha</option>
+                            <option value="Konghucu">Konghucu</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex flex-wrap -mx-4 mb-6">
+                    <div class="w-full md:w-1/2 px-4">
+                        <label for="phone_child_${childIndex}" class="block text-gray-700 font-medium mb-2">No. Hp</label>
+                        <input type="text" id="phone_child_${childIndex}" name="phone_child[]"
+                            class="form-input mt-1 block w-full text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50">
+                    </div>
+                    <div class="w-full md:w-1/2 px-4">
+                        <label for="job_child_${childIndex}" class="block text-gray-700 font-medium mb-2">Pekerjaan</label>
+                        <input type="text" id="job_child_${childIndex}" name="job_child[]"
+                            class="form-input mt-1 block w-full text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50">
+                    </div>
+                </div>
+                <div class="flex flex-wrap -mx-4 mb-6">
+                    <div class="w-full md:w-1/2 px-4">
+                        <label for="last_education_child_${childIndex}" class="block text-gray-700 font-medium mb-2">Pendidikan Terakhir</label>
+                        <select id="last_education_child_${childIndex}" name="last_education_child[]"
+                            class="form-select mt-1 block w-full py-2 px-4 text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50">
+                            <option value="">Pilih Pendidikan Terakhir</option>
+                            <option value="SD">SD</option>
+                            <option value="SMP">SMP</option>
+                            <option value="SMA">SMA</option>
+                            <option value="Diploma">Diploma</option>
+                            <option value="S1">S1</option>
+                            <option value="S2">S2</option>
+                            <option value="S3">S3</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
 
-                        <div class="w-full md:w-1/2 px-4">
-                            <label for="blood_child[]" class="block text-gray-700 font-medium mb-2">Golongan
-                                Darah</label>
-                            <select id="blood_child[]" name="blood_child[]"
-                                class="form-select mt-1 block w-full py-2 px-4 text-black bg-gray-100 border-[#42348b] rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50"
-                                >
-                                <option value="">Pilih Golongan Darah</option>
-                                <option value="A">A</option>
-                                <option value="B">B</option>
-                                <option value="AB">AB</option>
-                                <option value="O">O</option>
-                            </select>
-                        </div>
-                        <div class="w-full md:w-1/2 px-4">
-                            <label for="religion_child[]" class="block text-gray-700 font-medium mb-2">Agama</label>
-                            <select id="religion_child[]" name="religion_child[]"
-                                class="form-select mt-1 block w-full py-2 px-4 text-black bg-gray-100 border-[#42348b] rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50"
-                                >
-                                <option value="">Pilih Agama</option>
-                                <option value="Islam">Islam</option>
-                                <option value="Kristen">Kristen</option>
-                                <option value="Katolik">Katolik</option>
-                                <option value="Hindu">Hindu</option>
-                                <option value="Buddha">Buddha</option>
-                                <option value="Konghucu">Konghucu</option>
-                                <option value="Lainnya">Lainnya</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap -mx-4 mb-6">
-
-                        <div class="w-full md:w-1/2 px-4">
-                            <label for="phone_child[]" class="block text-gray-700 font-medium mb-2">No. Hp</label>
-                            <input type="text" id="phone_child[]" name="phone_child[]"
-                                class="form-input mt-1 block w-full text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50"
-                                >
-                        </div>
-                        <div class="w-full md:w-1/2 px-4">
-                            <label for="job_child[]" class="block text-gray-700 font-medium mb-2">Pekerjaan</label>
-                            <input type="text" id="job_child[]" name="job_child[]"
-                                class="form-input mt-1 block w-full text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50"
-                                >
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap -mx-4 mb-6">
-                        <div class="w-full md:w-1/2 px-4">
-                            <label for="last_education_child[]" class="block text-gray-700 font-medium mb-2">Pendidikan
-                                Terakhir</label>
-                            <select id="last_education_child[]" name="last_education_child[]"
-                                class="form-select mt-1 block w-full py-2 px-4 text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50"
-                                >
-                                <option value="">Pilih Pendidikan Terakhir</option>
-                                <option value="SD">SD</option>
-                                <option value="SMP">SMP</option>
-                                <option value="SMA">SMA</option>
-                                <option value="Diploma">Diploma</option>
-                                <option value="S1">S1</option>
-                                <option value="S2">S2</option>
-                                <option value="S3">S3</option>
-                            </select>
-                        </div>
-                    </div>
-                    </div>
         `;
-            childrenFields.insertAdjacentHTML('beforeend', childFieldHtml);
+        childrenFields.insertAdjacentHTML('beforeend', newChildHtml);
+        childIndex++;
         }
     </script>
 </x-app-layout>

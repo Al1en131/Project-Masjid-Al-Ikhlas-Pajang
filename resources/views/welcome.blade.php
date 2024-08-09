@@ -64,31 +64,41 @@
                         Masjid <br /> Al-Ikhlas Pajang
                     </p>
                     @if (Route::has('login'))
-                        <div class="mt-10 flex max-md:justify-center max-md:flex-col max-md:items-center">
-                            @auth
-                                <div class="flex gap-2 items-center">
-                                    <a href="{{ url('/dashboard') }}"
-                                        class="text-[#42348b] bg-white border-2 border-[#42348b] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Data
-                                        Jama'ah</a>
-                                    <form method="POST" action="{{ route('logout') }}">
-                                        @csrf
-                                        <button type="submit"
-                                            class="text-[#42348b] bg-white border-2 border-[#42348b] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Log
-                                            Out</button>
-                                    </form>
-                                </div>
-                            @else
-                                <div class="flex gap-2 items-center">
-                                    <a href="{{ route('login') }}"
-                                        class="text-[#42348b] bg-white border-2 border-[#42348b] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Log
-                                        in</a>
-                                    @if (Route::has('register'))
-                                        <a href="{{ route('register') }}"
-                                            class="text-[#42348b] bg-white border-2 border-[#42348b] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Register</a>
-                                    @endif
-                                </div>
-                            @endauth
-                        </div> @endif
+                    <div class="mt-10 flex max-md:justify-center max-md:flex-col max-md:items-center">
+                        @auth
+                        @role('admin')
+                        <div class="flex gap-2 items-center">
+                            <a href="{{ url('/dashboard') }}"
+                                class="text-[#42348b] bg-white border-2 border-[#42348b] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Data Jama'ah</a>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit"
+                                    class="text-[#42348b] bg-white border-2 border-[#42348b] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Log Out</button>
+                            </form>
+                        </div>
+                        @elserole('user')
+                        <div class="flex gap-2 items-center">
+                            <a href="{{ route('home', ['user_id' => Auth::id(), 'resident_id' => $resident_id ?? 0]) }}"
+                                class="text-[#42348b] bg-white border-2 border-[#42348b] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Isi Data Jama'ah</a>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit"
+                                    class="text-[#42348b] bg-white border-2 border-[#42348b] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Log Out</button>
+                            </form>
+                        </div>
+                        @endrole
+                        @else
+                        <div class="flex gap-2 items-center">
+                            <a href="{{ route('login') }}"
+                                class="text-[#42348b] bg-white border-2 border-[#42348b] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Log in</a>
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}"
+                                    class="text-[#42348b] bg-white border-2 border-[#42348b] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Register</a>
+                            @endif
+                        </div>
+                        @endauth
+                    </div> @endif
+                
                 </div>
                 <img src="{{ asset('assets/image/masjid4.png') }}"
         class="max-md:mx-auto" alt="">
@@ -146,7 +156,8 @@
             </div>
             <div class="text-[#42348b] w-1/2 max-md:w-full max-md:mt-10 pl-6 max-md:pl-0" id="about">
                 <h1 class="font-bold text-4xl mb-6 max-md:text-center">Tentang Masjid</h1>
-                <p class="max-md:text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                <p class="max-md:text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the
                     industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
                     and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
                     leap into electronic typesetting, remaining essentially unchanged.</p>
@@ -904,25 +915,26 @@
             });
         });
     </script>
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
             const navbar = document.getElementById('navbar');
             const navLinks = document.querySelectorAll('#nav-menu a');
             const navbarTitle = document.getElementById('navbar-title');
-            const sections = ['about', 'activities', 'gallery', 'tutorial', 'contact'].map(id => document.getElementById(id));
-            
-            window.addEventListener('scroll', function () {
+            const sections = ['about', 'activities', 'gallery', 'tutorial', 'contact'].map(id => document
+                .getElementById(id));
+
+            window.addEventListener('scroll', function() {
                 let scrolledPastHero = false;
-                
+
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
                     const sectionHeight = section.offsetHeight;
-                    
+
                     if (window.scrollY >= sectionTop - sectionHeight / 2) {
                         scrolledPastHero = true;
                     }
                 });
-                
+
                 if (scrolledPastHero) {
                     navbar.classList.add('bg-purple');
                     navbarTitle.classList.add('text-white');
