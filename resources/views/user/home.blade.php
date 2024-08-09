@@ -31,58 +31,90 @@
 
 <body class="antialiased" id="home">
     <nav id="navbar"
-        class="bg-transparent px-20 border-gray-200 max-md:px-4 fixed top-0 w-full py-2 z-50 transition-colors duration-300">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4">
-            <a href="#" class="flex items-center">
-                <span id="navbar-title"
-                    class="self-center text-2xl font-semibold whitespace-nowrap text-[#42348b] transition-colors">Al-Ikhlas</span>
-            </a>
-            <div class="flex md:hidden">
-                <button id="menu-toggle" type="button"
-                    class="inline-flex items-center w-10 h-10 justify-center text-sm text-gray-500 hover:text-[#D9D9FF]">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M1 1h15M1 7h15M1 13h15" />
-                    </svg>
-                </button>
-            </div>
-            <ul id="nav-menu"
-                class="hidden flex-col p-4 md:p-0 font-medium md:flex md:flex-row md:space-x-8 md:mt-0 md:border-0 md:ml-auto bg-[#42348b] md:bg-transparent absolute md:static top-16 left-0 right-0 md:w-auto w-full">
-                <li><a href="#home" class="block py-2 pl-3 pr-4 text-[#42348b] md:p-0 transition-colors">Home</a></li>
-                <li><a href="#about" class="block py-2 pl-3 pr-4 text-[#42348b] md:p-0 transition-colors">Tentang</a>
-                </li>
-                <li><a href="#activities"
-                        class="block py-2 pl-3 pr-4 text-[#42348b] md:p-0 transition-colors">Kegiatan</a></li>
-                <li><a href="#gallery" class="block py-2 pl-3 pr-4 text-[#42348b] md:p-0 transition-colors">Galeri</a>
-                </li>
-                <li><a href="#tutorial"
-                        class="block py-2 pl-3 pr-4 text-[#42348b] md:p-0 transition-colors">Tutorial</a></li>
-                <li><a href="#contact" class="block py-2 pl-3 pr-4 text-[#42348b] md:p-0 transition-colors">Kontak</a>
-                </li>
-            </ul>
+    class="bg-transparent px-20 border-gray-200 max-md:px-4 fixed top-0 w-full py-2 z-50 transition-colors duration-300">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4">
+        <a href="{{ route('/') }}" class="flex items-center">
+            <span id="navbar-title"
+                class="self-center text-2xl font-semibold whitespace-nowrap text-[#42348b] transition-colors">Al-Ikhlas</span>
+        </a>
+        <div class="flex md:hidden">
+            <button id="menu-toggle" type="button"
+                class="inline-flex items-center w-10 h-10 justify-center text-sm text-gray-500 hover:text-[#D9D9FF]">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
         </div>
-    </nav>
+        <ul id="nav-menu"
+            class="hidden flex-col p-4 md:p-0 font-medium md:flex md:flex-row md:space-x-8 md:mt-0 md:border-0 md:ml-auto bg-[#42348b] md:bg-transparent absolute md:static top-16 left-0 right-0 md:w-auto w-full">
+            <li>
+                <a href="{{ route('/') }}"
+                    class="block py-2 pl-3 pr-4 transition-colors
+                    {{ request()->is('/') ? 'text-[#D9D9FF] bg-[#42348b]' : 'text-[#42348b]' }}">Home</a>
+            </li>
+            <li>
+                <a href="{{ route('/') }}#about"
+                    class="block py-2 pl-3 pr-4 transition-colors
+                    {{ request()->is('/') && request()->has('about') ? 'text-[#D9D9FF] bg-[#42348b]' : 'text-[#42348b]' }}">Tentang</a>
+            </li>
+            <li>
+                <a href="{{ route('/') }}#activities"
+                    class="block py-2 pl-3 pr-4 transition-colors
+                    {{ request()->is('/') && request()->has('activities') ? 'text-[#D9D9FF] bg-[#42348b]' : 'text-[#42348b]' }}">Kegiatan</a>
+            </li>
+            <li>
+                <a href="{{ route('/') }}#gallery"
+                    class="block py-2 pl-3 pr-4 transition-colors
+                    {{ request()->is('/') && request()->has('gallery') ? 'text-[#D9D9FF] bg-[#42348b]' : 'text-[#42348b]' }}">Galeri</a>
+            </li>
+            <li>
+                <a href="{{ route('/') }}#tutorial"
+                    class="block py-2 pl-3 pr-4 transition-colors
+                    {{ request()->is('/') && request()->has('tutorial') ? 'text-[#D9D9FF] bg-[#42348b]' : 'text-[#42348b]' }}">Tutorial</a>
+            </li>
+            <li>
+                <a href="{{ route('/') }}#contact"
+                    class="block py-2 pl-3 pr-4 transition-colors
+                    {{ request()->is('/') && request()->has('contact') ? 'text-[#D9D9FF] bg-[#42348b]' : 'text-[#42348b]' }}">Kontak</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-    <img src="{{ asset('assets/image/bg2.jpg') }}" alt=""
-        class="-z-10 absolute right-0 h-[600px] max-md:hidden">
+
+    <img src="{{ asset('assets/image/bg-22.png') }}" alt=""
+        class="-z-10 absolute right-0 h-[620px] max-md:hidden">
     <div class="px-20 z-10  max-md:px-6 max-md:mt-32">
         <div class="text-white justify-center">
-            <div class="flex justify-between items-center max-md:flex-col max-md:items-center">
-                <div class="block pr-8 max-md:pr-0">
+            <div class="flex justify-between items-center max-md:flex-col max-md:items-center ">
+                <div class="block pr-8 max-md:pr-0 mt-8 max-md:mt-0">
                     <p class="text-start max-md:hidden text-6xl font-bold text-[#42348b] leading-[70px]">
                         Data Jama'ah Masjid Al-Ikhlas Pajang
                     </p>
                     <p class="text-center hidden max-md:block text-6xl font-bold text-[#42348b] leading-[70px]">
                         Data Jama'ah Masjid <br /> Al-Ikhlas Pajang
                     </p>
+                    <div class="  items-center mt-10 justify-start text-center z-10 ">
+                        <a href="{{ route('user.create') }}">
+                            <button type="button"
+                                class="focus:outline-none text-white flex items-center bg-[#42348b] hover:bg-[#d9d9ff] hover:text-[#42348b] hover:border-[#42348b] hover:border rounded-lg text-sm px-4 py-2.5 max-md:px-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                </svg> <span>Tambah Jama'ah</span>
+                            </button>
+                        </a>
+                    </div>
                 </div>
-                <img src="{{ asset('assets/image/masjid4.png') }}" class="max-md:mx-auto" alt="">
+                <img src="{{ asset('assets/image/masjid4.png') }}" class="max-md:mx-auto mt-8 max-md:mt-0" alt="">
             </div>
         </div>
     </div>
-    <div class="px-20 mb-12">
+
+    <div class="px-20 mb-12 z-10">
         <div class="bg-white w-full border border-[#42348b] shadow overflow-hidden sm:rounded-lg">
             <div class="px-4 py-5 sm:px-6">
                 <h3 class="text-lg leading-6 font-medium text-gray-900">
@@ -93,93 +125,100 @@
                 </p>
             </div>
             <div class="border-t border-[#42348b]">
-                <dl>
-                    <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">
-                            NIK
-                        </dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $resident->nik }}
-                        </dd>
-                    </div>
-                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">
-                            Nama
-                        </dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $resident->name }}
-                        </dd>
-                    </div>
-                    <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">
-                            Jenis Kelamin
-                        </dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $resident->gender }}
-                        </dd>
-                    </div>
-                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">
-                            Tempat, Tanggal Lahir
-                        </dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $resident->birth }}
-                        </dd>
-                    </div>
-                    <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">
-                            Agama
-                        </dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $resident->religion }}
-                        </dd>
-                    </div>
-                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">
-                            Status
-                        </dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $resident->status }}
-                        </dd>
-                    </div>
-                    <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">
-                            Golongan Darah
-                        </dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $resident->blood }}
-                        </dd>
-                    </div>
-                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">
-                            No. Hp
-                        </dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $resident->phone }}
-                        </dd>
-                    </div>
-                    <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">
-                            Pekerjaan
-                        </dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $resident->job }}
-                        </dd>
-                    </div>
-                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">
-                            Pendidikan Terakhir
-                        </dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $resident->last_education }}
-                        </dd>
-                    </div>
-                </dl>
+                @if ($residentExists)
+                    <dl>
+                        <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                NIK
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {{ $resident->nik }}
+                            </dd>
+                        </div>
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Nama
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {{ $resident->name }}
+                            </dd>
+                        </div>
+                        <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Jenis Kelamin
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {{ $resident->gender }}
+                            </dd>
+                        </div>
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Tempat, Tanggal Lahir
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {{ $resident->birth }}
+                            </dd>
+                        </div>
+                        <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Agama
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {{ $resident->religion }}
+                            </dd>
+                        </div>
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Status
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {{ $resident->status }}
+                            </dd>
+                        </div>
+                        <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Golongan Darah
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {{ $resident->blood }}
+                            </dd>
+                        </div>
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                No. Hp
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {{ $resident->phone }}
+                            </dd>
+                        </div>
+                        <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Pekerjaan
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {{ $resident->job }}
+                            </dd>
+                        </div>
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Pendidikan Terakhir
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {{ $resident->last_education }}
+                            </dd>
+                        </div>
+                    </dl>
+                @else
+                    <p class="px-4 py-5 text-center text-gray-900">
+                        Belum ada data resident.
+                    </p>
+                @endif
             </div>
         </div>
         
+        
         <!-- Wife Data -->
-        @if ($resident->wife)
+        @if ($spouse)
         <div class="bg-white w-full border mt-16 border-[#42348b] shadow overflow-hidden sm:rounded-lg">
             <div class="px-4 py-5 sm:px-6">
                 <h3 class="text-lg leading-6 font-medium text-gray-900">
@@ -196,7 +235,7 @@
                             Nama
                         </dt>
                         <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $resident->wife->name_wife }}
+                            {{ $spouse->name_wife }}
                         </dd>
                     </div>
                     <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -204,7 +243,7 @@
                             Jenis Kelamin
                         </dt>
                         <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $resident->wife->gender_wife }}
+                            {{ $spouse->gender_wife }}
                         </dd>
                     </div>
                     <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -212,7 +251,7 @@
                             Tempat, Tanggal Lahir
                         </dt>
                         <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $resident->wife->birth_wife }}
+                            {{ $spouse->birth_wife }}
                         </dd>
                     </div>
                     <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -220,7 +259,7 @@
                             Agama
                         </dt>
                         <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $resident->wife->religion_wife }}
+                            {{ $spouse->religion_wife }}
                         </dd>
                     </div>
                     <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -228,7 +267,7 @@
                             Golongan Darah
                         </dt>
                         <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $resident->wife->blood_wife }}
+                            {{ $spouse->blood_wife }}
                         </dd>
                     </div>
                     <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -236,7 +275,7 @@
                             No. Hp
                         </dt>
                         <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $resident->wife->phone_wife }}
+                            {{ $spouse->phone_wife }}
                         </dd>
                     </div>
                     <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -244,7 +283,7 @@
                             Pekerjaan
                         </dt>
                         <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $resident->wife->job_wife }}
+                            {{ $spouse->job_wife }}
                         </dd>
                     </div>
                     <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -252,118 +291,136 @@
                             Pendidikan Terakhir
                         </dt>
                         <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $resident->wife->last_education_wife }}
+                            {{ $spouse->last_education_wife }}
                         </dd>
                     </div>
                     <!-- Repeat similar structure for other wife data -->
                 </dl>
+                @else
+                    <p class="px-4 py-5 text-center text-gray-900">
+              
+                    </p>
+                @endif
+
             </div>
         </div>
-        @endif
+
     
         <!-- Children Data -->
+        @if ($resident)
         @if ($resident->children->isNotEmpty())
-        <div class="bg-white w-full border border-[#42348b] mt-16 shadow overflow-hidden sm:rounded-lg">
-            <div class="px-4 py-5 sm:px-6">
-                <h3 class="text-lg leading-6 font-medium text-gray-900">
-                    Data Anak
-                </h3>
-                <p class="mt-1 max-w-2xl text-sm text-gray-500">
-                    Masjid Al-Ikhlas Pajang
-                </p>
+            <div class="bg-white w-full border border-[#42348b] mt-16 shadow overflow-hidden sm:rounded-lg">
+                <div class="px-4 py-5 sm:px-6">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900">
+                        Data Anak
+                    </h3>
+                    <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                        Masjid Al-Ikhlas Pajang
+                    </p>
+                </div>
+                <div class="border-t border-[#42348b]">
+                    <dl>
+                        @foreach ($resident->children as $child)
+                            <div class="bg-[#efeffe] px-4 py-5 border-t border-[#42348b] sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">
+                                    Nama
+                                </dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    {{ $child->name_child }}
+                                </dd>
+                            </div>
+                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">
+                                    Jenis Kelamin
+                                </dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    {{ $child->gender_child }}
+                                </dd>
+                            </div>
+                            <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">
+                                    Tempat, Tanggal Lahir
+                                </dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    {{ $child->birth_child }}
+                                </dd>
+                            </div>
+                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">
+                                    Agama
+                                </dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    {{ $child->religion_child }}
+                                </dd>
+                            </div>
+                            <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">
+                                    Status
+                                </dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    {{ $child->status_child }}
+                                </dd>
+                            </div>
+                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">
+                                    Golongan Darah
+                                </dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    {{ $child->blood_child }}
+                                </dd>
+                            </div>
+                            <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">
+                                    No. Hp
+                                </dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    {{ $child->phone_child }}
+                                </dd>
+                            </div>
+                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">
+                                    Pekerjaan
+                                </dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    {{ $child->job_child }}
+                                </dd>
+                            </div>
+                            <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">
+                                    Pendidikan Terakhir
+                                </dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    {{ $child->last_education_child }}
+                                </dd>
+                            </div> @endforeach
+                    </dl>
+                </div>
             </div>
-            <div class="border-t border-[#42348b]">
-                <dl>
-                    @foreach ($resident->children as $child)
-                    <div class=" bg-[#efeffe] px-4 py-5 border-t border-[#42348b] sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">
-                            Nama
-                        </dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $child->name_child }}
-                        </dd>
-                    </div>
-                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">
-                            Jenis Kelamin
-                        </dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $child->gender_child }}
-                        </dd>
-                    </div>
-                    <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">
-                            Tempat, Tanggal Lahir
-                        </dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $child->birth_child }}
-                        </dd>
-                    </div>
-                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">
-                            Agama
-                        </dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $child->religion_child }}
-                        </dd>
-                    </div>
-                    <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">
-                            Status
-                        </dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $child->status_child }}
-                        </dd>
-                    </div>
-                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">
-                            Golongan Darah
-                        </dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $child->blood_child }}
-                        </dd>
-                    </div>
-                    <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">
-                            No. Hp
-                        </dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $child->phone_child }}
-                        </dd>
-                    </div>
-                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">
-                            Pekerjaan
-                        </dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $child->job_child }}
-                        </dd>
-                    </div>
-                    <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">
-                            Pendidikan Terakhir
-                        </dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $child->last_education_child }}
-                        </dd>
-                    </div> @endforeach
-                </dl>
-            </div>
-        </div>
-        @endif
+@else
+<p class="px-4
+        py-5 text-center text-gray-900">
+
+    </p>
+    @endif
+@else
+    <p class="px-4 py-5 text-center text-gray-900">
+
+    </p>
+    @endif
+
     </div>
-    
+
 
 
 
 
     <footer class="bg-[#42348b]
         px-20 py-4 shadow text-center">
-    <div class="w-full">
-        <span class="text-sm text-white">© 2024 <a href="https://flowbite.com/" class="hover:underline">KKN
-                Kelompok 3 Pajang</a>. All Rights Reserved.
-        </span>
-    </div>
+        <div class="w-full">
+            <span class="text-sm text-white">© 2024 <a href="https://flowbite.com/" class="hover:underline">KKN
+                    Kelompok 3 Pajang</a>. All Rights Reserved.
+            </span>
+        </div>
     </footer>
     <!-- Styles -->
     <script src="https://cdn.tailwindcss.com"></script>

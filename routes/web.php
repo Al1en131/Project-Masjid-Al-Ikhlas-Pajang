@@ -20,6 +20,10 @@ Route::get('/', [HomeController::class, 'index'])->name('/');
 
 Route::middleware(['auth', 'verified', 'role:user'])->group(function () {
     Route::get('/home/{user_id}/{resident_id}', [HomeController::class, 'home'])->name('home');
+    Route::post('/user', [HomeController::class, 'store'])->name('user.store');
+    Route::get('/user/create', [HomeController::class, 'create'])->name('user.create');
+
+
 });
 
 Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {

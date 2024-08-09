@@ -42,7 +42,7 @@
             </button>
           </div>
           <ul id="nav-menu" class="hidden flex-col p-4 md:p-0 font-medium md:flex md:flex-row md:space-x-8 md:mt-0 md:border-0 md:ml-auto bg-[#42348b] md:bg-transparent absolute md:static top-16 left-0 right-0 md:w-auto w-full">
-            <li><a href="#home" class="block py-2 pl-3 pr-4 text-[#42348b] md:p-0 transition-colors">Home</a></li>
+            <li><a href="{{ route('/') }}" class="block py-2 pl-3 pr-4 text-[#42348b] md:p-0 transition-colors">Home</a></li>
             <li><a href="#about" class="block py-2 pl-3 pr-4 text-[#42348b] md:p-0 transition-colors">Tentang</a></li>
             <li><a href="#activities" class="block py-2 pl-3 pr-4 text-[#42348b] md:p-0 transition-colors">Kegiatan</a></li>
             <li><a href="#gallery" class="block py-2 pl-3 pr-4 text-[#42348b] md:p-0 transition-colors">Galeri</a></li>
@@ -56,7 +56,7 @@
     <div class="px-20 z-10  max-md:px-6 max-md:mt-32">
         <div class="text-white justify-center">
             <div class="flex justify-between items-center max-md:flex-col max-md:items-center">
-                <div class="block pr-8 max-md:pr-0">
+                <div class="block pr-8 max-md:pr-0 mt-8 max-md:mt-0">
                     <p class="text-start max-md:hidden text-6xl font-bold text-[#42348b] leading-[70px]">
                         Masjid Al-Ikhlas Pajang
                     </p>
@@ -101,7 +101,7 @@
                 
                 </div>
                 <img src="{{ asset('assets/image/masjid4.png') }}"
-        class="max-md:mx-auto" alt="">
+        class="max-md:mx-auto max-md:mt-0 mt-8" alt="">
     </div>
     </div>
     </div>
@@ -112,21 +112,21 @@
                 <div class="p-4 md:w-1/3 sm:w-1/2 w-full">
                     <div
                         class="border-4 border-[#42348b] px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110 bg-white">
-                        <h2 class="title-font font-medium text-3xl text-[#42348b]">189</h2>
+                        <h2 class="title-font font-medium text-3xl text-[#42348b]">{{ $totalJamaah }}</h2>
                         <p class="leading-relaxed">Jama'ah</p>
                     </div>
                 </div>
                 <div class="p-4 md:w-1/3 sm:w-1/2 w-full">
                     <div
                         class="border-4 border-[#42348b] px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110 bg-white">
-                        <h2 class="title-font font-medium text-3xl text-[#42348b]">117</h2>
+                        <h2 class="title-font font-medium text-3xl text-[#42348b]">{{ $totalMale }}</h2>
                         <p class="leading-relaxed">Laki-Laki</p>
                     </div>
                 </div>
                 <div class="p-4 md:w-1/3 sm:w-1/2 w-full">
                     <div
                         class="border-4 border-[#42348b] px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110 bg-white">
-                        <h2 class="title-font font-medium text-3xl text-[#42348b]">72</h2>
+                        <h2 class="title-font font-medium text-3xl text-[#42348b]">{{ $totalFemale }}</h2>
                         <p class="leading-relaxed">Perempuan</p>
                     </div>
                 </div>
