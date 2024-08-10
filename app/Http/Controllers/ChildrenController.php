@@ -12,8 +12,12 @@ class ChildrenController extends Controller
      */
     public function index()
     {
-        //
+        // Retrieve all children with their associated father (resident) and mother (wife)
+        $children = Children::with(['resident'])->get();
+
+        return view('admin.resident.child', compact('children'));
     }
+
 
     /**
      * Show the form for creating a new resource.

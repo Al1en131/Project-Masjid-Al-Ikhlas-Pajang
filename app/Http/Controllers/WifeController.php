@@ -12,7 +12,10 @@ class WifeController extends Controller
      */
     public function index()
     {
-        //
+        // Retrieve all wives with their associated husband (resident)
+        $wives = Wife::with('resident')->get();
+
+        return view('admin.resident.wife', compact('wives'));
     }
 
     /**

@@ -14,6 +14,12 @@
                     <x-nav-link :href="route('admin.resident.index')" :active="request()->routeIs(['admin.resident.index'])">
                         {{ __('Data KK') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('admin.resident.wife')" :active="request()->routeIs(['admin.resident.wife'])">
+                        {{ __('Data Istri') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('admin.resident.child')" :active="request()->routeIs(['admin.resident.child'])">
+                        {{ __('Data Anak') }}
+                    </x-nav-link>
                 </div>
             </div>
 

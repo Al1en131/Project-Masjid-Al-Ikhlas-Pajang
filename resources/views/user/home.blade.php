@@ -29,10 +29,10 @@
 
 </head>
 
-<body class="antialiased" id="home">
+<body class="antialiased min-h-screen" id="home">
     <nav id="navbar"
     class="bg-transparent px-20 border-gray-200 max-md:px-4 fixed top-0 w-full py-2 z-50 transition-colors duration-300">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4">
+    <div class=" flex flex-wrap items-center justify-between mx-auto py-4">
         <a href="{{ route('/') }}" class="flex items-center">
             <span id="navbar-title"
                 class="self-center text-2xl font-semibold whitespace-nowrap text-[#42348b] transition-colors">Al-Ikhlas</span>
@@ -52,32 +52,32 @@
             class="hidden flex-col p-4 md:p-0 font-medium md:flex md:flex-row md:space-x-8 md:mt-0 md:border-0 md:ml-auto bg-[#42348b] md:bg-transparent absolute md:static top-16 left-0 right-0 md:w-auto w-full">
             <li>
                 <a href="{{ route('/') }}"
-                    class="block py-2 pl-3 pr-4 transition-colors
+                    class="block py-2 transition-colors
                     {{ request()->is('/') ? 'text-[#D9D9FF] bg-[#42348b]' : 'text-[#42348b]' }}">Home</a>
             </li>
             <li>
                 <a href="{{ route('/') }}#about"
-                    class="block py-2 pl-3 pr-4 transition-colors
+                    class="block py-2 transition-colors
                     {{ request()->is('/') && request()->has('about') ? 'text-[#D9D9FF] bg-[#42348b]' : 'text-[#42348b]' }}">Tentang</a>
             </li>
             <li>
                 <a href="{{ route('/') }}#activities"
-                    class="block py-2 pl-3 pr-4 transition-colors
+                    class="block py-2 transition-colors
                     {{ request()->is('/') && request()->has('activities') ? 'text-[#D9D9FF] bg-[#42348b]' : 'text-[#42348b]' }}">Kegiatan</a>
             </li>
             <li>
                 <a href="{{ route('/') }}#gallery"
-                    class="block py-2 pl-3 pr-4 transition-colors
+                    class="block py-2 transition-colors
                     {{ request()->is('/') && request()->has('gallery') ? 'text-[#D9D9FF] bg-[#42348b]' : 'text-[#42348b]' }}">Galeri</a>
             </li>
             <li>
                 <a href="{{ route('/') }}#tutorial"
-                    class="block py-2 pl-3 pr-4 transition-colors
+                    class="block py-2 transition-colors
                     {{ request()->is('/') && request()->has('tutorial') ? 'text-[#D9D9FF] bg-[#42348b]' : 'text-[#42348b]' }}">Tutorial</a>
             </li>
             <li>
                 <a href="{{ route('/') }}#contact"
-                    class="block py-2 pl-3 pr-4 transition-colors
+                    class="block py-2 transition-colors
                     {{ request()->is('/') && request()->has('contact') ? 'text-[#D9D9FF] bg-[#42348b]' : 'text-[#42348b]' }}">Kontak</a>
             </li>
         </ul>
@@ -94,9 +94,6 @@
                     <p class="text-start max-md:hidden text-6xl font-bold text-[#42348b] leading-[70px]">
                         Data Jama'ah Masjid Al-Ikhlas Pajang
                     </p>
-                    <p class="text-center hidden max-md:block text-6xl font-bold text-[#42348b] leading-[70px]">
-                        Data Jama'ah Masjid <br /> Al-Ikhlas Pajang
-                    </p>
                     <div class="  items-center mt-10 justify-start text-center z-10 ">
                         <a href="{{ route('user.create') }}">
                             <button type="button"
@@ -104,7 +101,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                     stroke="currentColor" class="w-5 h-5 mr-2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                </svg> <span>Tambah Jama'ah</span>
+                                </svg> <span>Isi Data Jama'ah</span>
                             </button>
                         </a>
                     </div>
@@ -409,13 +406,8 @@
     @endif
 
     </div>
-
-
-
-
-
     <footer class="bg-[#42348b]
-        px-20 py-4 shadow text-center">
+        px-20 py-4 shadow text-center bottom-0">
         <div class="w-full">
             <span class="text-sm text-white">© 2024 <a href="https://flowbite.com/" class="hover:underline">KKN
                     Kelompok 3 Pajang</a>. All Rights Reserved.

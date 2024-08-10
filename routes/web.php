@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\ChildrenController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ResidentController;
+use App\Http\Controllers\WifeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +39,8 @@ Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
     Route::get('/resident/{id}/edit', [ResidentController::class, 'edit'])->name('admin.resident.edit');
     Route::put('/resident/{id}', [ResidentController::class, 'update'])->name('admin.resident.update');
     Route::get('/resident/{id}', [ResidentController::class, 'destroy'])->name('admin.resident.destroy');
+    Route::get('/wife', [WifeController::class, 'index'])->name('admin.resident.wife');
+    Route::get('/child', [ChildrenController::class, 'index'])->name('admin.resident.child');
 });
 
 
