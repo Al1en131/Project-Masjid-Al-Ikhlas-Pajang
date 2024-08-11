@@ -13,105 +13,81 @@
     <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
     <link rel="stylesheet"
         href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
-    <style>
-        .bg-purple {
-            background-color: #42348b !important;
-        }
-
-        .text-white {
-            color: white !important;
-        }
-
-        .transition-colors {
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-    </style>
+        <style>
+            .bg-ungu {
+                background-color: #42348b !important;
+            }
+            
+            .transition-colors {
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+        </style>
+        
 
 </head>
 
-<body class="antialiased min-h-screen" id="home">
-    <nav id="navbar"
-    class="bg-transparent px-20 border-gray-200 max-md:px-4 fixed top-0 w-full py-2 z-50 transition-colors duration-300">
-    <div class=" flex flex-wrap items-center justify-between mx-auto py-4">
-        <a href="{{ route('/') }}" class="flex items-center">
-            <span id="navbar-title"
-                class="self-center text-2xl font-semibold whitespace-nowrap text-[#42348b] transition-colors">Al-Ikhlas</span>
-        </a>
-        <div class="flex md:hidden">
-            <button id="menu-toggle" type="button"
-                class="inline-flex items-center w-10 h-10 justify-center text-sm text-gray-500 hover:text-[#D9D9FF]">
-                <span class="sr-only">Open main menu</span>
-                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 17 14">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M1 1h15M1 7h15M1 13h15" />
-                </svg>
-            </button>
+<body class="antialiased min-h-screen " id="home">
+    <nav id="navbar" class="fixed w-full top-0 left-0 z-50 px-20 max-md:px-4 transition-colors">
+        <div class="flex flex-wrap items-center justify-between mx-auto py-4">
+            <a href="{{ route('/') }}" class="flex items-center">
+                <span id="navbar-title" class="self-center text-2xl font-semibold whitespace-nowrap text-[#42348b] transition-colors">Al-Ikhlas</span>
+            </a>
+            <div class="flex md:hidden">
+                <button id="menu-toggle" type="button" class="inline-flex items-center w-10 h-10 justify-center text-sm text-gray-500 hover:text-[#D9D9FF]">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+            </div>
+            <ul id="nav-menu" class="hidden flex-col p-4 md:p-0 font-medium md:flex md:flex-row md:space-x-8 md:mt-0 md:border-0 md:ml-auto bg-[#42348b] md:bg-transparent absolute md:static top-16 left-0 right-0 md:w-auto w-full">
+                <li><a href="{{ route('/') }}" class="block py-2 transition-colors text-[#42348b]">Home</a></li>
+                <li><a href="{{ route('/') }}#about" class="block py-2 transition-colors text-[#42348b]">Tentang</a></li>
+                <li><a href="{{ route('/') }}#activities" class="block py-2 transition-colors text-[#42348b]">Kegiatan</a></li>
+                <li><a href="{{ route('/') }}#gallery" class="block py-2 transition-colors text-[#42348b]">Galeri</a></li>
+                <li><a href="{{ route('/') }}#tutorial" class="block py-2 transition-colors text-[#42348b]">Tutorial</a></li>
+                <li><a href="{{ route('/') }}#contact" class="block py-2 transition-colors text-[#42348b]">Kontak</a></li>
+            </ul>
         </div>
-        <ul id="nav-menu"
-            class="hidden flex-col p-4 md:p-0 font-medium md:flex md:flex-row md:space-x-8 md:mt-0 md:border-0 md:ml-auto bg-[#42348b] md:bg-transparent absolute md:static top-16 left-0 right-0 md:w-auto w-full">
-            <li>
-                <a href="{{ route('/') }}"
-                    class="block py-2 transition-colors
-                    {{ request()->is('/') ? 'text-[#D9D9FF] bg-[#42348b]' : 'text-[#42348b]' }}">Home</a>
-            </li>
-            <li>
-                <a href="{{ route('/') }}#about"
-                    class="block py-2 transition-colors
-                    {{ request()->is('/') && request()->has('about') ? 'text-[#D9D9FF] bg-[#42348b]' : 'text-[#42348b]' }}">Tentang</a>
-            </li>
-            <li>
-                <a href="{{ route('/') }}#activities"
-                    class="block py-2 transition-colors
-                    {{ request()->is('/') && request()->has('activities') ? 'text-[#D9D9FF] bg-[#42348b]' : 'text-[#42348b]' }}">Kegiatan</a>
-            </li>
-            <li>
-                <a href="{{ route('/') }}#gallery"
-                    class="block py-2 transition-colors
-                    {{ request()->is('/') && request()->has('gallery') ? 'text-[#D9D9FF] bg-[#42348b]' : 'text-[#42348b]' }}">Galeri</a>
-            </li>
-            <li>
-                <a href="{{ route('/') }}#tutorial"
-                    class="block py-2 transition-colors
-                    {{ request()->is('/') && request()->has('tutorial') ? 'text-[#D9D9FF] bg-[#42348b]' : 'text-[#42348b]' }}">Tutorial</a>
-            </li>
-            <li>
-                <a href="{{ route('/') }}#contact"
-                    class="block py-2 transition-colors
-                    {{ request()->is('/') && request()->has('contact') ? 'text-[#D9D9FF] bg-[#42348b]' : 'text-[#42348b]' }}">Kontak</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+    </nav>
+    
+    
+    
+    
 
 
     <img src="{{ asset('assets/image/bg-22.png') }}" alt=""
         class="-z-10 absolute right-0 h-[620px] max-md:hidden">
-    <div class="px-20 z-10  max-md:px-6 max-md:mt-32">
+    <div class="px-20 z-10  max-md:px-4 max-md:mt-32">
         <div class="text-white justify-center">
             <div class="flex justify-between items-center max-md:flex-col max-md:items-center ">
                 <div class="block pr-8 max-md:pr-0 mt-8 max-md:mt-0">
                     <p class="text-start max-md:hidden text-6xl font-bold text-[#42348b] leading-[70px]">
                         Data Jama'ah Masjid Al-Ikhlas Pajang
                     </p>
-                    <div class="  items-center mt-10 justify-start text-center z-10 ">
-                        <a href="{{ route('user.create') }}">
+                    <div class="  items-center mt-10 justify-start text-center z-10 max-md:hidden ">
+                        <a href="{{ route('user.create', ['user_id' => Auth::id()]) }}">
                             <button type="button"
-                                class="focus:outline-none text-white flex items-center bg-[#42348b] hover:bg-[#d9d9ff] hover:text-[#42348b] hover:border-[#42348b] hover:border rounded-lg text-sm px-4 py-2.5 max-md:px-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                    stroke="currentColor" class="w-5 h-5 mr-2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                </svg> <span>Isi Data Jama'ah</span>
+                                class="focus:outline-none text-white flex items-center bg-[#42348b] hover:bg-[#d9d9ff] hover:text-[#42348b] hover:border-[#42348b] hover:border rounded-lg text-sm px-8 py-3 max-md:px-4">
+                                <span>Isi Form Data Jama'ah</span>
                             </button>
                         </a>
                     </div>
                 </div>
                 <img src="{{ asset('assets/image/masjid4.png') }}" class="max-md:mx-auto mt-8 max-md:mt-0" alt="">
+                <div class="  items-center my-8 justify-start text-center z-10 max-md:contents hidden ">
+                    <a href="{{ route('user.create', ['user_id' => Auth::id()]) }}">
+                        <button type="button"
+                            class="focus:outline-none text-white flex items-center bg-[#42348b] hover:bg-[#d9d9ff] hover:text-[#42348b] hover:border-[#42348b] hover:border rounded-lg text-sm px-8 py-3 max-md:px-4">
+                            <span>Isi Form Data Jama'ah</span>
+                        </button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="px-20 mb-12 z-10">
+    <div class="px-20 mb-12 z-10 max-md:px-4" id="activities">
         <div class="bg-white w-full border border-[#42348b] shadow overflow-hidden sm:rounded-lg">
             <div class="px-4 py-5 sm:px-6">
                 <h3 class="text-lg leading-6 font-medium text-gray-900">
@@ -580,38 +556,46 @@
             });
         });
     </script>
+    {{-- <script>
+        document.addEventListener('scroll', function() {
+            const activitiesSection = document.getElementById('activities');
+            const navbar = document.querySelector('#navbar');
+            const sectionPosition = activitiesSection.getBoundingClientRect();
+
+            if (sectionPosition.top <= 0 && sectionPosition.bottom > 0) {
+                navbar.classList.add('bg-ungu');
+            } else {
+                navbar.classList.remove('bg-ungu');
+            }
+        });
+    </script> --}}
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const navbar = document.getElementById('navbar');
-            const navLinks = document.querySelectorAll('#nav-menu a');
-            const navbarTitle = document.getElementById('navbar-title');
-            const sections = ['about', 'activities', 'gallery', 'tutorial', 'contact'].map(id => document
-                .getElementById(id));
+        document.addEventListener('scroll', function() {
+            const activitiesSection = document.getElementById('activities');
+            const navbar = document.querySelector('#navbar');
+            const navLinks = document.querySelectorAll('#nav-menu li a');
+            const logoText = document.getElementById('navbar-title'); // Select the logo text
+            const sectionPosition = activitiesSection.getBoundingClientRect();
 
-            window.addEventListener('scroll', function() {
-                let scrolledPastHero = false;
-
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.offsetHeight;
-
-                    if (window.scrollY >= sectionTop - sectionHeight / 2) {
-                        scrolledPastHero = true;
-                    }
+            if (sectionPosition.top <= 0 && sectionPosition.bottom > 0) {
+                navbar.classList.add('bg-ungu');
+                navLinks.forEach(link => {
+                    link.style.color = '#D9D9FF'; // Change text color to light purple
                 });
-
-                if (scrolledPastHero) {
-                    navbar.classList.add('bg-purple');
-                    navbarTitle.classList.add('text-white');
-                    navLinks.forEach(link => link.classList.add('text-white'));
-                } else {
-                    navbar.classList.remove('bg-purple');
-                    navbarTitle.classList.remove('text-white');
-                    navLinks.forEach(link => link.classList.remove('text-white'));
-                }
-            });
+                logoText.style.color = '#D9D9FF'; // Change logo text color to light purple
+            } else {
+                navbar.classList.remove('bg-ungu');
+                navLinks.forEach(link => {
+                    link.style.color = '#42348b'; // Revert text color to original
+                });
+                logoText.style.color = '#42348b'; // Revert logo text color to original
+            }
         });
     </script>
+
+
+
+
 
     </body>
 

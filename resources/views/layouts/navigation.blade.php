@@ -4,6 +4,7 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Navigation Links -->
+                @role('admin')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('/')" :active="request()->routeIs('/')">
                         {{ __('Home') }}
@@ -21,6 +22,30 @@
                         {{ __('Data Anak') }}
                     </x-nav-link>
                 </div>
+                @elserole('user')
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('/')" :active="request()->routeIs('/')">
+                        {{ __('Home') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('/') . '#about'" :active="request()->routeIs(['home'])">
+                        {{ __('About') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('/') . '#activities'" :active="request()->routeIs(['home'])">
+                        {{ __('Kegiatan') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('/') . '#gallery'" :active="request()->routeIs(['home'])">
+                        {{ __('Galeri') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('/') . '#tutorial'" :active="request()->routeIs(['home'])">
+                        {{ __('Tutorial') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('/') . '#contact'" :active="request()->routeIs(['home'])">
+                        {{ __('Kontak') }}
+                    </x-nav-link>
+                </div>
+                @endrole
+                
+
             </div>
 
             <!-- Settings Dropdown -->
@@ -68,6 +93,7 @@
     </div>
 
     <!-- Responsive Navigation Menu -->
+    @role('admin')
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('/')" :active="request()->routeIs('/')">
@@ -78,6 +104,12 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('admin.resident.index')" :active="request()->routeIs('admin.resident.index')">
                 {{ __('Data Jamaah') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('admin.resident.wife')" :active="request()->routeIs('admin.resident.wife')">
+                {{ __('Data Istri') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('admin.resident.child')" :active="request()->routeIs('admin.resident.child')">
+                {{ __('Data Anak') }}
             </x-responsive-nav-link>
         </div>
 
@@ -102,5 +134,51 @@
             </div>
         </div>
     </div>
+    @elserole('user')
+    <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('/')" :active="request()->routeIs('/')">
+                {{ __('Home') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('/') . '#about'" :active="request()->routeIs('home')">
+                {{ __('Tentang') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('/') . '#activities'" :active="request()->routeIs('home')">
+                {{ __('Kegiatan') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('/') . '#gallery'" :active="request()->routeIs('home')">
+                {{ __('Galeri') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('/') . '#tutorial'" :active="request()->routeIs('home')">
+                {{ __('Tutorial') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('/') . '#contact'" :active="request()->routeIs('home')">
+                {{ __('Kontak') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <!-- Responsive Settings Options -->
+        <div class="pt-4 pb-1 border-t border-gray-200">
+            <div class="px-4">
+                <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
+                <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+            </div>
+
+            <div class="mt-3 space-y-1">
+                <x-responsive-nav-link :href="route('profile.edit')">
+                    {{ __('Profile') }}
+                </x-responsive-nav-link>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <x-responsive-nav-link :href="route('logout')"
+                        onclick="event.preventDefault(); this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-responsive-nav-link>
+                </form>
+            </div>
+        </div>
+    </div>
+    @endrole
+
 </nav>
-<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/alpine.min.js" defer></script>
+

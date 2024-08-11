@@ -22,10 +22,12 @@ Route::get('/', [HomeController::class, 'index'])->name('/');
 
 Route::middleware(['auth', 'verified', 'role:user'])->group(function () {
     Route::get('/home/{user_id}/{resident_id}', [HomeController::class, 'home'])->name('home');
-    Route::post('/user', [HomeController::class, 'store'])->name('user.store');
-    Route::get('/user/create', [HomeController::class, 'create'])->name('user.create');
-
-
+    // Pass both user_id and resident_id when needed
+    Route::get('/user/create/{user_id}', [HomeController::class, 'create'])->name('user.create');
+    Route::post('/user/store/{user_id}', [HomeController::class, 'store'])->name('user.store');
+    Route::get('/user/{id}/edit', [HomeController::class, 'edit'])->name('user.edit');
+    Route::put('/user/{id}', [HomeController::class, 'update'])->name('user.update');
+    Route::get('/user/{id}', [HomeController::class, 'show'])->name('user.show');
 });
 
 Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {

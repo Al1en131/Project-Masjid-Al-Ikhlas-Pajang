@@ -42,16 +42,15 @@
             </button>
           </div>
           <ul id="nav-menu" class="hidden flex-col p-4 md:p-0 font-medium md:flex md:flex-row md:space-x-8 md:mt-0 md:border-0 md:ml-auto bg-[#42348b] md:bg-transparent absolute md:static top-16 left-0 right-0 md:w-auto w-full">
-            <li><a href="{{ route('/') }}" class="block py-2 pl-3 pr-4 text-[#42348b] md:p-0 transition-colors">Home</a></li>
-            <li><a href="#about" class="block py-2 pl-3 pr-4 text-[#42348b] md:p-0 transition-colors">Tentang</a></li>
-            <li><a href="#activities" class="block py-2 pl-3 pr-4 text-[#42348b] md:p-0 transition-colors">Kegiatan</a></li>
-            <li><a href="#gallery" class="block py-2 pl-3 pr-4 text-[#42348b] md:p-0 transition-colors">Galeri</a></li>
-            <li><a href="#tutorial" class="block py-2 pl-3 pr-4 text-[#42348b] md:p-0 transition-colors">Tutorial</a></li>
-            <li><a href="#contact" class="block py-2 pl-3 pr-4 text-[#42348b] md:p-0 transition-colors">Kontak</a></li>
+            <li><a href="{{ route('/') }}" class="block py-2 pl-3 pr-4 text-[#42348b] max-md:text-[#D9D9FF] md:p-0 transition-colors">Home</a></li>
+            <li><a href="#about" class="block py-2 pl-3 pr-4 text-[#42348b] max-md:text-[#D9D9FF] md:p-0 transition-colors">Tentang</a></li>
+            <li><a href="#activities" class="block py-2 pl-3 pr-4 text-[#42348b] max-md:text-[#D9D9FF] md:p-0 transition-colors">Kegiatan</a></li>
+            <li><a href="#gallery" class="block py-2 pl-3 pr-4 text-[#42348b] max-md:text-[#D9D9FF] md:p-0 transition-colors">Galeri</a></li>
+            <li><a href="#tutorial" class="block py-2 pl-3 pr-4 text-[#42348b] max-md:text-[#D9D9FF] md:p-0 transition-colors">Tutorial</a></li>
+            <li><a href="#contact" class="block py-2 pl-3 pr-4 text-[#42348b] max-md:text-[#D9D9FF] md:p-0 transition-colors">Kontak</a></li>
           </ul>
         </div>
     </nav> 
-      
     <img src="{{ asset('assets/image/bg2.jpg') }}" alt="" class="-z-10 absolute right-0 h-[600px] max-md:hidden">
     <div class="px-20 z-10  max-md:px-6 max-md:mt-32">
         <div class="text-white justify-center">
@@ -77,9 +76,9 @@
                             </form>
                         </div>
                         @elserole('user')
-                        <div class="flex gap-2 items-center">
+                        <div class="flex max-sm:block gap-2 items-center max-sm:justify-center max-sm:space-y-5 max-sm:mx-auto max-sm:content-center max-sm:text-center max-sm:self-center">
                             <a href="{{ route('home', ['user_id' => Auth::id(), 'resident_id' => $resident_id ?? 0]) }}"
-                                class="text-[#42348b] bg-white border-2 border-[#42348b] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Isi Data Jama'ah</a>
+                                class="text-[#42348b] bg-white border-2 border-[#42348b] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Lihat Data Diri</a>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <button type="submit"
@@ -93,7 +92,7 @@
                                 class="text-[#42348b] bg-white border-2 border-[#42348b] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Log in</a>
                             @if (Route::has('register'))
                                 <a href="{{ route('register') }}"
-                                    class="text-[#42348b] bg-white border-2 border-[#42348b] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Register</a>
+                                    class="text-[#42348b] bg-white border-2 border-[#42348b] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Registrasi</a>
                             @endif
                         </div>
                         @endauth
@@ -113,7 +112,7 @@
                     <div
                         class="border-4 border-[#42348b] px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110 bg-white">
                         <h2 class="title-font font-medium text-3xl text-[#42348b]">{{ $totalJamaah }}</h2>
-                        <p class="leading-relaxed">Jama'ah</p>
+                        <p class="leading-relaxed">Total Jama'ah</p>
                     </div>
                 </div>
                 <div class="p-4 md:w-1/3 sm:w-1/2 w-full">
@@ -178,11 +177,6 @@
 
             </div>
             <!-- image grid-->
-
-
-
-
-
         </div>
     </div>
     </div>
@@ -744,8 +738,8 @@
 
     <footer class="bg-[#42348b] px-20 py-4 shadow text-center">
         <div class="w-full">
-            <span class="text-sm text-white">© 2024 <a href="https://flowbite.com/" class="hover:underline">KKN
-                    Kelompok 3 Pajang</a>. All Rights Reserved.
+            <span class="text-sm text-white">© 2024 <a href="https://flowbite.com/" class="hover:underline">
+                    Masjid Al-Ikhlas Pajang</a>. All Rights Reserved.
             </span>
         </div>
     </footer>
@@ -947,6 +941,38 @@
             });
         });
     </script>
+        @if (session('success'))
+        <div align="center">
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    function showSuccessAlert() {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Success!',
+                            text: '{{ session('success') }}',
+                            customClass: {
+                                confirmButton: 'btn-success'
+                            },
+                        });
+                    }
+                    showSuccessAlert();
+                });
+            </script>
+            <style>
+                .btn-success {
+                    background-color: #42348b;
+                    color: #fff;
+                    border: none;
+                    border-radius: 4px;
+                    padding: 0.5em 1em;
+                    font-size: 16px;
+                }
+            </style>
+        </div>
+    @endif
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     </body>
 

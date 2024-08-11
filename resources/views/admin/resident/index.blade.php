@@ -127,7 +127,7 @@
                                                     </svg>
                                                 </a>
                                                 <a href="{{ route('admin.resident.destroy', ['id' => $resident->id]) }}"
-                                                    method="POST" class="delete text-red-600">
+                                                    method="POST" class="delete text-red-600" data-id="{{ $resident->id }}">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                                                         class="w-6 h-6">
@@ -149,6 +149,66 @@
         </div>
     </div>
 </x-app-layout>
+@if (session('success'))
+<div align="center">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            function showSuccessAlert() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    text: '{{ session('success') }}',
+                    customClass: {
+                        confirmButton: 'btn-success'
+                    },
+                });
+            }
+            showSuccessAlert();
+        });
+    </script>
+    <style>
+        .btn-success {
+            background-color: #42348b;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5em 1em;
+            font-size: 16px;
+        }
+    </style>
+</div>
+@endif
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const deleteLinks = document.querySelectorAll('.delete');
+
+        deleteLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                const url = this.getAttribute('href');
+                const id = this.getAttribute('data-id');
+
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = url;
+                    }
+                });
+            });
+        });
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Toggle the filter modal

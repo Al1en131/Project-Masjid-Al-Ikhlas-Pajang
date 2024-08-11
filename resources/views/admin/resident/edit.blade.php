@@ -17,11 +17,6 @@
                 </div>
             </div>
         </div>
-        @if (session('success'))
-            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-6">
-                {{ session('success') }}
-            </div>
-        @endif
 
         <form method="POST" action="{{ route('admin.resident.update', ['id' => $resident->id]) }}" class="">
             @csrf
@@ -475,18 +470,7 @@
                             </div>
                         @endforeach
                     </div>
-                    <div class="w-full flex justify-end items-end mt-16">
-                        <div class="">
-                            <button type="button" onclick="addChildField()"
-                                class="py-2 px-4 bg-[#d9d9ff] text-[#42348b] rounded-md flex items-center hover:bg-[#33297a] hover:text-[#d9d9ff] hover:border-2 hover:border-[#d9d9ff]">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-3">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                </svg>
-                                <span>Tambah Anak</span>
-                            </button>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div class="flex mt-8">
                     <button type="submit"
