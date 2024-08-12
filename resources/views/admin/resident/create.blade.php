@@ -22,7 +22,7 @@
             @csrf
             <div class="shadow-md rounded-xl border-2 border-[#42348b] bg-white p-16 max-md:p-8">
                 <div class="flex flex-wrap -mx-4 mb-6">
-                    <div class="w-full md:w-1/2 px-4">
+                    <div class="w-full md:w-1/2 px-4 max-md:mb-6">
                         <label for="nik" class="block text-gray-700 font-medium mb-2">Nomor KK</label>
                         <input type="text" id="nik" name="nik"
                             class="form-input mt-1 block w-full text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50"
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="flex flex-wrap -mx-4 mb-6">
-                    <div class="w-full md:w-1/2 px-4">
+                    <div class="w-full md:w-1/2 px-4 max-md:mb-6">
                         <label for="gender" class="block text-gray-700 font-medium mb-2">Jenis Kelamin</label>
                         <select id="gender" name="gender"
                             class="form-select mt-1 block w-full py-2 px-4 bg-gray-100 text-black border-[#42348b] rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50"
@@ -58,7 +58,7 @@
                 </div>
 
                 <div class="flex flex-wrap -mx-4 mb-6">
-                    <div class="w-full md:w-1/2 px-4">
+                    <div class="w-full md:w-1/2 px-4 max-md:mb-6">
                         <label for="status" class="block text-gray-700 font-medium mb-2">Status</label>
                         <select id="status" name="status" onchange="toggleSpouseAndChildrenFields()"
                             class="form-select mt-1 block w-full py-2 px-4 text-black bg-gray-100 border-[#42348b] rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50"
@@ -87,7 +87,7 @@
                 </div>
 
                 <div class="flex flex-wrap -mx-4 mb-6">
-                    <div class="w-full md:w-1/2 px-4">
+                    <div class="w-full md:w-1/2 px-4 max-md:mb-6">
                         <label for="blood" class="block text-gray-700 font-medium mb-2">Golongan Darah</label>
                         <select id="blood" name="blood"
                             class="form-select mt-1 block w-full bg-gray-100 py-2 px-4 text-black border-[#42348b] rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50"
@@ -109,7 +109,7 @@
                 </div>
 
                 <div class="flex flex-wrap -mx-4 mb-6">
-                    <div class="w-full md:w-1/2 px-4">
+                    <div class="w-full md:w-1/2 px-4 max-md:mb-6">
                         <label for="job" class="block text-gray-700 font-medium mb-2">Pekerjaan</label>
                         <input type="text" id="job" name="job"
                             class="form-input mt-1 block w-full text-black bg-gray-100 border-[#42348b] rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50"
@@ -138,10 +138,10 @@
             <div id="spouseAndChildrenFields" class="hidden">
                 <div
                     class=" shadow-md rounded-xl border-2 mt-16 border-[#42348b] bg-white px-16 pb-16 pt-6 max-md:p-8">
-                    <h1 class="text-2xl text-[#42348b] border-b-2 border-[#42348b] font-bold mb-16 leading-[3.5rem]">
+                    <h1 class="text-2xl text-[#42348b] border-b-2 border-[#42348b] font-bold mb-16 max-md:mb-8 leading-[3.5rem]">
                         Data Istri</h1>
                     <div class="flex flex-wrap -mx-4 mb-6">
-                        <div class="w-full md:w-1/2 px-4">
+                        <div class="w-full md:w-1/2 px-4 max-md:mb-6">
                             <label for="name_wife" class="block text-gray-700 font-medium mb-2">Nama Istri</label>
                             <input type="text" id="name_wife" name="name_wife"
                                 class="form-input mt-1 block w-full bg-gray-100 text-black border-[#42348b] rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50">
@@ -155,7 +155,7 @@
                     </div>
 
                     <div class="flex flex-wrap -mx-4 mb-6">
-                        <div class="w-full md:w-1/2 px-4">
+                        <div class="w-full md:w-1/2 px-4 max-md:mb-6">
                             <label for="gender_wife" class="block text-gray-700 font-medium mb-2">Jenis
                                 Kelamin</label>
                             <select id="gender_wife" name="gender_wife"
@@ -183,7 +183,7 @@
                     </div>
 
                     <div class="flex flex-wrap -mx-4 mb-6">
-                        <div class="w-full md:w-1/2 px-4">
+                        <div class="w-full md:w-1/2 px-4 max-md:mb-6">
                             <label for="blood_wife" class="block text-gray-700 font-medium mb-2">Golongan
                                 Darah</label>
                             <select id="blood_wife" name="blood_wife"
@@ -204,7 +204,7 @@
                     </div>
 
                     <div class="flex flex-wrap -mx-4 mb-6">
-                        <div class="w-full md:w-1/2 px-4">
+                        <div class="w-full md:w-1/2 px-4 max-md:mb-6">
                             <label for="job_wife" class="block text-gray-700 font-medium mb-2">Pekerjaan</label>
                             <input type="text" id="job_wife" name="job_wife"
                                 class="form-input mt-1 block w-full text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50">
@@ -229,11 +229,11 @@
                 </div>
                 <div
                     class=" shadow-md rounded-xl border-2 mt-16 border-[#42348b] bg-white px-16 pb-16 pt-6 max-md:p-8">
-                    <h1 class="text-2xl text-[#42348b] border-b-2 border-[#42348b] font-bold mb-20 leading-[3.5rem]">
+                    <h1 class="text-2xl text-[#42348b] border-b-2 border-[#42348b] font-bold mb-20 max-md:mb-8 leading-[3.5rem]">
                         Data Anak</h1>
                     <div id="childrenFields">
                         <div class="flex flex-wrap -mx-4 mb-6">
-                            <div class="w-full md:w-1/2 px-4">
+                            <div class="w-full md:w-1/2 px-4 max-md:mb-6">
                                 <label for="name_child[]" class="block text-gray-700 font-medium mb-2">Nama
                                     Anak</label>
                                 <input type="text" id="name_child" name="name_child[]"
@@ -248,7 +248,7 @@
                             </div>
                         </div>
                         <div class="flex flex-wrap -mx-4 mb-6">
-                            <div class="w-full md:w-1/2 px-4">
+                            <div class="w-full md:w-1/2 px-4 max-md:mb-6">
                                 <label for="gender_child[]" class="block text-gray-700 font-medium mb-2">Jenis
                                     Kelamin</label>
                                 <select id="gender_child[]" name="gender_child[]"
@@ -272,7 +272,7 @@
                         </div>
                         <div class="flex flex-wrap -mx-4 mb-6">
 
-                            <div class="w-full md:w-1/2 px-4">
+                            <div class="w-full md:w-1/2 px-4 max-md:mb-6">
                                 <label for="blood_child[]" class="block text-gray-700 font-medium mb-2">Golongan
                                     Darah</label>
                                 <select id="blood_child[]" name="blood_child[]"
@@ -302,7 +302,7 @@
                         </div>
                         <div class="flex flex-wrap -mx-4 mb-6">
 
-                            <div class="w-full md:w-1/2 px-4">
+                            <div class="w-full md:w-1/2 px-4 max-md:mb-6">
                                 <label for="phone_child[]" class="block text-gray-700 font-medium mb-2">No. Hp</label>
                                 <input type="text" id="phone_child[]" name="phone_child[]"
                                     class="form-input mt-1 block w-full text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50">
@@ -315,7 +315,7 @@
                             </div>
                         </div>
                         <div class="flex flex-wrap -mx-4 mb-6">
-                            <div class="w-full md:w-1/2 px-4">
+                            <div class="w-full md:w-1/2 px-4 max-md:mb-6">
                                 <label for="last_education_child[]"
                                     class="block text-gray-700 font-medium mb-2">Pendidikan
                                     Terakhir</label>
@@ -333,7 +333,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-full flex justify-end items-end mt-16">
+                    <div class="w-full flex justify-end items-end mt-16 max-md:mt-8">
                         <div class="">
                             <button type="button" onclick="addChildField()"
                                 class="py-2 px-4 bg-[#d9d9ff] text-[#42348b] rounded-md flex items-center hover:bg-[#33297a] hover:text-[#d9d9ff] hover:border-2 hover:border-[#d9d9ff]">
@@ -371,9 +371,9 @@
         function addChildField() {
             const childrenFields = document.getElementById('childrenFields');
             const newChildHtml = `
-                       <div class="border-t-2 mt-16 border-[#42348b]">
-                <div class="flex flex-wrap -mx-4 mb-6 pt-16">
-                    <div class="w-full md:w-1/2 px-4">
+                       <div class="border-t-2 mt-16 border-[#42348b] max-md:mt-8">
+                <div class="flex flex-wrap -mx-4 mb-6 pt-16 max-md:pt-8">
+                    <div class="w-full md:w-1/2 px-4 max-md:mb-6">
                         <label for="name_child_${childIndex}" class="block text-gray-700 font-medium mb-2">Nama Anak</label>
                         <input type="text" id="name_child_${childIndex}" name="name_child[]"
                             class="form-input mt-1 block w-full text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50">
@@ -386,7 +386,7 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap -mx-4 mb-6">
-                    <div class="w-full md:w-1/2 px-4">
+                    <div class="w-full md:w-1/2 px-4 max-md:mb-6">
                         <label for="gender_child_${childIndex}" class="block text-gray-700 font-medium mb-2">Jenis Kelamin</label>
                         <select id="gender_child_${childIndex}" name="gender_child[]"
                             class="form-select mt-1 block w-full py-2 px-4 text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50">
@@ -406,7 +406,7 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap -mx-4 mb-6">
-                    <div class="w-full md:w-1/2 px-4">
+                    <div class="w-full md:w-1/2 px-4 max-md:mb-6">
                         <label for="blood_child_${childIndex}" class="block text-gray-700 font-medium mb-2">Golongan Darah</label>
                         <select id="blood_child_${childIndex}" name="blood_child[]"
                             class="form-select mt-1 block w-full py-2 px-4 text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50">
@@ -433,7 +433,7 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap -mx-4 mb-6">
-                    <div class="w-full md:w-1/2 px-4">
+                    <div class="w-full md:w-1/2 px-4 max-md:mb-6">
                         <label for="phone_child_${childIndex}" class="block text-gray-700 font-medium mb-2">No. Hp</label>
                         <input type="text" id="phone_child_${childIndex}" name="phone_child[]"
                             class="form-input mt-1 block w-full text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50">
@@ -445,7 +445,7 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap -mx-4 mb-6">
-                    <div class="w-full md:w-1/2 px-4">
+                    <div class="w-full md:w-1/2 px-4 max-md:mb-6">
                         <label for="last_education_child_${childIndex}" class="block text-gray-700 font-medium mb-2">Pendidikan Terakhir</label>
                         <select id="last_education_child_${childIndex}" name="last_education_child[]"
                             class="form-select mt-1 block w-full py-2 px-4 text-black border-[#42348b] bg-gray-100 rounded-md shadow-sm focus:border-[#42348b] focus:ring focus:ring-[#42348b] focus:ring-opacity-50">

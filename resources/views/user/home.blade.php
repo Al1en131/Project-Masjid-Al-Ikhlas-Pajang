@@ -41,12 +41,12 @@
                 </button>
             </div>
             <ul id="nav-menu" class="hidden flex-col p-4 md:p-0 font-medium md:flex md:flex-row md:space-x-8 md:mt-0 md:border-0 md:ml-auto bg-[#42348b] md:bg-transparent absolute md:static top-16 left-0 right-0 md:w-auto w-full">
-                <li><a href="{{ route('/') }}" class="block py-2 transition-colors text-[#42348b]">Home</a></li>
-                <li><a href="{{ route('/') }}#about" class="block py-2 transition-colors text-[#42348b]">Tentang</a></li>
-                <li><a href="{{ route('/') }}#activities" class="block py-2 transition-colors text-[#42348b]">Kegiatan</a></li>
-                <li><a href="{{ route('/') }}#gallery" class="block py-2 transition-colors text-[#42348b]">Galeri</a></li>
-                <li><a href="{{ route('/') }}#tutorial" class="block py-2 transition-colors text-[#42348b]">Tutorial</a></li>
-                <li><a href="{{ route('/') }}#contact" class="block py-2 transition-colors text-[#42348b]">Kontak</a></li>
+                <li><a href="{{ route('/') }}" class="block py-2 transition-colors text-[#42348b] max-md:text-[#d9d9ff]">Home</a></li>
+                <li><a href="{{ route('/') }}#about" class="block py-2 transition-colors text-[#42348b] max-md:text-[#d9d9ff]">Tentang</a></li>
+                <li><a href="{{ route('/') }}#activities" class="block py-2 transition-colors text-[#42348b] max-md:text-[#d9d9ff]">Kegiatan</a></li>
+                <li><a href="{{ route('/') }}#gallery" class="block py-2 transition-colors text-[#42348b] max-md:text-[#d9d9ff]">Galeri</a></li>
+                <li><a href="{{ route('/') }}#tutorial" class="block py-2 transition-colors text-[#42348b] max-md:text-[#d9d9ff]">Tutorial</a></li>
+                <li><a href="{{ route('/') }}#contact" class="block py-2 transition-colors text-[#42348b] max-md:text-[#d9d9ff]">Kontak</a></li>
             </ul>
         </div>
     </nav>
@@ -87,7 +87,7 @@
         </div>
     </div>
 
-    <div class="px-20 mb-12 z-10 max-md:px-4" id="activities">
+    <div class="px-20 mb-12 z-10 max-md:px-4 max-md:mt-8" id="activities">
         <div class="bg-white w-full border border-[#42348b] shadow overflow-hidden sm:rounded-lg">
             <div class="px-4 py-5 sm:px-6">
                 <h3 class="text-lg leading-6 font-medium text-gray-900">
@@ -385,8 +385,7 @@
     <footer class="bg-[#42348b]
         px-20 py-4 shadow text-center bottom-0">
         <div class="w-full">
-            <span class="text-sm text-white">© 2024 <a href="https://flowbite.com/" class="hover:underline">KKN
-                    Kelompok 3 Pajang</a>. All Rights Reserved.
+            <span class="text-sm text-white">© 2024 <a href="https://flowbite.com/" class="hover:underline">Masjid Al-Ikhlas Pajang</a>. All Rights Reserved.
             </span>
         </div>
     </footer>

@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
     <link href="https://unpkg.com/flowbite@1.4.5/dist/flowbite.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
-    <link rel="stylesheet"
-        href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
         <style>
             .bg-purple {
                 background-color: #42348b !important;
@@ -23,7 +22,11 @@
             .transition-colors {
                 transition: background-color 0.3s ease, color 0.3s ease;
             }
+            .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Mengatur posisi dan warna shadow */
+}
         </style>
+        
 
 </head>
 
@@ -51,15 +54,16 @@
           </ul>
         </div>
     </nav> 
-    <img src="{{ asset('assets/image/bg2.jpg') }}" alt="" class="-z-10 absolute right-0 h-[600px] max-md:hidden">
-    <div class="px-20 z-10  max-md:px-6 max-md:mt-32">
-        <div class="text-white justify-center">
-            <div class="flex justify-between items-center max-md:flex-col max-md:items-center">
-                <div class="block pr-8 max-md:pr-0 mt-8 max-md:mt-0">
-                    <p class="text-start max-md:hidden text-6xl font-bold text-[#42348b] leading-[70px]">
+    <img src="{{ asset('assets/image/bgg.jpg') }}" alt="" class="-z-10 absolute right-0 w-full max-md:hidden">
+    <div class="px-20 z-10 py-48 max-md:px-6 max-md:mt-32">
+        <div class="text-white justify-center ">
+            <div class="flex justify-between items-center max-md:flex-col  max-md:items-center">
+                <div class="block pr-8 max-md:pr-0 w-1/2  max-md:mt-0">
+                    <p class="text-start max-md:hidden text-6xl font-bold text-[#42348b] leading-[70px] text-shadow">
                         Masjid Al-Ikhlas Pajang
                     </p>
-                    <p class="text-center hidden max-md:block text-6xl font-bold text-[#42348b] leading-[70px]">
+                    
+                    <p class="text-center hidden max-md:block text-6xl text-shadow font-bold text-[#42348b] leading-[70px]">
                         Masjid <br /> Al-Ikhlas Pajang
                     </p>
                     @if (Route::has('login'))
@@ -68,11 +72,11 @@
                         @role('admin')
                         <div class="flex gap-2 items-center">
                             <a href="{{ url('/dashboard') }}"
-                                class="text-[#42348b] bg-white border-2 border-[#42348b] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Data Jama'ah</a>
+                                class="text-[#42348b] bg-white border-2 shadow-[2px_2px_4px_rgba(0,0,0,0.4)] border-[#42348b] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Data Jama'ah</a>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <button type="submit"
-                                    class="text-[#42348b] bg-white border-2 border-[#42348b] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Log Out</button>
+                                    class="text-[#42348b] bg-white border-2 border-[#42348b] shadow-[2px_2px_4px_rgba(0,0,0,0.4)] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Log Out</button>
                             </form>
                         </div>
                         @elserole('user')
@@ -89,48 +93,52 @@
                         @else
                         <div class="flex gap-2 items-center">
                             <a href="{{ route('login') }}"
-                                class="text-[#42348b] bg-white border-2 border-[#42348b] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Log in</a>
+                                class="text-[#42348b] bg-white border-2 shadow-[2px_2px_4px_rgba(0,0,0,0.4)] border-[#42348b] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Log in</a>
                             @if (Route::has('register'))
                                 <a href="{{ route('register') }}"
-                                    class="text-[#42348b] bg-white border-2 border-[#42348b] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Registrasi</a>
+                                    class="text-[#42348b] bg-white border-2 shadow-[2px_2px_4px_rgba(0,0,0,0.4)] border-[#42348b] focus:outline-none hover:bg-[#42348b] hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm py-3 px-10 me-2 mb-2">Registrasi</a>
                             @endif
                         </div>
                         @endauth
                     </div> @endif
                 
                 </div>
-                <img src="{{ asset('assets/image/masjid4.png') }}"
-        class="max-md:mx-auto max-md:mt-0 mt-8" alt="">
+                <div class="flex items-center justify-center w-1/2">
+                    <img src="{{ asset('assets/image/profil1.jpeg') }}"
+                        class="w-96 object-cover rounded-xl transition-transform shadow-[10px_10px_0px_0px_rgba(66,52,139)] duration-300 hover:scale-105"
+                        alt="Image 2">
+                </div>
     </div>
     </div>
     </div>
-
-    <div class="text-gray-700 body-font px-20 max-md:px-8">
-        <div class="container mx-auto">
-            <div class="flex flex-wrap -m-4 text-center">
-                <div class="p-4 md:w-1/3 sm:w-1/2 w-full">
-                    <div
-                        class="border-4 border-[#42348b] px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110 bg-white">
-                        <h2 class="title-font font-medium text-3xl text-[#42348b]">{{ $totalJamaah }}</h2>
-                        <p class="leading-relaxed">Total Jama'ah</p>
-                    </div>
-                </div>
-                <div class="p-4 md:w-1/3 sm:w-1/2 w-full">
-                    <div
-                        class="border-4 border-[#42348b] px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110 bg-white">
-                        <h2 class="title-font font-medium text-3xl text-[#42348b]">{{ $totalMale }}</h2>
-                        <p class="leading-relaxed">Laki-Laki</p>
-                    </div>
-                </div>
-                <div class="p-4 md:w-1/3 sm:w-1/2 w-full">
-                    <div
-                        class="border-4 border-[#42348b] px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110 bg-white">
-                        <h2 class="title-font font-medium text-3xl text-[#42348b]">{{ $totalFemale }}</h2>
-                        <p class="leading-relaxed">Perempuan</p>
-                    </div>
-                </div>
+@role('admin')
+<div class="container mx-auto">
+    <div class="flex flex-wrap -m-4 text-center">
+        <div class="p-4 md:w-1/3 sm:w-1/2 w-full">
+            <div
+                class="border-4 border-[#42348b] px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110 bg-white">
+                <h2 class="title-font font-medium text-3xl text-[#42348b]">{{ $totalJamaah }}</h2>
+                <p class="leading-relaxed">Total Jama'ah</p>
             </div>
         </div>
+        <div class="p-4 md:w-1/3 sm:w-1/2 w-full">
+            <div
+                class="border-4 border-[#42348b] px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110 bg-white">
+                <h2 class="title-font font-medium text-3xl text-[#42348b]">{{ $totalMale }}</h2>
+                <p class="leading-relaxed">Laki-Laki</p>
+            </div>
+        </div>
+        <div class="p-4 md:w-1/3 sm:w-1/2 w-full">
+            <div
+                class="border-4 border-[#42348b] px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110 bg-white">
+                <h2 class="title-font font-medium text-3xl text-[#42348b]">{{ $totalFemale }}</h2>
+                <p class="leading-relaxed">Perempuan</p>
+            </div>
+        </div>
+    </div>
+</div>
+@endrole
+    <div class="text-gray-700 body-font px-20 max-md:px-8">
         <div class="justify-between flex max-md:block w-full py-28 items-center">
             <div class="w-full md:w-1/2 pr-6 max-md:pr-0" data-aos="fade-up" data-aos-delay="200">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -153,6 +161,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="text-[#42348b] w-1/2 max-md:w-full max-md:mt-10 pl-6 max-md:pl-0" id="about">
                 <h1 class="font-bold text-4xl mb-6 max-md:text-center">Tentang Masjid</h1>
                 <p class="max-md:text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -181,7 +190,7 @@
     </div>
     </div>
     </div>
-    <div class="py-16 px-20 max-md:px-8 text-center text-[#42348b] bg-[#e8e8ff]" id="activities">
+    <div class="py-10 px-20 max-md:px-8 text-center text-[#42348b] bg-[#e8e8ff]" id="activities">
         <h1 class="font-bold text-4xl mb-6">Kegiatan Masjid</h1>
         <p class="pb-10">Masjid Al Ikhlas Pajang memiliki kegiatan keagamaan dan sosial yang melibatkan
             seluruh lapisan masyarakat, mulai dari anak-anak hingga dewasa. Melalui beragam kegiatan, Masjid Al Ikhlas
@@ -507,9 +516,9 @@
                     <button
                         class="relative flex justify-center items-center focus:outline-none focus-visible:ring focus-visible:ring-indigo-300 rounded-3xl group"
                         @click="modalOpen = true" aria-controls="modal" aria-label="Watch the video">
-                        <img class="rounded-3xl shadow-2xl transition-shadow duration-300 ease-in-out"
-                            src="https://cruip-tutorials.vercel.app/modal-video/modal-video-thumb.jpg" width="768"
-                            height="432" alt="Modal video thumbnail" />
+                        <video width="768"  class="rounded-3xl shadow-2xl transition-shadow duration-300 ease-in-out" controls>
+                            <source src="{{ asset('assets/image/bg-video.mp4') }}" type="video/mp4">
+                        </video>
                         <!-- Play icon -->
                         <svg class="absolute pointer-events-none group-hover:scale-110 transition-transform duration-300 ease-in-out"
                             xmlns="http://www.w3.org/2000/svg" width="72" height="72">
@@ -578,11 +587,9 @@
                                         </div>
                                     </div>
                                     <div class="mt-4">
-                                        <h4 class="text-lg leading-6 font-semibold text-gray-900">Headline</h4>
+                                        <h4 class="text-lg leading-6 font-semibold text-gray-900">Login / Registrasi</h4>
                                         <p class="mt-2 text-base leading-6 text-gray-500">
-                                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit
-                                            perferendis
-                                            suscipit eaque, iste dolor cupiditate blanditiis ratione.
+                                            Pengguna dapat melakukan registrasi atau login dengan menekan tombol Registrasi di sebelah kanan.
                                         </p>
                                     </div>
                                 </div>
@@ -596,11 +603,9 @@
                                         </div>
                                     </div>
                                     <div class="mt-4">
-                                        <h4 class="text-lg leading-6 font-semibold text-gray-900">Headline</h4>
+                                        <h4 class="text-lg leading-6 font-semibold text-gray-900">Menuju Halaman Isi Form Data Jama'ah</h4>
                                         <p class="mt-2 text-base leading-6 text-gray-500">
-                                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit
-                                            perferendis
-                                            suscipit eaque, iste dolor cupiditate blanditiis ratione.
+                                            Setelah berhasil login atau registrasi, pengguna dapat mengisi data pribadi dengan cara klik tombol "Lihat Data Diri" kemudian klik tombol "Isi Form Data Jama'ah".
                                         </p>
                                     </div>
                                 </div>
@@ -614,18 +619,48 @@
                                         </div>
                                     </div>
                                     <div class="mt-4">
-                                        <h4 class="text-lg leading-6 font-semibold text-gray-900">Headline</h4>
+                                        <h4 class="text-lg leading-6 font-semibold text-gray-900">Isi Form Data Jama'ah</h4>
                                         <p class="mt-2 text-base leading-6 text-gray-500">
-                                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit
-                                            perferendis
-                                            suscipit eaque, iste dolor cupiditate blanditiis ratione.
+                                            Isi form sesuai dengan data yang dibutuhkan. Jika status yang dipilih adalah "menikah", maka form untuk data istri dan anak akan muncul. Namun, jika status "belum menikah" yang dipilih, form tersebut tidak akan muncul.
                                         </p>
                                     </div>
                                 </div>
                             </li>
-
+                            <li class=" bg-gray-100 p-5 pb-10 text-center mb-20">
+                                <div class="flex flex-col items-center">
+                                    <div class="flex-shrink-0 relative top-0 -mt-16">
+                                        <div
+                                            class="flex items-center justify-center h-20 w-20 rounded-full bg-indigo-500 text-white border-4 border-white text-xl font-semibold">
+                                            4
+                                        </div>
+                                    </div>
+                                    <div class="mt-4">
+                                        <h4 class="text-lg leading-6 font-semibold text-gray-900">Simpan Data</h4>
+                                        <p class="mt-2 text-base leading-6 text-gray-500">
+                                            Setelah mengisi data jama'ah, klik tombol "Simpan" untuk menyimpan data. Akan muncul pemberitahuan bahwa data berhasil disimpan.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class=" bg-gray-100 p-5 pb-10 text-center mb-20">
+                                <div class="flex flex-col items-center">
+                                    <div class="flex-shrink-0 relative top-0 -mt-16">
+                                        <div
+                                            class="flex items-center justify-center h-20 w-20 rounded-full bg-indigo-500 text-white border-4 border-white text-xl font-semibold">
+                                            5
+                                        </div>
+                                    </div>
+                                    <div class="mt-4">
+                                        <h4 class="text-lg leading-6 font-semibold text-gray-900">Cek Data yang Sudah Berhasil Dimasukkan</h4>
+                                        <p class="mt-2 text-base leading-6 text-gray-500">
+                                            Pengguna dapat melihat data yang telah disimpan di halaman "Data Diri" dengan mengklik tombol "Lihat Data Diri".Jika ingin mengedit data maka klik saja tombol "Isi Form Data Jama'ah"
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
                     </div>
+                    
 
                 </div>
             </div>
@@ -969,8 +1004,7 @@
                     font-size: 16px;
                 }
             </style>
-        </div>
-    @endif
+        </div> @endif
     
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
