@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\ChildrenController;
+use App\Http\Controllers\FinancialController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProfileMasjidController;
 use App\Http\Controllers\ResidentController;
 use App\Http\Controllers\WifeController;
 use Illuminate\Support\Facades\Route;
@@ -43,6 +45,10 @@ Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
     Route::get('/resident/{id}', [ResidentController::class, 'destroy'])->name('admin.resident.destroy');
     Route::get('/wife', [WifeController::class, 'index'])->name('admin.resident.wife');
     Route::get('/child', [ChildrenController::class, 'index'])->name('admin.resident.child');
+    Route::get('/financial', [FinancialController::class, 'index'])->name('admin.financial.index');
+    Route::get('/profilemasjid', [ProfileMasjidController::class, 'index'])->name('admin.profile.index');
+    Route::get('profilemasjid/edit', [ProfileMasjidController::class, 'edit'])->name('admin.profile.edit');
+    Route::put('profilemasjid/update', [ProfileMasjidController::class, 'update'])->name('admin.profile.update');
 });
 
 

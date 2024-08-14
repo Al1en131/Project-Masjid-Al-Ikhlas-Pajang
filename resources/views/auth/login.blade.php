@@ -2,11 +2,13 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-2" :status="session('status')" />
 
-    <div class="w-1/2 my-auto justify-center px-10 mx-auto max-md:hidden">
-        <img src="{{ asset('assets/image/masjid3.jpg') }}" alt="">
+    <div class="relative w-1/2 my-auto justify-center  content-center mx-auto items-center object-center max-md:hidden">
+        <!-- Image -->
+        <img src="{{ asset('assets/image/masjide.png') }}" alt="" class="h-[520px] mx-auto">
     </div>
-    <img src="{{asset('assets/image/bg-login.png')}}" alt="" class="-z-5 absolute right-0 h-screen w-[55%] max-md:hidden">
-    <div class="w-1/2 max-md:w-full max-md:bg-[#42348b] my-auto  flex items-center justify-center mx-auto z-10 min-h-screen">
+    
+    <img src="{{asset('assets/image/bg-login-hijau.png')}}" alt="" class=" absolute right-0 h-screen -z-5 w-[58%] max-md:hidden">
+    <div class="w-1/2 max-md:w-full max-md:bg-[#40534C] my-auto  flex items-center justify-center mx-auto z-10 min-h-screen">
         <form method="POST" action="{{ route('login') }}" class="w-80">
             @csrf
     
@@ -32,11 +34,11 @@
             <div class="flex justify-between mt-4 mb-4">
                 <label for="remember_me" class="inline-flex items-center">
                     <input id="remember_me" type="checkbox"
-                        class="rounded border-gray-300 text-[#42348b] shadow-sm focus:ring-[#42348b]" name="remember">
-                    <span class="ms-2 text-sm text-[#D9D9FF]">{{ __('Remember me') }}</span>
+                        class="rounded border-gray-300 text-[#80AF81] shadow-sm focus:ring-[#40534C]" name="remember">
+                    <span class="ms-2 text-sm text-[#40534C] max-md:text-[#80AF81]">{{ __('Remember me') }}</span>
                 </label>
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-start text-[#D9D9FF] hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    <a class="underline text-sm text-start text-[#40534C] max-md:text-[#80AF81] hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
@@ -48,7 +50,7 @@
                 <x-primary-button class="max-w-full w-full rounded-lg mb-3">
                     {{ __('Log in') }}
                 </x-primary-button>
-                <p class="text-white">Don't have an account ? <span class="text-[#D9D9FF]"><a href="{{ route('register') }}">Sign up
+                <p class="text-[#40534C] max-md:text-[#80AF81]">Don't have an account ? <span class="text-[#D6EFD8]"><a href="{{ route('register') }}">Sign up
                             here</a>
                     </span></p>
             </div>

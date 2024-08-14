@@ -19,7 +19,10 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ResidentSeeder::class,
             WifeSeeder::class,
-            ChildrenSeeder::class
+            ChildrenSeeder::class,
+            ProfileMasjidSeeder::class,
+            MediaSeeder::class,
+            FinancialSeeder::class,
         ]);
     }
 }

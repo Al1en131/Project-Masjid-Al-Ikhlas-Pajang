@@ -11,8 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('media', function (Blueprint $table) {
+        Schema::create('profile_masjids', function (Blueprint $table) {
             $table->id();
+            $table->string('about');
+            $table->string('activity');
+            $table->string('gallery');
+            $table->string('address');
+            $table->string('detail_contact');
+            $table->string('detail_account_number');
             $table->timestamps();
         });
     }
@@ -22,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('media');
+        Schema::dropIfExists('profile_masjids');
     }
 };

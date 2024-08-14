@@ -14,8 +14,6 @@ return new class extends Migration
 
         Schema::create('media', function (Blueprint $table) {
             $table->id();
-
-            $table->morphs('model');
             $table->uuid('uuid')->nullable()->unique();
             $table->string('collection_name');
             $table->string('name');
@@ -28,9 +26,16 @@ return new class extends Migration
             $table->json('custom_properties');
             $table->json('generated_conversions');
             $table->json('responsive_images');
+            $table->unsignedBigInteger('model_id'); // Tambahkan kolom ini
+            $table->string('model_type'); // Tambahkan kolom ini
             $table->unsignedInteger('order_column')->nullable()->index();
-
             $table->nullableTimestamps();
+        
         });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('media');
     }
 };

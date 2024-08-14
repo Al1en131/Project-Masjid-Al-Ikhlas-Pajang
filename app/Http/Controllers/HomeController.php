@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Children;
+use App\Models\ProfileMasjid;
 use App\Models\Property;
 use App\Models\Resident;
 use App\Models\User;
@@ -15,6 +16,7 @@ class HomeController extends Controller
 {
     public function home($user_id, $resident_id)
     {
+        
         // Verifikasi bahwa user_id yang dikirimkan adalah milik pengguna yang sedang login
         if (Auth::id() !== (int)$user_id) {
             abort(403, 'Unauthorized action.');
@@ -30,6 +32,7 @@ class HomeController extends Controller
 
         $spouse = $resident ? $resident->wife : null;
         $children = $resident ? $resident->children : [];
+ 
         // Kirim data ke view, termasuk status keberadaan resident
         return view('user.home', compact('resident', 'spouse', 'children'))
             ->with('residentExists', $resident !== null);
@@ -37,8 +40,8 @@ class HomeController extends Controller
 
     public function index()
     {
+        $profiles = ProfileMasjid::all();
         $totalResidents = Resident::count();
-
         // Hitung jumlah laki-laki dan perempuan di Resident
         $totalMale = Resident::where('gender', 'Laki-Laki')->count();
         $totalFemale = Resident::where('gender', 'Perempuan')->count();
@@ -62,7 +65,7 @@ class HomeController extends Controller
             }
         }
 
-        return view('welcome', compact('resident_id', 'totalJamaah', 'totalMale', 'totalFemale'));
+        return view('welcome', compact('resident_id', 'totalJamaah', 'totalMale', 'totalFemale', 'profiles'));
     }
 
 

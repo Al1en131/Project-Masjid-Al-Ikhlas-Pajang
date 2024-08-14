@@ -8,7 +8,7 @@
                 <div class=" md:justify-end max-md:contents items-center hidden">
                     <a href="{{ route('admin.resident.create') }}">
                         <button type="button"
-                            class="focus:outline-none text-white flex items-center bg-[#42348b] hover:bg-[#d9d9ff] hover:text-[#42348b] hover:border-[#42348b] hover:border rounded-lg text-sm px-4 py-2.5 max-md:px-4 w-full">
+                            class="focus:outline-none text-white flex items-center bg-[#40534C] hover:bg-[#D6EFD8] hover:text-[#40534C] hover:border-[#40534C] hover:border rounded-lg text-sm px-4 py-2.5 max-md:px-4 w-full">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-5 h-5 mr-2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -22,7 +22,7 @@
                     <!-- Search Bar -->
                     <div class="relative flex-grow">
                         <input type="text" id="table-search" placeholder="Search for items"
-                            class="block w-full px-10 py-2 text-sm me-5 text-gray-900 border border-[#42348b] rounded-lg bg-gray-50 focus:ring-[#42348b] focus:border-[#42348b] " />
+                            class="block w-full px-10 py-2 text-sm me-5 text-gray-900 border border-[#40534C] rounded-lg bg-gray-50 focus:ring-[#40534C] focus:border-[#40534C] " />
                         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                             <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -34,7 +34,7 @@
                 </div>
                 <!-- Filter Button -->
                 {{-- <button id="filter-button"
-                    class="bg-[#42348b] text-white max-md:ml-4 px-4 py-2 w-16 rounded-lg shadow hover:border-[#42348b] hover:border hover:bg-[#d9d9ff] hover:text-[#42348b] focus:outline-none focus:ring-2 focus:ring-[#42348b] flex items-center justify-center">
+                    class="bg-[#40534C] text-white max-md:ml-4 px-4 py-2 w-16 rounded-lg shadow hover:border-[#40534C] hover:border hover:bg-[#d9d9ff] hover:text-[#40534C] focus:outline-none focus:ring-2 focus:ring-[#40534C] flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -45,7 +45,7 @@
                 <div class=" md:justify-end max-md:contents w-3/12 items-center">
                     <a href="{{ route('admin.resident.create') }}">
                         <button type="button"
-                            class="focus:outline-none max-md:hidden text-white text-center justify-center flex items-center bg-[#42348b] hover:bg-[#d9d9ff] hover:border-[#42348b] hover:border hover:text-[#42348b] rounded-lg text-sm px-4 py-2.5 max-md:px-4 w-full">
+                            class="focus:outline-none max-md:hidden text-white text-center justify-center flex items-center bg-[#40534C] hover:bg-[#D6EFD8] hover:border-[#40534C] hover:border hover:text-[#40534C] rounded-lg text-sm px-4 py-2.5 max-md:px-4 w-full">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -81,7 +81,7 @@
                     <div class="overflow-x-auto rounded-lg">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500">
                             <thead class="text-xs text-white uppercase bg-secondary ">
-                                <tr class="bg-[#42348b] text-white text-nowrap">
+                                <tr class="bg-[#40534C] text-white text-nowrap">
                                     <th class="px-6 py-3">No.</th>
                                     <th class="px-6 py-3">NIK</th>
                                     <th class="px-6 py-3">Nama</th>
@@ -169,7 +169,7 @@
     </script>
     <style>
         .btn-success {
-            background-color: #42348b;
+            background-color: #40534C;
             color: #fff;
             border: none;
             border-radius: 4px;

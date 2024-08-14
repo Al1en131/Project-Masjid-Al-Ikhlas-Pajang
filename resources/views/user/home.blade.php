@@ -15,7 +15,7 @@
         href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
         <style>
             .bg-ungu {
-                background-color: #42348b !important;
+                background-color: #40534C !important;
             }
             
             .transition-colors {
@@ -30,55 +30,57 @@
     <nav id="navbar" class="fixed w-full top-0 left-0 z-50 px-20 max-md:px-4 transition-colors">
         <div class="flex flex-wrap items-center justify-between mx-auto py-4">
             <a href="{{ route('/') }}" class="flex items-center">
-                <span id="navbar-title" class="self-center text-2xl font-semibold whitespace-nowrap text-[#42348b] transition-colors">Al-Ikhlas</span>
+                <span id="navbar-title" class="self-center text-2xl font-semibold whitespace-nowrap text-[#40534C] transition-colors">Al-Ikhlas</span>
             </a>
             <div class="flex md:hidden">
-                <button id="menu-toggle" type="button" class="inline-flex items-center w-10 h-10 justify-center text-sm text-gray-500 hover:text-[#D9D9FF]">
+                <button id="menu-toggle" type="button" class="inline-flex items-center w-10 h-10 justify-center text-sm text-gray-500 hover:text-[#C9DABF]">
                     <span class="sr-only">Open main menu</span>
                     <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
                     </svg>
                 </button>
             </div>
-            <ul id="nav-menu" class="hidden flex-col p-4 md:p-0 font-medium md:flex md:flex-row md:space-x-8 md:mt-0 md:border-0 md:ml-auto bg-[#42348b] md:bg-transparent absolute md:static top-16 left-0 right-0 md:w-auto w-full">
-                <li><a href="{{ route('/') }}" class="block py-2 transition-colors text-[#42348b] max-md:text-[#d9d9ff]">Home</a></li>
-                <li><a href="{{ route('/') }}#about" class="block py-2 transition-colors text-[#42348b] max-md:text-[#d9d9ff]">Tentang</a></li>
-                <li><a href="{{ route('/') }}#activities" class="block py-2 transition-colors text-[#42348b] max-md:text-[#d9d9ff]">Kegiatan</a></li>
-                <li><a href="{{ route('/') }}#gallery" class="block py-2 transition-colors text-[#42348b] max-md:text-[#d9d9ff]">Galeri</a></li>
-                <li><a href="{{ route('/') }}#tutorial" class="block py-2 transition-colors text-[#42348b] max-md:text-[#d9d9ff]">Tutorial</a></li>
-                <li><a href="{{ route('/') }}#contact" class="block py-2 transition-colors text-[#42348b] max-md:text-[#d9d9ff]">Kontak</a></li>
+            <ul id="nav-menu" class="hidden flex-col p-4 md:p-0 font-medium md:flex md:flex-row md:space-x-8 md:mt-0 md:border-0 md:ml-auto bg-[#40534C] md:bg-transparent absolute md:static top-16 left-0 right-0 md:w-auto w-full">
+                <li><a href="{{ route('/') }}" class="block py-2 transition-colors text-[#40534C] max-md:text-[#C9DABF]">Home</a></li>
+                <li><a href="{{ route('/') }}#about" class="block py-2 transition-colors text-[#40534C] max-md:text-[#C9DABF]">Tentang</a></li>
+                <li><a href="{{ route('/') }}#activities" class="block py-2 transition-colors text-[#40534C] max-md:text-[#C9DABF]">Kegiatan</a></li>
+                <li><a href="{{ route('/') }}#gallery" class="block py-2 transition-colors text-[#40534C] max-md:text-[#C9DABF]">Galeri</a></li>
+                <li><a href="{{ route('/') }}#tutorial" class="block py-2 transition-colors text-[#40534C] max-md:text-[#C9DABF]">Tutorial</a></li>
+                <li><a href="{{ route('/') }}#contact" class="block py-2 transition-colors text-[#40534C] max-md:text-[#C9DABF]">Kontak</a></li>
             </ul>
         </div>
     </nav>
     
-    
-    
-    
-
-
-    <img src="{{ asset('assets/image/bg-22.png') }}" alt=""
-        class="-z-10 absolute right-0 h-[620px] max-md:hidden">
-    <div class="px-20 z-10  max-md:px-4 max-md:mt-32">
+    <img src="{{ asset('assets/image/bggg.jpg') }}" alt=""
+        class="-z-10 absolute right-0 w-full max-md:hidden">
+    <div class="px-20 z-10  max-md:px-4 pt-36 max-md:pt-0 pb-20 max-md:pb-4 max-md:mt-28">
         <div class="text-white justify-center">
             <div class="flex justify-between items-center max-md:flex-col max-md:items-center ">
                 <div class="block pr-8 max-md:pr-0 mt-8 max-md:mt-0">
-                    <p class="text-start max-md:hidden text-6xl font-bold text-[#42348b] leading-[70px]">
+                    <p class="text-start max-md:hidden text-6xl font-bold text-[#40534C] leading-[70px]">
                         Data Jama'ah Masjid Al-Ikhlas Pajang
+                    </p>
+                    <p class="text-center hidden max-md:block text-6xl mb-10 text-shadow font-bold text-[#40534C] leading-[70px]">
+                        Masjid </br> Al-Ikhlas Pajang
                     </p>
                     <div class="  items-center mt-10 justify-start text-center z-10 max-md:hidden ">
                         <a href="{{ route('user.create', ['user_id' => Auth::id()]) }}">
                             <button type="button"
-                                class="focus:outline-none text-white flex items-center bg-[#42348b] hover:bg-[#d9d9ff] hover:text-[#42348b] hover:border-[#42348b] hover:border rounded-lg text-sm px-8 py-3 max-md:px-4">
+                                class="focus:outline-none text-white flex items-center bg-[#40534C] hover:bg-[#C9DABF] hover:text-[#40534C] hover:border-[#40534C] hover:border rounded-lg text-sm px-8 py-3 max-md:px-4">
                                 <span>Isi Form Data Jama'ah</span>
                             </button>
                         </a>
                     </div>
                 </div>
-                <img src="{{ asset('assets/image/masjid4.png') }}" class="max-md:mx-auto mt-8 max-md:mt-0" alt="">
+                <div class="flex items-center justify-end w-1/2 max-md:hidden">
+                    <img src="{{ asset('assets/image/profil1.jpeg') }}"
+                        class="w-96 object-cover rounded-xl transition-transform shadow-[10px_10px_0px_0px_rgba(64,83,76)] duration-300 hover:scale-105"
+                        alt="Image 2">
+                </div>
                 <div class="  items-center my-8 justify-start text-center z-10 max-md:contents hidden ">
                     <a href="{{ route('user.create', ['user_id' => Auth::id()]) }}">
                         <button type="button"
-                            class="focus:outline-none text-white flex items-center bg-[#42348b] hover:bg-[#d9d9ff] hover:text-[#42348b] hover:border-[#42348b] hover:border rounded-lg text-sm px-8 py-3 max-md:px-4">
+                            class="focus:outline-none text-white flex items-center bg-[#40534C] hover:bg-[#C9DABF] hover:text-[#40534C] hover:border-[#40534C] hover:border rounded-lg text-sm px-8 py-3 max-md:px-4">
                             <span>Isi Form Data Jama'ah</span>
                         </button>
                     </a>
@@ -88,7 +90,7 @@
     </div>
 
     <div class="px-20 mb-12 z-10 max-md:px-4 max-md:mt-8" id="activities">
-        <div class="bg-white w-full border border-[#42348b] shadow overflow-hidden sm:rounded-lg">
+        <div class="bg-white w-full border border-[#40534C] shadow overflow-hidden sm:rounded-lg">
             <div class="px-4 py-5 sm:px-6">
                 <h3 class="text-lg leading-6 font-medium text-gray-900">
                     Data Jama'ah
@@ -97,10 +99,10 @@
                     Masjid Al-Ikhlas Pajang
                 </p>
             </div>
-            <div class="border-t border-[#42348b]">
+            <div class="border-t border-[#40534C]">
                 @if ($residentExists)
                     <dl>
-                        <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <div class="bg-[#D6EFD8] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt class="text-sm font-medium text-gray-500">
                                 NIK
                             </dt>
@@ -116,7 +118,7 @@
                                 {{ $resident->name }}
                             </dd>
                         </div>
-                        <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <div class="bg-[#D6EFD8] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt class="text-sm font-medium text-gray-500">
                                 Jenis Kelamin
                             </dt>
@@ -132,7 +134,7 @@
                                 {{ $resident->birth }}
                             </dd>
                         </div>
-                        <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <div class="bg-[#D6EFD8] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt class="text-sm font-medium text-gray-500">
                                 Agama
                             </dt>
@@ -148,7 +150,7 @@
                                 {{ $resident->status }}
                             </dd>
                         </div>
-                        <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <div class="bg-[#D6EFD8] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt class="text-sm font-medium text-gray-500">
                                 Golongan Darah
                             </dt>
@@ -164,7 +166,7 @@
                                 {{ $resident->phone }}
                             </dd>
                         </div>
-                        <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <div class="bg-[#D6EFD8] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt class="text-sm font-medium text-gray-500">
                                 Pekerjaan
                             </dt>
@@ -183,8 +185,7 @@
                     </dl>
                 @else
                     <p class="px-4 py-5 text-center text-gray-900">
-                        Belum ada data resident.
-                    </p>
+                        Belum ada data pribadi                    </p>
                 @endif
             </div>
         </div>
@@ -192,7 +193,7 @@
         
         <!-- Wife Data -->
         @if ($spouse)
-        <div class="bg-white w-full border mt-16 border-[#42348b] shadow overflow-hidden sm:rounded-lg">
+        <div class="bg-white w-full border mt-16 border-[#40534C] shadow overflow-hidden sm:rounded-lg">
             <div class="px-4 py-5 sm:px-6">
                 <h3 class="text-lg leading-6 font-medium text-gray-900">
                     Data Istri
@@ -201,9 +202,9 @@
                     Masjid Al-Ikhlas Pajang
                 </p>
             </div>
-            <div class="border-t border-[#42348b]">
+            <div class="border-t border-[#40534C]">
                 <dl>
-                    <div class=" bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <div class=" bg-[#D6EFD8] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                         <dt class="text-sm font-medium text-gray-500">
                             Nama
                         </dt>
@@ -219,7 +220,7 @@
                             {{ $spouse->gender_wife }}
                         </dd>
                     </div>
-                    <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <div class="bg-[#D6EFD8] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                         <dt class="text-sm font-medium text-gray-500">
                             Tempat, Tanggal Lahir
                         </dt>
@@ -235,7 +236,7 @@
                             {{ $spouse->religion_wife }}
                         </dd>
                     </div>
-                    <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <div class="bg-[#D6EFD8] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                         <dt class="text-sm font-medium text-gray-500">
                             Golongan Darah
                         </dt>
@@ -251,7 +252,7 @@
                             {{ $spouse->phone_wife }}
                         </dd>
                     </div>
-                    <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <div class="bg-[#D6EFD8] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                         <dt class="text-sm font-medium text-gray-500">
                             Pekerjaan
                         </dt>
@@ -282,7 +283,7 @@
         <!-- Children Data -->
         @if ($resident)
         @if ($resident->children->isNotEmpty())
-            <div class="bg-white w-full border border-[#42348b] mt-16 shadow overflow-hidden sm:rounded-lg">
+            <div class="bg-white w-full border mx-auto border-[#40534C] mt-16 shadow overflow-hidden sm:rounded-lg">
                 <div class="px-4 py-5 sm:px-6">
                     <h3 class="text-lg leading-6 font-medium text-gray-900">
                         Data Anak
@@ -291,77 +292,59 @@
                         Masjid Al-Ikhlas Pajang
                     </p>
                 </div>
-                <div class="border-t border-[#42348b]">
+                <div class="border-t border-[#40534C]">
                     <dl>
                         @foreach ($resident->children as $child)
-                            <div class="bg-[#efeffe] px-4 py-5 border-t border-[#42348b] sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500">
-                                    Nama
-                                </dt>
+                            <div class="bg-[#D6EFD8] px-4 py-5 border-t border-[#40534C] sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">Nama</dt>
                                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                                     {{ $child->name_child }}
                                 </dd>
                             </div>
                             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500">
-                                    Jenis Kelamin
-                                </dt>
+                                <dt class="text-sm font-medium text-gray-500">Jenis Kelamin</dt>
                                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                                     {{ $child->gender_child }}
                                 </dd>
                             </div>
-                            <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500">
-                                    Tempat, Tanggal Lahir
-                                </dt>
+                            <div class="bg-[#D6EFD8] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">Tempat, Tanggal Lahir</dt>
                                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                                     {{ $child->birth_child }}
                                 </dd>
                             </div>
                             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500">
-                                    Agama
-                                </dt>
+                                <dt class="text-sm font-medium text-gray-500">Agama</dt>
                                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                                     {{ $child->religion_child }}
                                 </dd>
                             </div>
-                            <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500">
-                                    Status
-                                </dt>
+                            <div class="bg-[#D6EFD8] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">Status</dt>
                                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                                     {{ $child->status_child }}
                                 </dd>
                             </div>
                             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500">
-                                    Golongan Darah
-                                </dt>
+                                <dt class="text-sm font-medium text-gray-500">Golongan Darah</dt>
                                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                                     {{ $child->blood_child }}
                                 </dd>
                             </div>
-                            <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500">
-                                    No. Hp
-                                </dt>
+                            <div class="bg-[#D6EFD8] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">No. Hp</dt>
                                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                                     {{ $child->phone_child }}
                                 </dd>
                             </div>
                             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500">
-                                    Pekerjaan
-                                </dt>
+                                <dt class="text-sm font-medium text-gray-500">Pekerjaan</dt>
                                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                                     {{ $child->job_child }}
                                 </dd>
                             </div>
-                            <div class="bg-[#efeffe] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500">
-                                    Pendidikan Terakhir
-                                </dt>
+                            <div class="bg-[#D6EFD8] px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">Pendidikan Terakhir</dt>
                                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                                     {{ $child->last_education_child }}
                                 </dd>
@@ -372,20 +355,18 @@
 @else
 <p class="px-4
         py-5 text-center text-gray-900">
-
     </p>
     @endif
 @else
-    <p class="px-4 py-5 text-center text-gray-900">
-
-    </p>
+    <p class="px-4 py-5 text-center text-gray-900"></p>
     @endif
 
     </div>
-    <footer class="bg-[#42348b]
+    <footer class="bg-[#40534C]
         px-20 py-4 shadow text-center bottom-0">
         <div class="w-full">
-            <span class="text-sm text-white">© 2024 <a href="https://flowbite.com/" class="hover:underline">Masjid Al-Ikhlas Pajang</a>. All Rights Reserved.
+            <span class="text-sm text-white">© 2024 <a href="https://flowbite.com/" class="hover:underline">Masjid
+                    Al-Ikhlas Pajang</a>. All Rights Reserved.
             </span>
         </div>
     </footer>
@@ -413,9 +394,9 @@
                 });
 
                 navLinks.forEach((a) => {
-                    a.classList.remove("text-[#d9d9ff]");
+                    a.classList.remove("text-[#C9DABF]");
                     if (a.getAttribute("href") === `#${current}`) {
-                        a.classList.add("text-[#d9d9ff]");
+                        a.classList.add("text-[#C9DABF]");
                     }
                 });
             };
@@ -579,15 +560,15 @@
             if (sectionPosition.top <= 0 && sectionPosition.bottom > 0) {
                 navbar.classList.add('bg-ungu');
                 navLinks.forEach(link => {
-                    link.style.color = '#D9D9FF'; // Change text color to light purple
+                    link.style.color = '#C9DABF'; // Change text color to light purple
                 });
-                logoText.style.color = '#D9D9FF'; // Change logo text color to light purple
+                logoText.style.color = '#C9DABF'; // Change logo text color to light purple
             } else {
                 navbar.classList.remove('bg-ungu');
                 navLinks.forEach(link => {
-                    link.style.color = '#42348b'; // Revert text color to original
+                    link.style.color = '#40534C'; // Revert text color to original
                 });
-                logoText.style.color = '#42348b'; // Revert logo text color to original
+                logoText.style.color = '#40534C'; // Revert logo text color to original
             }
         });
     </script>
