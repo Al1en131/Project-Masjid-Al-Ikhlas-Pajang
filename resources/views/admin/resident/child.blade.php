@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="flex flex-col min-h-full max-md:px-10 lg:px-20 py-9 max-md:py-6">
+    <div class="flex flex-col min-h-full max-md:px-4 lg:px-20 py-9 max-md:py-6">
         <div class="max-w-full flex-grow">
             <div class="flex justify-between items-center mb-6 max-md:mb-4">
                 <div class="font-Poppins">
@@ -8,7 +8,7 @@
                 
             </div>
             <div class="rounded-lg mb-7 max-md:mb-4 flex justify-between items-center w-full gap-2 max-md:gap-0">
-                <div class="flex flex-wrap items-center w-9/12">
+                <div class="flex flex-wrap items-center w-full">
                     <!-- Search Bar -->
                     <div class="relative flex-grow">
                         <input type="text" id="table-search" placeholder="Search for items"

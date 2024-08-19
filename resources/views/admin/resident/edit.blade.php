@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="container mx-auto px-20 max-md:px-8 py-8">
+    <div class="container mx-auto px-20 max-md:px-4 py-8">
         <div class="flex justify-between items-center">
             <div class="block mb-4 items-center">
                 <h1 class="text-2xl font-semibold text-gray-800 mb-1">Ubah Data Jama'ah</h1>
@@ -181,7 +181,7 @@
             <!-- Spouse Fields -->
             <div id="spouseAndChildrenFields">
                 <div class="shadow-md rounded-xl border-2 mt-16 border-[#40534C] bg-white px-16 pb-16 pt-6 max-md:p-8">
-                    <h1 class="text-2xl text-[#40534C] border-b-2 border-[#40534C] font-bold mb-16 max-md:mb-8 leading-[3.5rem]">
+                    <h1 class="text-2xl text-[#40534C] border-b-2 border-[#40534C] font-bold mb-14 max-md:mb-8 leading-[3.5rem]">
                         Data Istri</h1>
                     <div class="flex flex-wrap -mx-4 mb-6">
                         <div class="w-full md:w-1/2 px-4 max-md:mb-6">
@@ -317,7 +317,7 @@
 
                 <!-- Children Fields -->
                 <div class="shadow-md rounded-xl border-2 mt-16 border-[#40534C] bg-white px-16 pb-16 pt-6 max-md:p-8">
-                    <h1 class="text-2xl text-[#40534C] border-b-2 border-[#40534C] font-bold mb-20 max-md:mb-8 leading-[3.5rem]">
+                    <h1 class="text-2xl text-[#40534C] border-b-2 border-[#40534C] font-bold mb-14 max-md:mb-8 leading-[3.5rem]">
                         Data Anak</h1>
                     <div id="childrenFields">
                         @foreach ($resident->children as $index => $child)
@@ -469,6 +469,19 @@
                                 </div>
                             </div>
                         @endforeach
+
+                    </div>
+                    <div class="w-full flex justify-end items-end mt-16 max-md:mt-8">
+                        <div class="">
+                            <button type="button" onclick="addChildField()"
+                                class="py-2 px-4 bg-[#D6EFD8] text-[#40534C] rounded-md flex items-center hover:bg-[#40534C] hover:text-[#D6EFD8] hover:border-2 hover:border-[#D6EFD8]">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-3">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                </svg>
+                                <span>Tambah Anak</span>
+                            </button>
+                        </div>
                     </div>
                     
                 </div>
@@ -497,7 +510,7 @@
         function addChildField() {
             const childrenFields = document.getElementById('childrenFields');
             const childFieldHtml = `
-            <div class="border-t-2 mt-16 border-[#40534C] max-md:mt-6">
+            <div class="border-b-2 mt-16 border-[#40534C] max-md:mt-6">
                  <div class="flex flex-wrap -mx-4 mb-6 pt-16 max-md:pt-8">
                         <div class="w-full md:w-1/2 px-4 max-md:mb-6">
                             <label for="name_child[]" class="block text-gray-700 font-medium mb-2">Nama Anak</label>

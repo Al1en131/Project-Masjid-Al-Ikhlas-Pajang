@@ -198,7 +198,7 @@
 
             <div id="spouseAndChildrenFields" class="{{ $hasResident ? ($hasChildren ? '' : 'hidden') : 'hidden' }}">
                 <div class="shadow-md rounded-xl border-2 mt-16 border-[#40534C] bg-white px-16 pb-16 pt-6 max-md:p-8">
-                    <h1 class="text-2xl text-[#40534C] border-b-2 border-[#40534C] font-bold mb-16 max-md:mb-8 leading-[3.5rem]">
+                    <h1 class="text-2xl text-[#40534C] border-b-2 border-[#40534C] font-bold mb-14 max-md:mb-8 leading-[3.5rem]">
                         Data Istri</h1>
                     <div class="flex flex-wrap -mx-4 mb-6">
                         <div class="w-full md:w-1/2 px-4 max-md:mb-6">
@@ -335,7 +335,7 @@
                     <div
                         class="shadow-md rounded-xl border-2 mt-16 border-[#40534C] bg-white px-16 pb-16 pt-6 max-md:p-8">
                         <h1
-                            class="text-2xl text-[#40534C] border-b-2 border-[#40534C] font-bold mb-20 max-md:mb-8 leading-[3.5rem]">
+                            class="text-2xl text-[#40534C] border-b-2 border-[#40534C] font-bold mb-14 max-md:mb-8 leading-[3.5rem]">
                             Data Anak</h1>
                         <div id="childrenFields">
                             @foreach ($resident->children as $index => $child)
@@ -492,7 +492,7 @@
                             @endforeach
 
                         </div>
-                        <div class="w-full flex justify-end items-end mt-16 ax-md:mt-8">
+                        <div class="w-full flex justify-end items-end mt-16 max-md:mt-8">
                             <div class="">
                                 <button type="button" onclick="addChildField()"
                                     class="py-2 px-4 bg-[#C9DABF] text-[#40534C] rounded-md flex items-center hover:bg-[#40534C] hover:text-[#C9DABF] hover:border-2 hover:border-[#C9DABF]">

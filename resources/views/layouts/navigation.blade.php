@@ -21,25 +21,8 @@
                     </x-nav-link>
                 </div>
                 @elserole('user')
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('/')" :active="request()->routeIs('/')">
-                        {{ __('Home') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('/') . '#about'" :active="request()->routeIs(['home'])">
-                        {{ __('About') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('/') . '#activities'" :active="request()->routeIs(['home'])">
-                        {{ __('Kegiatan') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('/') . '#gallery'" :active="request()->routeIs(['home'])">
-                        {{ __('Galeri') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('/') . '#tutorial'" :active="request()->routeIs(['home'])">
-                        {{ __('Tutorial') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('/') . '#contact'" :active="request()->routeIs(['home'])">
-                        {{ __('Kontak') }}
-                    </x-nav-link>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex items-center">
+                    <a href="{{route ('/')}}" class="text-3xl pr-6 text-[#40534C] font-bold max-md:pr-0">Al-Ikhlas</a>
                 </div>
                 @endrole
                 
@@ -108,7 +91,7 @@
                 {{ __('Home') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('admin.resident.index')" :active="request()->routeIs('admin.resident.index')">
-                {{ __('Data Jamaah') }}
+                {{ __('Data KK') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('admin.resident.wife')" :active="request()->routeIs('admin.resident.wife')">
                 {{ __('Data Istri') }}
@@ -150,21 +133,6 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('/')" :active="request()->routeIs('/')">
                 {{ __('Home') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('/') . '#about'" :active="request()->routeIs('home')">
-                {{ __('Tentang') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('/') . '#activities'" :active="request()->routeIs('home')">
-                {{ __('Kegiatan') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('/') . '#gallery'" :active="request()->routeIs('home')">
-                {{ __('Galeri') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('/') . '#tutorial'" :active="request()->routeIs('home')">
-                {{ __('Tutorial') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('/') . '#contact'" :active="request()->routeIs('home')">
-                {{ __('Kontak') }}
             </x-responsive-nav-link>
         </div>
 

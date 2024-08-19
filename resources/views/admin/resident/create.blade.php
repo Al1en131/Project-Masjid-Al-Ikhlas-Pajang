@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="container mx-auto px-20 max-md:px-8 py-8">
+    <div class="container mx-auto px-20 max-md:px-4 py-8">
         <div class="flex justify-between items-center">
             <div class="block mb-4 items-center">
                 <h1 class="text-2xl font-semibold text-gray-800 mb-1">Tambah Data Jama'ah</h1>
@@ -138,7 +138,7 @@
             <div id="spouseAndChildrenFields" class="hidden">
                 <div
                     class=" shadow-md rounded-xl border-2 mt-16 border-[#40534C] bg-white px-16 pb-16 pt-6 max-md:p-8">
-                    <h1 class="text-2xl text-[#40534C] border-b-2 border-[#40534C] font-bold mb-16 max-md:mb-8 leading-[3.5rem]">
+                    <h1 class="text-2xl text-[#40534C] border-b-2 border-[#40534C] font-bold mb-14 max-md:mb-8 leading-[3.5rem]">
                         Data Istri</h1>
                     <div class="flex flex-wrap -mx-4 mb-6">
                         <div class="w-full md:w-1/2 px-4 max-md:mb-6">
@@ -229,7 +229,7 @@
                 </div>
                 <div
                     class=" shadow-md rounded-xl border-2 mt-16 border-[#40534C] bg-white px-16 pb-16 pt-6 max-md:p-8">
-                    <h1 class="text-2xl text-[#40534C] border-b-2 border-[#40534C] font-bold mb-20 max-md:mb-8 leading-[3.5rem]">
+                    <h1 class="text-2xl text-[#40534C] border-b-2 border-[#40534C] font-bold mb-14 max-md:mb-8 leading-[3.5rem]">
                         Data Anak</h1>
                     <div id="childrenFields">
                         <div class="flex flex-wrap -mx-4 mb-6">

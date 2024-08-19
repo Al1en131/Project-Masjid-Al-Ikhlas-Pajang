@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Children;
+use App\Models\Financial;
 use App\Models\ProfileMasjid;
 use App\Models\Property;
 use App\Models\Resident;
@@ -42,6 +43,7 @@ class HomeController extends Controller
     {
         $profiles = ProfileMasjid::all();
         $totalResidents = Resident::count();
+        $financial = Financial::all();
         // Hitung jumlah laki-laki dan perempuan di Resident
         $totalMale = Resident::where('gender', 'Laki-Laki')->count();
         $totalFemale = Resident::where('gender', 'Perempuan')->count();
@@ -65,7 +67,7 @@ class HomeController extends Controller
             }
         }
 
-        return view('welcome', compact('resident_id', 'totalJamaah', 'totalMale', 'totalFemale', 'profiles'));
+        return view('welcome', compact('resident_id', 'totalJamaah', 'totalMale', 'totalFemale', 'profiles','financial'));
     }
 
 
@@ -328,6 +330,6 @@ class HomeController extends Controller
             }
         }
 
-        return redirect()->route('user.home')->with('success', 'Resident updated successfully.');
+        return redirect()->route('user.home')->with('success', 'Data Berhasil Diubah');
     }
 }

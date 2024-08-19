@@ -21,7 +21,7 @@
 </head>
 
 <body class=" text-gray-900 antialiased relative">
-    <div class="min-h-screen bg-transparent bg-[#eeeeee]">
+    <div class="min-h-screen bg-[#eeeeee]">
         <div class="w-full flex justify-between">
             {{ $slot }}
         </div>

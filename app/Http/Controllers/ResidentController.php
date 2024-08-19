@@ -121,7 +121,7 @@ class ResidentController extends Controller
             }
         }
 
-        return redirect()->route('admin.resident.index')->with('success', 'Resident created successfully.');
+        return redirect()->route('admin.resident.index')->with('success', 'Data Berhasil di simpan');
     }
 
 
@@ -186,9 +186,10 @@ class ResidentController extends Controller
             'job_child.*' => 'nullable|string|max:255',
             'last_education_child.*' => 'nullable|string|max:20',
         ]);
-
+    
         $resident = Resident::findOrFail($id);
-
+    
+        // Update resident information
         $resident->update([
             'nik' => $request->input('nik'),
             'user_id' => $request->input('user_id'),
@@ -202,26 +203,41 @@ class ResidentController extends Controller
             'job' => $request->input('job'),
             'last_education' => $request->input('last_education'),
         ]);
-
-        // Update wife information
-        $resident->wife()->update([
-            'name_wife' => $request->input('name_wife'),
-            'birth_wife' => $request->input('birth_wife'),
-            'gender_wife' => $request->input('gender_wife'),
-            'religion_wife' => $request->input('religion_wife'),
-            'blood_wife' => $request->input('blood_wife'),
-            'phone_wife' => $request->input('phone_wife'),
-            'job_wife' => $request->input('job_wife'),
-            'last_education_wife' => $request->input('last_education_wife'),
-        ]);
-
-        // Get current children
+    
+        // Check if wife exists
+        if ($resident->wife) {
+            // Update wife information if exists
+            $resident->wife()->update([
+                'name_wife' => $request->input('name_wife'),
+                'birth_wife' => $request->input('birth_wife'),
+                'gender_wife' => $request->input('gender_wife'),
+                'religion_wife' => $request->input('religion_wife'),
+                'blood_wife' => $request->input('blood_wife'),
+                'phone_wife' => $request->input('phone_wife'),
+                'job_wife' => $request->input('job_wife'),
+                'last_education_wife' => $request->input('last_education_wife'),
+            ]);
+        } else {
+            // Create a new wife entry if doesn't exist
+            $resident->wife()->create([
+                'name_wife' => $request->input('name_wife'),
+                'birth_wife' => $request->input('birth_wife'),
+                'gender_wife' => $request->input('gender_wife'),
+                'religion_wife' => $request->input('religion_wife'),
+                'blood_wife' => $request->input('blood_wife'),
+                'phone_wife' => $request->input('phone_wife'),
+                'job_wife' => $request->input('job_wife'),
+                'last_education_wife' => $request->input('last_education_wife'),
+            ]);
+        }
+    
+        // Update or create children
         $currentChildren = $resident->children()->get();
         $currentChildrenIds = $currentChildren->pluck('id')->toArray();
-
+    
         $children = $request->input('name_child', []);
         $updatedChildrenIds = [];
-
+    
         foreach ($children as $index => $name) {
             $child = $currentChildren[$index] ?? new Children();
             $child->fill([
@@ -235,21 +251,22 @@ class ResidentController extends Controller
                 'job_child' => $request->input('job_child.' . $index),
                 'last_education_child' => $request->input('last_education_child.' . $index),
             ]);
-
+    
             // Assign resident_id
             $child->resident_id = $resident->id;
-
+    
             $child->save();
-
+    
             $updatedChildrenIds[] = $child->id;
         }
-
+    
         // Delete children that are no longer in the list
         $childrenToDelete = array_diff($currentChildrenIds, $updatedChildrenIds);
         Children::whereIn('id', $childrenToDelete)->delete();
-
-        return redirect()->route('admin.resident.index')->with('success', 'Data updated successfully');
+    
+        return redirect()->route('admin.resident.index')->with('success', 'Data Berhasil diubah');
     }
+    
 
 
     /**
@@ -262,6 +279,6 @@ class ResidentController extends Controller
         $resident->wife()->delete(); // Delete associated wife
         $resident->delete(); // Delete the resident itself
 
-        return redirect()->route('admin.resident.index')->with('success', 'Resident deleted successfully.');
+        return redirect()->route('admin.resident.index')->with('success', 'Data Berhasil dihapus');
     }
 }

@@ -46,6 +46,11 @@ Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
     Route::get('/wife', [WifeController::class, 'index'])->name('admin.resident.wife');
     Route::get('/child', [ChildrenController::class, 'index'])->name('admin.resident.child');
     Route::get('/financial', [FinancialController::class, 'index'])->name('admin.financial.index');
+    Route::get('/financial/create', [FinancialController::class, 'create'])->name('admin.financial.create');
+    Route::post('/financial', [FinancialController::class, 'store'])->name('admin.financial.store');
+    Route::get('/financial/{id}/edit', [FinancialController::class, 'edit'])->name('admin.financial.edit');
+    Route::put('/financial/{financial}', [FinancialController::class, 'update'])->name('admin.financial.update');
+    Route::delete('/financial/{financial}', [FinancialController::class, 'destroy'])->name('admin.financial.destroy');
     Route::get('/profilemasjid', [ProfileMasjidController::class, 'index'])->name('admin.profile.index');
     Route::get('profilemasjid/edit', [ProfileMasjidController::class, 'edit'])->name('admin.profile.edit');
     Route::put('profilemasjid/update', [ProfileMasjidController::class, 'update'])->name('admin.profile.update');

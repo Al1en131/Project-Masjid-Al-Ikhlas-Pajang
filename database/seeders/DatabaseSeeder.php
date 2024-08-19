@@ -21,7 +21,6 @@ class DatabaseSeeder extends Seeder
             WifeSeeder::class,
             ChildrenSeeder::class,
             ProfileMasjidSeeder::class,
-            MediaSeeder::class,
             FinancialSeeder::class,
         ]);
     }

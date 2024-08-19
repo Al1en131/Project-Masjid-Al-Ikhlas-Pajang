@@ -7,6 +7,7 @@ use App\Models\Financial;
 use App\Models\Media;
 use Financial as GlobalFinancial;
 use Illuminate\Support\Facades\Storage;
+use GuzzleHttp\Client;
 
 class FinancialController extends Controller
 {
@@ -18,7 +19,7 @@ class FinancialController extends Controller
         $financials = Financial::all();
 
         // Retrieve media associated with the Financial model
-       
+
 
         return view('admin.financial.index', compact('financials'));
     }
@@ -28,109 +29,143 @@ class FinancialController extends Controller
      */
     public function create()
     {
-        return view('financials.create');
+        return view('admin.financial.create');
     }
 
     /**
      * Store a newly created financial record in storage.
      */
+    // 
+
     public function store(Request $request)
     {
+        // Validate the request
         $request->validate([
             'date' => 'required|date',
-            'file' => 'required|file|mimes:pdf,jpg,png',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        // Handle file upload
-        $file = $request->file('file');
-        $fileName = $file->getClientOriginalName();
-        $filePath = $file->storeAs('public/financials', $fileName);
+        // Handle image upload to telegrap.ph
+        $imageUrl = null;
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imagePath = $image->getPathname();
 
-        // Create media record
-        $media = Media::create([
-            'uuid' => \Illuminate\Support\Str::uuid(),
-            'collection_name' => 'financial_reports',
-            'name' => pathinfo($fileName, PATHINFO_FILENAME),
-            'file_name' => $fileName,
-            'mime_type' => $file->getMimeType(),
-            'disk' => 'public',
-            'size' => $file->getSize(),
-            'manipulations' => json_encode([]),
-            'custom_properties' => json_encode([]),
-            'generated_conversions' => json_encode([]),
-            'responsive_images' => json_encode([]),
-            'order_column' => null,
-        ]);
+            // Upload the image to telegrap.ph
+            $client = new Client();
+            $response = $client->post('https://telegra.ph/upload', [
+                'multipart' => [
+                    [
+                        'name'     => 'file',
+                        'contents' => fopen($imagePath, 'r'),
+                        'filename' => $image->getClientOriginalName()
+                    ],
+                ]
+            ]);
 
-        // Create financial record
-        Financial::create([
-            'date' => $request->date,
-            'media_id' => $media->id,
-        ]);
+            // Parse the response to get the image URL
+            $body = json_decode($response->getBody()->getContents(), true);
+            if (isset($body[0]['src'])) {
+                $imageUrl = 'https://telegra.ph/' . $body[0]['src'];
+            } else {
+                return redirect()->back()
+                    ->withErrors(['image' => 'Failed to upload image.'])
+                    ->withInput();
+            }
+        }
 
-        return redirect()->route('financials.index')->with('success', 'Financial record created successfully.');
+        // Save the financial data including the image URL
+        $financial = new Financial();
+        $financial->date = $request->date;
+        $financial->image = $imageUrl; // Save the URL of the uploaded image
+        $financial->save();
+
+        return redirect()->route('admin.financial.index')->with('success', 'Data Laporan Keuangan Berhasil Ditambahkan');
     }
 
     /**
      * Show the form for editing the specified financial record.
      */
-    public function edit(Financial $financial)
+    public function edit($id)
     {
-        return view('financials.edit', compact('financial'));
+        // Retrieve the financial record by ID
+        $financial = Financial::findOrFail($id);
+    
+        // Return the edit view with the financial record
+        return view('admin.financial.edit', compact('financial'));
     }
+    
 
     /**
      * Update the specified financial record in storage.
      */
     public function update(Request $request, Financial $financial)
     {
+        // Validate the request
         $request->validate([
             'date' => 'required|date',
-            'file' => 'nullable|file|mimes:pdf,jpg,png',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-
-        // Handle file upload
-        if ($request->hasFile('file')) {
-            // Delete old file
-            if ($financial->media) {
-                Storage::disk($financial->media->disk)->delete('financials/' . $financial->media->file_name);
-            }
-
-            $file = $request->file('file');
-            $fileName = $file->getClientOriginalName();
-            $filePath = $file->storeAs('public/financials', $fileName);
-
-            // Update media record
-            $financial->media->update([
-                'name' => pathinfo($fileName, PATHINFO_FILENAME),
-                'file_name' => $fileName,
-                'mime_type' => $file->getMimeType(),
-                'size' => $file->getSize(),
+    
+        // Debugging: Check the input data
+    
+        // Check if a new image is uploaded
+        if ($request->hasFile('image')) {
+            // Upload the new image to telegrap.ph
+            $image = $request->file('image');
+            $imagePath = $image->getPathname();
+    
+            $client = new Client();
+            $response = $client->post('https://telegra.ph/upload', [
+                'multipart' => [
+                    [
+                        'name'     => 'file',
+                        'contents' => fopen($imagePath, 'r'),
+                        'filename' => $image->getClientOriginalName()
+                    ],
+                ]
             ]);
+    
+            $body = json_decode($response->getBody()->getContents(), true);
+            if (isset($body[0]['src'])) {
+                $newImageUrl = 'https://telegra.ph/' . $body[0]['src'];
+                // Debugging: Check the new image URL
+    
+                // Delete the old image if it exists
+                if ($financial->image) {
+                    Storage::delete($financial->image);
+                }
+    
+                // Update the record with the new image URL
+                $financial->image = $newImageUrl;
+            } else {
+                return redirect()->back()
+                    ->withErrors(['image' => 'Failed to upload image.'])
+                    ->withInput();
+            }
         }
-
-        // Update financial record
-        $financial->update([
-            'date' => $request->date,
-        ]);
-
-        return redirect()->route('financials.index')->with('success', 'Financial record updated successfully.');
+    
+        // Update the date
+        $financial->date = $request->date;
+    
+        // Save the updated record
+       // Debugging: Check the model before saving
+        $financial->save();
+    
+        return redirect()->route('admin.financial.index')->with('success', 'Data Laporan Keuangan Berhasil Diubah');
     }
+    
 
     /**
      * Remove the specified financial record from storage.
      */
     public function destroy(Financial $financial)
     {
-        // Delete associated media file
-        if ($financial->media) {
-            Storage::disk($financial->media->disk)->delete('financials/' . $financial->media->file_name);
-            $financial->media->delete();
-        }
-
-        // Delete financial record
+        // Hapus data financial dari database
         $financial->delete();
-
-        return redirect()->route('financials.index')->with('success', 'Financial record deleted successfully.');
+        
+        // Redirect ke route index dengan pesan sukses
+        return redirect()->route('admin.financial.index')->with('success', 'Data berhasil dihapus');
     }
+    
 }

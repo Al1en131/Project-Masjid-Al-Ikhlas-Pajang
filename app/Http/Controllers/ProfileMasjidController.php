@@ -64,14 +64,14 @@ class ProfileMasjidController extends Controller
         $profile = ProfileMasjid::first(); // Mengambil data pertama atau satu-satunya
         $profile->update([
             'about' => $request->about,
-            'activity' => $request->activy,
+            'activity' => $request->activity,
             'gallery' => $request->gallery,
             'address' => $request->address,
             'detail_contact' => $request->detail_contact,
             'detail_account_number' => $request->detail_account_number,
         ]);
 
-        return redirect()->route('admin.profile.index')->with('success', 'Profile updated successfully.');
+        return redirect()->route('dashboard')->with('success', 'Profil Masjid Berhasil Diubah');
     }
     /**
      * Remove the specified resource from storage.

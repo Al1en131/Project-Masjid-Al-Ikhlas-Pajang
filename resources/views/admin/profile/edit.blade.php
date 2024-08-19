@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="py-9 max-md:px-5 max-md:py-6">
+    <div class="py-9 max-md:px-4 max-md:py-6">
         <div class="mx-auto sm:px-6 lg:px-20">
             <div class="flex items-center justify-between pb-[31px] max-md:pb-4">
                 <div class="">
@@ -99,7 +99,7 @@
 
                     </div>
                     <div class="block sm:col-span-2 sm:flex">
-                        <label class="mb-1 block w-56 py-2.5 text-sm font-medium text-gray-900" for="gallery">Galeri Masjid
+                        <label class="mb-1 block w-56 py-2.5 text-sm font-medium text-gray-900" for="gallery">Galeri
                             Masjid</label>
                         <textarea
                             class="text-black border-[#40534C] bg-gray-100 rounded-md px-4 py-2.5 shadow-sm focus:border-[#40534C] focus:ring focus:ring-[#40534C] focus:ring-opacity-50 mb-1 w-full"
