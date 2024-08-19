@@ -800,9 +800,9 @@
         <h1 class="text-3xl font-bold text-center text-[#40534C] mb-10">Kunjungi Masjid Al-Ikhlas Pajang</h1>
     </div>
     <section class="mb-10">
-        <div class="container px-20 py-4 mx-auto">
+        <div class="container px-20 max-md:px-4  py-4 mx-auto">
             <div class="lg:flex lg:items-center lg:-mx-6">
-                <div class="lg:w-1/2 lg:mx-6">
+                <div class="lg:w-1/2 lg:mx-6 max-md:w-full max-md:mb-10">
                     <div class=" ">
 
                         <dl class="space-y-10 md:space-y-12 md:block md:gap-x-8 md:gap-y-10">
@@ -883,7 +883,7 @@
                     </div>
                 </div>
 
-                <div class="mt-8 lg:w-1/2 lg:mx-6">
+                <div class="mt-8 lg:w-1/2 lg:mx-6 max-md:w-full">
                     <div
                         class="w-full px-8 py-10 mx-auto overflow-hidden rounded-lg shadow-2xl bg-[#c9dabf] lg:max-w-xl border border-[#40534C] shadow-gray-300/50">
                         <h1 class="text-lg font-medium text-[#40534C]">Kritik dan Saran</h1>
