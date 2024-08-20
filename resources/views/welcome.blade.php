@@ -554,12 +554,12 @@
                         </div>
                     </div>
                     <div class="relative overflow-hidden rounded-2xl shadow-lg group">
-                        <img src="https://images.unsplash.com/photo-1624526267942-ab0ff8a3e972?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw3fHxjcmlja2V0fGVufDB8MHx8fDE3MjEwNDMxNTh8MA&ixlib=rb-4.0.3&q=80&w=1080"
+                        <img src="{{ asset('assets/image/profil5.jpeg') }}"
                             alt="Sport" class="w-full h-48 object-cover">
                         <div
                             class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <div class="absolute bottom-0 left-0 right-0 p-4">
-                                <h4 class="text-xl font-bold text-white">Cricket</h4>
+                                <h4 class="text-xl font-bold text-white">Tulisan Masjid</h4>
                             </div>
                         </div>
                     </div>
@@ -631,11 +631,12 @@
                 <div class="[&_[x-cloak]]:hidden" x-data="{ modalOpen: false }">
 
                     <!-- Video thumbnail -->
+
                     <button
                         class="relative flex justify-center items-center focus:outline-none focus-visible:ring focus-visible:ring-indigo-300 rounded-3xl group"
-                        @click="modalOpen = true" aria-controls="modal" aria-label="Watch the video"> <img
+                        @click="modalOpen = true" aria-controls="modal" aria-label="Watch the video"> <a href="https://www.youtube.com/watch?v=IuMvNG9iZcI"><img
                             src="{{ asset('assets/image/tutor.jpg') }}" alt=""
-                            class="rounded-3xl shadow-2xl transition-shadow duration-300 ease-in-out" width="768">
+                            class="rounded-3xl shadow-2xl transition-shadow duration-300 ease-in-out" width="768"></a>
 
                         <!-- Play icon -->
                         <svg class="absolute pointer-events-none group-hover:scale-110 transition-transform duration-300 ease-in-out"
@@ -653,27 +654,6 @@
                         x-transition:enter-end="opacity-100" x-transition:leave="transition ease-out duration-100"
                         x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" aria-hidden="true"
                         x-cloak></div>
-                    <!-- End: Modal backdrop -->
-
-                    <!-- Modal dialog -->
-                    <div id="modal" class="fixed inset-0 z-[99999] flex px-4 md:px-6 py-6" role="dialog"
-                        aria-modal="true" x-show="modalOpen" x-transition:enter="transition ease-out duration-300"
-                        x-transition:enter-start="opacity-0 scale-75" x-transition:enter-end="opacity-100 scale-100"
-                        x-transition:leave="transition ease-out duration-200"
-                        x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-75"
-                        x-cloak>
-                        <div class="max-w-5xl mx-auto h-full flex items-center">
-                            <div class="w-full max-h-full rounded-3xl shadow-2xl aspect-video bg-black overflow-hidden"
-                                @click.outside="modalOpen = false" @keydown.escape.window="modalOpen = false">
-                                <video x-init="$watch('modalOpen', value => value ? $el.play() : $el.pause())" width="1920" height="1080" loop controls>
-                                    <source src="https://cruip-tutorials.vercel.app/modal-video/video.mp4"
-                                        type="video/mp4" />
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End: Modal dialog -->
 
                 </div>
                 <!-- End: Modal video component -->

@@ -2,7 +2,7 @@
     <div class="container mx-auto px-20 max-md:px-4 py-8">
         <div class="flex justify-between items-center max-md:mb-4 ">
             <div class="block mb-4 max-md:mb-0 items-center">
-                <h1 class="text-2xl max-md:text-xl font-semibold text-gray-800 mb-1 max-md:mb-0">Tambah Data Jama'ah</h1>
+                <h1 class="text-2xl max-md:text-xl font-semibold text-gray-800 mb-1 max-md:mb-0">Isi Data Jama'ah</h1>
                 <p class="max-md:hidden">Data Jama'ah Masjid Al-Ikhlas Pajang</p>
             </div>
             <div class="items-center">
