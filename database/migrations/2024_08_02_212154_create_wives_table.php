@@ -17,11 +17,11 @@ return new class extends Migration
             $table->string('name_wife');
             $table->enum('gender_wife', ['Laki-Laki', 'Perempuan']);
             $table->string('birth_wife');
-            $table->enum('religion_wife', ['Islam', 'Kristen', 'Katolik', 'Hindu', 'Buddha', 'Konghucu', 'lainnya']);
+            $table->enum('religion_wife', ['Islam', 'Kristen', 'Katolik', 'Hindu', 'Buddha', 'Konghucu', 'Lainnya']);
             $table->enum('blood_wife', ['A', 'B', 'AB', 'O']);
             $table->string('phone_wife');
             $table->string('job_wife');
-            $table->enum('last_education_wife', ['SD', 'SMP', 'SMA', 'Diploma', 'S1', 'S2', 'S3']);
+            $table->enum('last_education_wife', ['Tidak Sekolah','SD', 'SMP', 'SMA', 'Diploma', 'Sarjana', 'Magister', 'Doktor']);
             $table->timestamps();
         });
     }

@@ -18,11 +18,11 @@ return new class extends Migration
             $table->enum('gender_child', ['Laki-Laki', 'Perempuan']);
             $table->string('birth_child');
             $table->enum('status_child', ['Menikah', 'Belum Menikah']);
-            $table->enum('religion_child', ['Islam', 'Kristen','Katolik','Hindu', 'Buddha', 'Konghucu', 'lainnya'  ]);
+            $table->enum('religion_child', ['Islam', 'Kristen','Katolik','Hindu', 'Buddha', 'Konghucu', 'Lainnya'  ]);
             $table->enum('blood_child', ['A', 'B', 'AB', 'O']);
             $table->string('phone_child');
             $table->string('job_child');
-            $table->enum('last_education_child', ['SD', 'SMP', 'SMA', 'Diploma', 'S1', 'S2', 'S3']);
+            $table->enum('last_education_child', ['Tidak Sekolah','SD', 'SMP', 'SMA', 'Diploma', 'Sarjana', 'Magister', 'Doktor']);
             $table->timestamps();
         });
     }

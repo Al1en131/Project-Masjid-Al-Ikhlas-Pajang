@@ -198,7 +198,8 @@
 
             <div id="spouseAndChildrenFields" class="{{ $hasResident ? ($hasChildren ? '' : 'hidden') : 'hidden' }}">
                 <div class="shadow-md rounded-xl border-2 mt-16 border-[#40534C] bg-white px-16 pb-16 pt-6 max-md:p-8">
-                    <h1 class="text-2xl text-[#40534C] border-b-2 border-[#40534C] font-bold mb-14 max-md:mb-8 leading-[3.5rem]">
+                    <h1
+                        class="text-2xl text-[#40534C] border-b-2 border-[#40534C] font-bold mb-14 max-md:mb-8 leading-[3.5rem]">
                         Data Istri</h1>
                     <div class="flex flex-wrap -mx-4 mb-6">
                         <div class="w-full md:w-1/2 px-4 max-md:mb-6">
@@ -306,6 +307,9 @@
                             <select id="last_education_wife" name="last_education_wife"
                                 class="form-select mt-1 block w-full py-2 px-4 text-black border-[#40534C] bg-gray-100 rounded-md shadow-sm focus:border-[#40534C] focus:ring focus:ring-[#40534C] focus:ring-opacity-50">
                                 <option value="">Pilih Pendidikan Terakhir</option>
+                                <option value="Tidak Sekolah"
+                                    {{ old('last_education_wife', $resident->wife->last_education_wife ?? '') == 'Tidak Sekolah' ? 'selected' : '' }}>
+                                    Tidak Sekolah</option>
                                 <option value="SD"
                                     {{ old('last_education_wife', $resident->wife->last_education_wife ?? '') == 'SD' ? 'selected' : '' }}>
                                     SD</option>
@@ -318,15 +322,15 @@
                                 <option value="Diploma"
                                     {{ old('last_education_wife', $resident->wife->last_education_wife ?? '') == 'Diploma' ? 'selected' : '' }}>
                                     Diploma</option>
-                                <option value="S1"
-                                    {{ old('last_education_wife', $resident->wife->last_education_wife ?? '') == 'S1' ? 'selected' : '' }}>
-                                    S1</option>
-                                <option value="S2"
-                                    {{ old('last_education_wife', $resident->wife->last_education_wife ?? '') == 'S2' ? 'selected' : '' }}>
-                                    S2</option>
-                                <option value="S3"
-                                    {{ old('last_education_wife', $resident->wife->last_education_wife ?? '') == 'S3' ? 'selected' : '' }}>
-                                    S3</option>
+                                <option value="Sarjana"
+                                    {{ old('last_education_wife', $resident->wife->last_education_wife ?? '') == 'Sarjana' ? 'selected' : '' }}>
+                                    Sarjana</option>
+                                <option value="Magister"
+                                    {{ old('last_education_wife', $resident->wife->last_education_wife ?? '') == 'Magister' ? 'selected' : '' }}>
+                                    Magister</option>
+                                <option value="Doktor"
+                                    {{ old('last_education_wife', $resident->wife->last_education_wife ?? '') == 'Doktor' ? 'selected' : '' }}>
+                                    Doktor</option>
                             </select>
                         </div>
                     </div>
@@ -465,6 +469,9 @@
                                             name="last_education_child[]"
                                             class="form-select mt-1 block w-full py-2 px-4 text-black border-[#40534C] bg-gray-100 rounded-md shadow-sm focus:border-[#40534C] focus:ring focus:ring-[#40534C] focus:ring-opacity-50">
                                             <option value="">Pilih Pendidikan Terakhir</option>
+                                            <option value="Tidak Sekolah"
+                                                {{ old('last_education_child.' . $index, $child->last_education_child) == 'Tidak Sekolah' ? 'selected' : '' }}>
+                                                Tidak Sekolah</option>
                                             <option value="SD"
                                                 {{ old('last_education_child.' . $index, $child->last_education_child) == 'SD' ? 'selected' : '' }}>
                                                 SD</option>
@@ -477,15 +484,15 @@
                                             <option value="Diploma"
                                                 {{ old('last_education_child.' . $index, $child->last_education_child) == 'Diploma' ? 'selected' : '' }}>
                                                 Diploma</option>
-                                            <option value="S1"
-                                                {{ old('last_education_child.' . $index, $child->last_education_child) == 'S1' ? 'selected' : '' }}>
-                                                S1</option>
-                                            <option value="S2"
-                                                {{ old('last_education_child.' . $index, $child->last_education_child) == 'S2' ? 'selected' : '' }}>
-                                                S2</option>
-                                            <option value="S3"
-                                                {{ old('last_education_child.' . $index, $child->last_education_child) == 'S3' ? 'selected' : '' }}>
-                                                S3</option>
+                                            <option value="Sarjana"
+                                                {{ old('last_education_child.' . $index, $child->last_education_child) == 'Sarjana' ? 'selected' : '' }}>
+                                                Sarjana</option>
+                                            <option value="Magister"
+                                                {{ old('last_education_child.' . $index, $child->last_education_child) == 'Magister' ? 'selected' : '' }}>
+                                                Magister</option>
+                                            <option value="Doktor"
+                                                {{ old('last_education_child.' . $index, $child->last_education_child) == 'Doktor' ? 'selected' : '' }}>
+                                                Doktor</option>
                                         </select>
                                     </div>
                                 </div>
@@ -606,13 +613,14 @@
                                     <select id="last_education_child[]" name="last_education_child[]"
                                         class="form-select mt-1 block w-full py-2 px-4 text-black border-[#40534C] bg-gray-100 rounded-md shadow-sm focus:border-[#40534C] focus:ring focus:ring-[#40534C] focus:ring-opacity-50">
                                         <option value="">Pilih Pendidikan Terakhir</option>
+                                        <option value="Tidak Sekolah">Tidak Sekolah</option>
                                         <option value="SD">SD</option>
                                         <option value="SMP">SMP</option>
                                         <option value="SMA">SMA</option>
                                         <option value="Diploma">Diploma</option>
-                                        <option value="S1">S1</option>
-                                        <option value="S2">S2</option>
-                                        <option value="S3">S3</option>
+                                        <option value="Sarjana">Sarjana</option>
+                                        <option value="Magister">Magister</option>
+                                        <option value="Doktor">Doktor</option>
                                     </select>
                                 </div>
                             </div>
@@ -728,13 +736,14 @@
                 <label for="last_education_child_${index}" class="block text-gray-700 font-medium mb-2">Pendidikan Terakhir</label>
                 <select id="last_education_child_${index}" name="last_education_child[]" class="form-select mt-1 block w-full py-2 px-4 text-black border-[#40534C] bg-gray-100 rounded-md shadow-sm focus:border-[#40534C] focus:ring focus:ring-[#40534C] focus:ring-opacity-50">
                     <option value="">Pilih Pendidikan Terakhir</option>
+                    <option value="Tidak Sekolah">Tidak Sekolah</option>
                     <option value="SD">SD</option>
                     <option value="SMP">SMP</option>
                     <option value="SMA">SMA</option>
                     <option value="Diploma">Diploma</option>
-                    <option value="S1">S1</option>
-                    <option value="S2">S2</option>
-                    <option value="S3">S3</option>
+                    <option value="Sarjana">Sarjana</option>
+                    <option value="Magister">Magister</option>
+                    <option value="Doktor">Doktor</option>
                 </select>
             </div>
         </div>

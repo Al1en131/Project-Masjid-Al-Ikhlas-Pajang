@@ -20,11 +20,11 @@ class ResidentSeeder extends Seeder
                 'gender' => fake()->randomElement(['Laki-Laki', 'Perempuan']),
                 'birth' => fake()->date(),
                 'status' => fake()->randomElement(['Menikah', 'Belum Menikah']),
-                'religion' => fake()->randomElement(['Islam', 'Kristen', 'Katolik', 'Hindu', 'Buddha', 'Konghucu', 'lainnya']),
+                'religion' => fake()->randomElement(['Islam', 'Kristen', 'Katolik', 'Hindu', 'Buddha', 'Konghucu', 'Lainnya']),
                 'blood' => fake()->randomElement(['A', 'B', 'AB', 'O']),
                 'phone' => fake()->phoneNumber(),
                 'job' => fake()->jobTitle(),
-                'last_education' => fake()->randomElement(['SD', 'SMP', 'SMA', 'Diploma', 'S1', 'S2', 'S3']),
+                'last_education' => fake()->randomElement(['Tidak Sekolah','SD', 'SMP', 'SMA', 'Diploma', 'Sarjana', 'Magister', 'Doktor']),
                 'user_id' => User::inRandomOrder()->first()->id ?? null, // Assigns a random user_id or null if no users exist
             ]);
         }

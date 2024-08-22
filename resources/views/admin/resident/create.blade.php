@@ -123,13 +123,14 @@
                             class="form-select mt-1 block w-full py-2 px-4 bg-gray-100 text-black border-[#40534C] rounded-md shadow-sm focus:border-[#40534C] focus:ring focus:ring-[#40534C] focus:ring-opacity-50"
                             required>
                             <option value="">Pilih Pendidikan Terakhir</option>
+                            <option value="Tidak Sekolah">Tidak Sekolah</option>
                             <option value="SD">SD</option>
                             <option value="SMP">SMP</option>
                             <option value="SMA">SMA</option>
                             <option value="Diploma">Diploma</option>
-                            <option value="S1">S1</option>
-                            <option value="S2">S2</option>
-                            <option value="S3">S3</option>
+                            <option value="Sarjana">Sarjana</option>
+                            <option value="Magister">Magister</option>
+                            <option value="Doktor">Doktor</option>
                         </select>
                     </div>
                 </div>
@@ -216,13 +217,14 @@
                             <select id="last_education_wife" name="last_education_wife"
                                 class="form-select mt-1 block w-full py-2 px-4 text-black border-[#40534C] bg-gray-100 rounded-md shadow-sm focus:border-[#40534C] focus:ring focus:ring-[#40534C] focus:ring-opacity-50">
                                 <option value="">Pilih Pendidikan Terakhir</option>
+                                <option value="Tidak Sekolah">Tidak Sekolah</option>
                                 <option value="SD">SD</option>
                                 <option value="SMP">SMP</option>
                                 <option value="SMA">SMA</option>
                                 <option value="Diploma">Diploma</option>
-                                <option value="S1">S1</option>
-                                <option value="S2">S2</option>
-                                <option value="S3">S3</option>
+                                <option value="Sarjana">Sarjana</option>
+                                <option value="Magister">Magister</option>
+                                <option value="Doktor">Doktor</option>
                             </select>
                         </div>
                     </div>
@@ -322,13 +324,14 @@
                                 <select id="last_education_child[]" name="last_education_child[]"
                                     class="form-select mt-1 block w-full py-2 px-4 text-black border-[#40534C] bg-gray-100 rounded-md shadow-sm focus:border-[#40534C] focus:ring focus:ring-[#40534C] focus:ring-opacity-50">
                                     <option value="">Pilih Pendidikan Terakhir</option>
+                                    <option value="Tidak Sekolah">Tidak Sekolah</option>
                                     <option value="SD">SD</option>
                                     <option value="SMP">SMP</option>
                                     <option value="SMA">SMA</option>
                                     <option value="Diploma">Diploma</option>
-                                    <option value="S1">S1</option>
-                                    <option value="S2">S2</option>
-                                    <option value="S3">S3</option>
+                                    <option value="Sarjana">Sarjana</option>
+                                    <option value="Magister">Magister</option>
+                                    <option value="Doktor">Doktor</option>
                                 </select>
                             </div>
                         </div>
@@ -450,13 +453,14 @@
                         <select id="last_education_child_${childIndex}" name="last_education_child[]"
                             class="form-select mt-1 block w-full py-2 px-4 text-black border-[#40534C] bg-gray-100 rounded-md shadow-sm focus:border-[#40534C] focus:ring focus:ring-[#40534C] focus:ring-opacity-50">
                             <option value="">Pilih Pendidikan Terakhir</option>
+                                       <option value="Tidak Sekolah">Tidak Sekolah</option>
                             <option value="SD">SD</option>
                             <option value="SMP">SMP</option>
                             <option value="SMA">SMA</option>
                             <option value="Diploma">Diploma</option>
-                            <option value="S1">S1</option>
-                            <option value="S2">S2</option>
-                            <option value="S3">S3</option>
+                            <option value="Sarjana">Sarjana</option>
+                            <option value="Magister">Magister</option>
+                            <option value="Doktor">Doktor</option>
                         </select>
                     </div>
                 </div>

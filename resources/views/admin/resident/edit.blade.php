@@ -305,15 +305,15 @@
                                 <option value="Diploma"
                                     {{ old('last_education_wife', $resident->wife->last_education_wife ?? '') == 'Diploma' ? 'selected' : '' }}>
                                     Diploma</option>
-                                <option value="S1"
-                                    {{ old('last_education_wife', $resident->wife->last_education_wife ?? '') == 'S1' ? 'selected' : '' }}>
-                                    S1</option>
-                                <option value="S2"
-                                    {{ old('last_education_wife', $resident->wife->last_education_wife ?? '') == 'S2' ? 'selected' : '' }}>
-                                    S2</option>
-                                <option value="S3"
-                                    {{ old('last_education_wife', $resident->wife->last_education_wife ?? '') == 'S3' ? 'selected' : '' }}>
-                                    S3</option>
+                                <option value="Sarjana"
+                                    {{ old('last_education_wife', $resident->wife->last_education_wife ?? '') == 'Sarjana' ? 'selected' : '' }}>
+                                    Sarjana</option>
+                                <option value="Magister"
+                                    {{ old('last_education_wife', $resident->wife->last_education_wife ?? '') == 'Magister' ? 'selected' : '' }}>
+                                    Magister</option>
+                                <option value="Doktor"
+                                    {{ old('last_education_wife', $resident->wife->last_education_wife ?? '') == 'Doktor' ? 'selected' : '' }}>
+                                    Doktor</option>
                             </select>
                         </div>
                     </div>
@@ -464,15 +464,15 @@
                                         <option value="Diploma"
                                             {{ old('last_education_child.' . $index, $child->last_education_child) == 'Diploma' ? 'selected' : '' }}>
                                             Diploma</option>
-                                        <option value="S1"
-                                            {{ old('last_education_child.' . $index, $child->last_education_child) == 'S1' ? 'selected' : '' }}>
-                                            S1</option>
-                                        <option value="S2"
-                                            {{ old('last_education_child.' . $index, $child->last_education_child) == 'S2' ? 'selected' : '' }}>
-                                            S2</option>
-                                        <option value="S3"
-                                            {{ old('last_education_child.' . $index, $child->last_education_child) == 'S3' ? 'selected' : '' }}>
-                                            S3</option>
+                                        <option value="Sarjana"
+                                            {{ old('last_education_child.' . $index, $child->last_education_child) == 'Sarjana' ? 'selected' : '' }}>
+                                            Sarjana</option>
+                                        <option value="Magister"
+                                            {{ old('last_education_child.' . $index, $child->last_education_child) == 'Magister' ? 'selected' : '' }}>
+                                            Magister</option>
+                                        <option value="Doktor"
+                                            {{ old('last_education_child.' . $index, $child->last_education_child) == 'Doktor' ? 'selected' : '' }}>
+                                            Doktor</option>
                                     </select>
                                 </div>
                             </div>
@@ -616,9 +616,9 @@
                                 <option value="SMP">SMP</option>
                                 <option value="SMA">SMA</option>
                                 <option value="Diploma">Diploma</option>
-                                <option value="S1">S1</option>
-                                <option value="S2">S2</option>
-                                <option value="S3">S3</option>
+                                <option value="Sarjana">Sarjana</option>
+                                <option value="Magister">Magister</option>
+                                <option value="Doktor">Doktor</option>
                             </select>
                         </div>
                     </div>

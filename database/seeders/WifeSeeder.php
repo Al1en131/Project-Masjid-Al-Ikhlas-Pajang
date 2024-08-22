@@ -23,11 +23,11 @@ class WifeSeeder extends Seeder
                     'name_wife' => fake()->name(),
                     'gender_wife' => 'Perempuan', // Asumsinya gender_wife akan selalu 'Perempuan' karena ini tabel istri
                     'birth_wife' => fake()->date(),
-                    'religion_wife' => fake()->randomElement(['Islam', 'Kristen', 'Katolik', 'Hindu', 'Buddha', 'Konghucu', 'lainnya']),
+                    'religion_wife' => fake()->randomElement(['Islam', 'Kristen', 'Katolik', 'Hindu', 'Buddha', 'Konghucu', 'Lainnya']),
                     'blood_wife' => fake()->randomElement(['A', 'B', 'AB', 'O']),
                     'phone_wife' => fake()->phoneNumber(),
                     'job_wife' => fake()->jobTitle(),
-                    'last_education_wife' => fake()->randomElement(['SD', 'SMP', 'SMA', 'Diploma', 'S1', 'S2', 'S3']),
+                    'last_education_wife' => fake()->randomElement(['Tidak Sekolah','SD', 'SMP', 'SMA', 'Diploma', 'Sarjana', 'Magister', 'Doktor']),
                 ]);
             }
         }

@@ -24,11 +24,11 @@ class ChildrenSeeder extends Seeder
                     'gender_child' => fake()->randomElement(['Laki-Laki', 'Perempuan']),
                     'birth_child' => fake()->date(),
                     'status_child' => fake()->randomElement(['Menikah', 'Belum Menikah']),
-                    'religion_child' => fake()->randomElement(['Islam', 'Kristen', 'Katolik', 'Hindu', 'Buddha', 'Konghucu', 'lainnya']),
+                    'religion_child' => fake()->randomElement(['Islam', 'Kristen', 'Katolik', 'Hindu', 'Buddha', 'Konghucu', 'Lainnya']),
                     'blood_child' => fake()->randomElement(['A', 'B', 'AB', 'O']),
                     'phone_child' => fake()->phoneNumber(),
                     'job_child' => fake()->jobTitle(),
-                    'last_education_child' => fake()->randomElement(['SD', 'SMP', 'SMA', 'Diploma', 'S1', 'S2', 'S3']),
+                    'last_education_child' => fake()->randomElement(['Tidak Sekolah','SD', 'SMP', 'SMA', 'Diploma', 'Sarjana', 'Magister', 'Doktor']),
                 ]);
             }
         }
