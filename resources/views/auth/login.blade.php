@@ -39,12 +39,6 @@
                         class="rounded border-gray-300 text-[#80AF81] shadow-sm focus:ring-[#40534C]" name="remember">
                     <span class="ms-2 text-sm text-[#40534C] max-md:text-[#80AF81]">{{ __('Remember me') }}</span>
                 </label>
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-start text-[#40534C] max-md:text-[#80AF81] hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                        href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
             </div>
 
             <div class="max-w-full text-center">
