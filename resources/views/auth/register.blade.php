@@ -7,55 +7,63 @@
     <div class="w-1/2 max-md:w-full max-md:bg-[#40534C] my-auto flex items-center justify-center mx-auto z-10 min-h-screen">
         <form method="POST" action="{{ route('register') }}" class="w-80">
             @csrf
-
-            <!-- Name -->
-            <div>
-                <x-input-label for="name" :value="__('Name')" />
-                <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')"
-                    required autofocus autocomplete="name" />
+        
+            <div class="mb-4 w-full">
+                <label class="block font-medium text-sm mb-2 text-[#D6EFD8] md:text-[#40534C]" for="name">
+                    Name
+                </label>
+                <input
+                    class="border-[#40534C] w-full bg-[#f5f5f5] focus:border-[#40534C] focus:ring-[#40534C] max-md:focus:border-[#80AF81] max-md:focus:ring-[#80AF81] rounded-md shadow-sm"
+                    id="name" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" placeholder="name">
                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
             </div>
-
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-input-label for="email" :value="__('Email')" />
-                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
-                    required autocomplete="username" />
+        
+            <div class="mb-4 w-full">
+                <label class="block font-medium text-sm mb-2 text-[#D6EFD8] md:text-[#40534C]" for="email">
+                    Email
+                </label>
+                <input
+                    class="border-[#40534C] w-full bg-[#f5f5f5] focus:border-[#40534C] focus:ring-[#40534C] max-md:focus:border-[#80AF81] max-md:focus:ring-[#80AF81] rounded-md shadow-sm"
+                    id="email" type="email" name="email" :value="old('email')" required autocomplete="username" placeholder="email">
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-input-label for="password" :value="__('Password')" />
-
-                <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
-                    autocomplete="new-password" />
-
+        
+            <div class="mb-4 w-full">
+                <label class="block font-medium text-sm mb-2 text-[#D6EFD8] md:text-[#40534C]" for="password">
+                    Password
+                </label>
+                <input
+                    class="border-[#40534C] w-full bg-[#f5f5f5] focus:border-[#40534C] focus:ring-[#40534C] max-md:focus:border-[#80AF81] max-md:focus:ring-[#80AF81] rounded-md shadow-sm"
+                    id="password" type="password" name="password" required autocomplete="new-password" placeholder="password">
                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
             </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-text-input id="password_confirmation" class="block mt-1 w-full" type="password"
-                    name="password_confirmation" required autocomplete="new-password" />
-
+        
+            <div class="mb-6 w-full">
+                <label class="block font-medium text-sm mb-2 text-[#D6EFD8] md:text-[#40534C]" for="password_confirmation">
+                    Confirm Password
+                </label>
+                <input
+                    class="border-[#40534C] w-full bg-[#f5f5f5] focus:border-[#40534C] focus:ring-[#40534C] max-md:focus:border-[#80AF81] max-md:focus:ring-[#80AF81] rounded-md shadow-sm"
+                    id="password_confirmation" type="password" name="password_confirmation" required autocomplete="new-password" placeholder="confirm password">
                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
             </div>
-
-            <div class="grid mt-6 text-center">
-
-
-                <x-primary-button class="max-w-full w-full rounded-lg mb-3">
-                    {{ __('Registrasi') }}
-                </x-primary-button>
-                <p class="mr-6 text-white">Already registered? <a class="underline text-sm text-[#40534C] max-md:text-[#80AF81] hover:text-white"
-                        href="{{ route('login') }}">
-                        {{ __('Login') }}
-                    </a></p>
-
+        
+            <div class="flex items-center justify-between">
+                <button
+                    class="inline-flex items-center justify-center w-full px-4 py-4 bg-[#40534C] border border-transparent rounded-lg font-semibold text-xs text-[#D6EFD8] uppercase tracking-widest hover:bg-[#D6EFD8] hover:text-[#40534C] hover:border-[#40534C] max-md:bg-[#D6EFD8] max-md:text-[#40534C] max-md:hover:bg-[#40534C] max-md:hover:text-[#D6EFD8] max-md:hover:border-[#D6EFD8] focus:outline-none focus:ring-2 focus:ring-[#40534C] max-md:focus:ring-[#D6EFD8] transition ease-in-out duration-150"
+                    type="submit">
+                    Registrasi
+                </button>
+            </div>
+        
+            <div class="max-w-full text-center mt-4">
+                <p class="text-[#40534C] max-md:text-[#80AF81]">Already registered? 
+                    <span class="text-[#D6EFD8]">
+                        <a href="{{ route('login') }}">Login here</a>
+                    </span>
+                </p>
             </div>
         </form>
+        
     </div>
 </x-guest-layout>
