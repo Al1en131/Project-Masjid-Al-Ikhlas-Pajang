@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             // Seeder untuk production
             $this->call([
                 RoleSeeder::class,
+                AdminSeeder::class,
                 UserSeeder::class,
                 ResidentSeeder::class,
                 WifeSeeder::class,
@@ -28,6 +29,7 @@ class DatabaseSeeder extends Seeder
             // Seeder untuk non-production
             $this->call([
                 RoleSeeder::class,
+                AdminSeeder::class,
                 UserSeeder::class,
                 ResidentSeeder::class,
                 WifeSeeder::class,
