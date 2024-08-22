@@ -1,12 +1,6 @@
 <x-guest-layout>
-    <div class="relative w-1/2 my-auto justify-center  content-center mx-auto items-center object-center max-md:hidden">
-        <!-- Image -->
-        <img src="{{ asset('assets/image/masjide.png') }}" alt="" class="h-[520px] mx-auto">
-    </div>
-    <img src="{{ asset('assets/image/bg-login-hijau.png') }}" alt=""
-        class="max-md:hidden -z-5 absolute right-0 h-screen w-[58%]">
     <div
-        class="w-1/2 max-md:w-full max-md:bg-[#40534C] my-auto flex items-center justify-center mx-auto z-10 min-h-screen">
+        class="w-full my-auto flex items-center justify-center mx-auto z-10 min-h-screen">
         <form method="POST" action="{{ route('register') }}" class="w-80">
             @csrf
 
