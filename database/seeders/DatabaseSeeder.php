@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\Transaction;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,14 +13,29 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call([
-            RoleSeeder::class,
-            UserSeeder::class,
-            ResidentSeeder::class,
-            WifeSeeder::class,
-            ChildrenSeeder::class,
-            ProfileMasjidSeeder::class,
-            FinancialSeeder::class,
-        ]);
+        if (app()->environment('production')) {
+            // Seeder untuk production
+            $this->call([
+                RoleSeeder::class,
+                UserSeeder::class,
+                ResidentSeeder::class,
+                WifeSeeder::class,
+                ChildrenSeeder::class,
+                ProfileMasjidSeeder::class,
+                FinancialSeeder::class,
+            ]);
+        } else {
+            // Seeder untuk non-production
+            $this->call([
+                RoleSeeder::class,
+                UserSeeder::class,
+                ResidentSeeder::class,
+                WifeSeeder::class,
+                ChildrenSeeder::class,
+                ProfileMasjidSeeder::class,
+                FinancialSeeder::class,
+                MediaSeeder::class,
+            ]);
+        }
     }
 }

@@ -20,16 +20,8 @@ class RoleSeeder extends Seeder
             'user',
         ];
 
-        foreach ($roles as $role) {
-            Role::create(['name' => $role]);
+        foreach ($roles as $role){
+            Role::firstOrCreate(['name' => $role]);
         }
-
-        $admin = User::create([
-            'name' => 'Admin',
-            'email' => 'adminmasjid@gmail.com',
-            'password' => bcrypt('password'),
-        ]);
-        // assign role
-        $admin->assignRole('admin');
     }
 }
