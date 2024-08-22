@@ -554,8 +554,8 @@
                         </div>
                     </div>
                     <div class="relative overflow-hidden rounded-2xl shadow-lg group">
-                        <img src="{{ asset('assets/image/profil5.jpeg') }}"
-                            alt="Sport" class="w-full h-48 object-cover">
+                        <img src="{{ asset('assets/image/profil5.jpeg') }}" alt="Sport"
+                            class="w-full h-48 object-cover">
                         <div
                             class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <div class="absolute bottom-0 left-0 right-0 p-4">
@@ -634,9 +634,11 @@
 
                     <button
                         class="relative flex justify-center items-center focus:outline-none focus-visible:ring focus-visible:ring-indigo-300 rounded-3xl group"
-                        @click="modalOpen = true" aria-controls="modal" aria-label="Watch the video"> <a href="https://www.youtube.com/watch?v=IuMvNG9iZcI"><img
-                            src="{{ asset('assets/image/tutor.jpg') }}" alt=""
-                            class="rounded-3xl shadow-2xl transition-shadow duration-300 ease-in-out" width="768"></a>
+                        @click="modalOpen = true" aria-controls="modal" aria-label="Watch the video"> <a
+                            href="https://www.youtube.com/watch?v=IuMvNG9iZcI"><img
+                                src="{{ asset('assets/image/tutor.jpg') }}" alt=""
+                                class="rounded-3xl shadow-2xl transition-shadow duration-300 ease-in-out"
+                                width="768"></a>
 
                         <!-- Play icon -->
                         <svg class="absolute pointer-events-none group-hover:scale-110 transition-transform duration-300 ease-in-out"
@@ -779,129 +781,92 @@
     <div class="px-20 max-md:px-8" id="contact">
         <h1 class="text-3xl font-bold text-center text-[#40534C] mb-10">Kunjungi Masjid Al-Ikhlas Pajang</h1>
     </div>
-    <section class="mb-10">
-        <div class="container px-20 max-md:px-4  py-4 mx-auto">
-            <div class="lg:flex lg:items-center lg:-mx-6">
-                <div class="lg:w-1/2 lg:mx-6 max-md:w-full max-md:mb-10">
-                    <div class=" ">
+    <div class="w-full flex items-center gap-16">
 
-                        <dl class="space-y-10 md:space-y-12 md:block md:gap-x-8 md:gap-y-10">
-                            @foreach ($profiles as $profile)
-                                <div class="flex">
-                                    <div class="flex-shrink-0">
-                                        <div
-                                            class="flex items-center justify-center h-12 w-12 rounded-md bg-[#40534C] text-white">
-                                            <!-- Heroicon name: globe-alt -->
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                class="w-6 h-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
-                                            </svg>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.050171576622!2d110.78209847431884!3d-7.569509474762916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a143c0001b5b1%3A0x6ca0cdc1664dd88a!2sMasjid%20Al%20Ikhlas%20Pajang!5e0!3m2!1sid!2sid!4v1722581337611!5m2!1sid!2sid"
+            class="max-md:w-full w-1/2 h-[450px]" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="w-1/2 lg:mx-6 max-md:w-full max-md:mb-10">
+            <div class=" ">
 
-                                        </div>
-                                    </div>
-                                    <div class="ml-4">
-                                        <dt class="text-lg leading-6 font-medium text-gray-900">
-                                            Alamat
-                                        </dt>
-                                        <dd class="mt-2 text-base text-gray-500">
-                                            {{ $profile->address }}
-                                        </dd>
-                                    </div>
+                <dl class="space-y-10 md:space-y-12 md:block md:gap-x-8 md:gap-y-10">
+                    @foreach ($profiles as $profile)
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div
+                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-[#40534C] text-white">
+                                    <!-- Heroicon name: globe-alt -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                                    </svg>
+
                                 </div>
+                            </div>
+                            <div class="ml-4">
+                                <dt class="text-lg leading-6 font-medium text-gray-900">
+                                    Alamat
+                                </dt>
+                                <dd class="mt-2 text-base text-gray-500">
+                                    {{ $profile->address }}
+                                </dd>
+                            </div>
+                        </div>
 
 
-                                <div class="flex">
-                                    <div class="flex-shrink-0">
-                                        <div
-                                            class="flex items-center justify-center h-12 w-12 rounded-md bg-[#40534C] text-white">
-                                            <!-- Heroicon name: phone -->
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                class="w-6 h-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-                                            </svg>
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div
+                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-[#40534C] text-white">
+                                    <!-- Heroicon name: phone -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                                    </svg>
 
-                                        </div>
-                                    </div>
-                                    <div class="ml-4">
-                                        <dt class="text-lg leading-6 font-medium text-gray-900">
-                                            Nomor Telepon
-                                        </dt>
-                                        <dd class="mt-2 text-base text-gray-500">
-                                            {{ $profile->detail_contact }}
-                                        </dd>
-                                    </div>
                                 </div>
-                                <div class="flex">
-                                    <div class="flex-shrink-0">
-                                        <div
-                                            class="flex items-center justify-center h-12 w-12 rounded-md bg-[#40534C] text-white">
-                                            <!-- Heroicon name: phone -->
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                                fill="currentColor" class="w-6 h-6">
-                                                <path fill-rule="evenodd"
-                                                    d="M2.5 4A1.5 1.5 0 0 0 1 5.5V6h18v-.5A1.5 1.5 0 0 0 17.5 4h-15ZM19 8.5H1v6A1.5 1.5 0 0 0 2.5 16h15a1.5 1.5 0 0 0 1.5-1.5v-6ZM3 13.25a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5h-1.5a.75.75 0 0 1-.75-.75Zm4.75-.75a.75.75 0 0 0 0 1.5h3.5a.75.75 0 0 0 0-1.5h-3.5Z"
-                                                    clip-rule="evenodd" />
-                                            </svg>
+                            </div>
+                            <div class="ml-4">
+                                <dt class="text-lg leading-6 font-medium text-gray-900">
+                                    Nomor Telepon
+                                </dt>
+                                <dd class="mt-2 text-base text-gray-500">
+                                    {{ $profile->detail_contact }}
+                                </dd>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div
+                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-[#40534C] text-white">
+                                    <!-- Heroicon name: phone -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                        class="w-6 h-6">
+                                        <path fill-rule="evenodd"
+                                            d="M2.5 4A1.5 1.5 0 0 0 1 5.5V6h18v-.5A1.5 1.5 0 0 0 17.5 4h-15ZM19 8.5H1v6A1.5 1.5 0 0 0 2.5 16h15a1.5 1.5 0 0 0 1.5-1.5v-6ZM3 13.25a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5h-1.5a.75.75 0 0 1-.75-.75Zm4.75-.75a.75.75 0 0 0 0 1.5h3.5a.75.75 0 0 0 0-1.5h-3.5Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
 
-                                        </div>
-                                    </div>
-                                    <div class="ml-4">
-                                        <dt class="text-lg leading-6 font-medium text-gray-900">
-                                            Nomor Rekening
-                                        </dt>
-                                        <dd class="mt-2 text-base text-gray-500">
-                                            {{ $profile->detail_account_number }}
-                                        </dd>
-                                    </div>
                                 </div>
-                            @endforeach
-                        </dl>
-                    </div>
-                </div>
-
-                <div class="mt-8 lg:w-1/2 lg:mx-6 max-md:w-full">
-                    <div
-                        class="w-full px-8 py-10 mx-auto overflow-hidden rounded-lg shadow-2xl bg-[#c9dabf] lg:max-w-xl border border-[#40534C] shadow-gray-300/50">
-                        <h1 class="text-lg font-medium text-[#40534C]">Kritik dan Saran</h1>
-
-                        <form class="mt-6">
-                            <div class="flex-1">
-                                <label class="block mb-2 text-sm text-[#40534C] ">Nama</label>
-                                <input type="text" placeholder="Isi Nama Anda ..."
-                                    class="block w-full px-5 py-3 mt-2 text-[#40534C] placeholder-gray-400 bg-white border border-[#40534C] rounded-md  focus:border-[#40534C]  focus:ring-[#40534C] focus:outline-none focus:ring focus:ring-opacity-40" />
                             </div>
-
-                            <div class="flex-1 mt-6">
-                                <label class="block mb-2 text-sm text-[#40534C] ">No. Hp</label>
-                                <input type="email" placeholder="Isi No. Hp Anda ..."
-                                    class="block w-full px-5 py-3 mt-2 text-[#40534C] placeholder-gray-400 bg-white border border-[#40534C] rounded-md  focus:border-[#40534C]  focus:ring-[#40534C] focus:outline-none focus:ring focus:ring-opacity-40" />
+                            <div class="ml-4">
+                                <dt class="text-lg leading-6 font-medium text-gray-900">
+                                    Nomor Rekening
+                                </dt>
+                                <dd class="mt-2 text-base text-gray-500">
+                                    {{ $profile->detail_account_number }}
+                                </dd>
                             </div>
-
-                            <div class="w-full mt-6">
-                                <label class="block mb-2 text-sm text-[#40534C] ">Kritik dan Saran</label>
-                                <textarea
-                                    class="block w-full h-32 px-5 py-3 mt-2 text-[#40534C] placeholder-gray-400 bg-white border border-[#40534C] rounded-md md:h-48 focus:border-[#40534C]  focus:ring-[#40534C] focus:outline-none focus:ring focus:ring-opacity-40"
-                                    placeholder="Isi Kritik dan Saran yang ingin Anda sampaikan kepada kami ..."></textarea>
-                            </div>
-
-                            <button
-                                class="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-[#c9dabf] capitalize transition-colors duration-300 transform bg-[#40534C] rounded-md hover:bg-[#c9dabf] hover:text-[#40534C] hover:border hover:border-[#40534C] focus:outline-none focus:ring focus:ring-[#40534C] focus:ring-opacity-50">
-                                Kirim
-                            </button>
-                        </form>
-                    </div>
-                </div>
+                        </div>
+                    @endforeach
+                </dl>
             </div>
         </div>
-    </section>
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.050171576622!2d110.78209847431884!3d-7.569509474762916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a143c0001b5b1%3A0x6ca0cdc1664dd88a!2sMasjid%20Al%20Ikhlas%20Pajang!5e0!3m2!1sid!2sid!4v1722581337611!5m2!1sid!2sid"
-        class="w-full h-[450px]" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
 
 
 

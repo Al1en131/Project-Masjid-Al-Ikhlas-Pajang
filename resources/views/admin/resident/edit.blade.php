@@ -181,7 +181,8 @@
             <!-- Spouse Fields -->
             <div id="spouseAndChildrenFields">
                 <div class="shadow-md rounded-xl border-2 mt-16 border-[#40534C] bg-white px-16 pb-16 pt-6 max-md:p-8">
-                    <h1 class="text-2xl text-[#40534C] border-b-2 border-[#40534C] font-bold mb-14 max-md:mb-8 leading-[3.5rem]">
+                    <h1
+                        class="text-2xl text-[#40534C] border-b-2 border-[#40534C] font-bold mb-14 max-md:mb-8 leading-[3.5rem]">
                         Data Istri</h1>
                     <div class="flex flex-wrap -mx-4 mb-6">
                         <div class="w-full md:w-1/2 px-4 max-md:mb-6">
@@ -289,6 +290,9 @@
                             <select id="last_education_wife" name="last_education_wife"
                                 class="form-select mt-1 block w-full py-2 px-4 text-black border-[#40534C] bg-gray-100 rounded-md shadow-sm focus:border-[#40534C] focus:ring focus:ring-[#40534C] focus:ring-opacity-50">
                                 <option value="">Pilih Pendidikan Terakhir</option>
+                                <option value="Tidak Sekolah"
+                                    {{ old('last_education_wife', $resident->wife->last_education_wife ?? '') == 'Tidak Sekolah' ? 'selected' : '' }}>
+                                    Tidak Sekolah</option>
                                 <option value="SD"
                                     {{ old('last_education_wife', $resident->wife->last_education_wife ?? '') == 'SD' ? 'selected' : '' }}>
                                     SD</option>
@@ -317,7 +321,8 @@
 
                 <!-- Children Fields -->
                 <div class="shadow-md rounded-xl border-2 mt-16 border-[#40534C] bg-white px-16 pb-16 pt-6 max-md:p-8">
-                    <h1 class="text-2xl text-[#40534C] border-b-2 border-[#40534C] font-bold mb-14 max-md:mb-8 leading-[3.5rem]">
+                    <h1
+                        class="text-2xl text-[#40534C] border-b-2 border-[#40534C] font-bold mb-14 max-md:mb-8 leading-[3.5rem]">
                         Data Anak</h1>
                     <div id="childrenFields">
                         @foreach ($resident->children as $index => $child)
@@ -444,6 +449,9 @@
                                         name="last_education_child[]"
                                         class="form-select mt-1 block w-full py-2 px-4 text-black border-[#40534C] bg-gray-100 rounded-md shadow-sm focus:border-[#40534C] focus:ring focus:ring-[#40534C] focus:ring-opacity-50">
                                         <option value="">Pilih Pendidikan Terakhir</option>
+                                        <option value="Tidak Sekolah"
+                                            {{ old('last_education_child.' . $index, $child->last_education_child) == 'Tidak Sekolah' ? 'selected' : '' }}>
+                                            Tidak Sekolah</option>
                                         <option value="SD"
                                             {{ old('last_education_child.' . $index, $child->last_education_child) == 'SD' ? 'selected' : '' }}>
                                             SD</option>
@@ -483,7 +491,7 @@
                             </button>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="flex mt-8">
                     <button type="submit"
@@ -603,6 +611,7 @@
                                 class="form-select mt-1 block w-full py-2 px-4 text-black border-[#40534C] bg-gray-100 rounded-md shadow-sm focus:border-[#40534C] focus:ring focus:ring-[#40534C] focus:ring-opacity-50"
                                 >
                                 <option value="">Pilih Pendidikan Terakhir</option>
+                                   <option value="Tidak Sekolah">Tidak Sekolah</option>
                                 <option value="SD">SD</option>
                                 <option value="SMP">SMP</option>
                                 <option value="SMA">SMA</option>
