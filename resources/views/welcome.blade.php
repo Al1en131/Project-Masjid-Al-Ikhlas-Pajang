@@ -781,7 +781,7 @@
     <div class="px-20 max-md:px-8" id="contact">
         <h1 class="text-3xl font-bold text-center text-[#40534C] mb-10">Kunjungi Masjid Al-Ikhlas Pajang</h1>
     </div>
-    <div class="w-full flex items-center gap-16">
+    <div class="w-full flex max-md:block items-center gap-16">
 
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.050171576622!2d110.78209847431884!3d-7.569509474762916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a143c0001b5b1%3A0x6ca0cdc1664dd88a!2sMasjid%20Al%20Ikhlas%20Pajang!5e0!3m2!1sid!2sid!4v1722581337611!5m2!1sid!2sid"
