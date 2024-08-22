@@ -787,7 +787,7 @@
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.050171576622!2d110.78209847431884!3d-7.569509474762916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a143c0001b5b1%3A0x6ca0cdc1664dd88a!2sMasjid%20Al%20Ikhlas%20Pajang!5e0!3m2!1sid!2sid!4v1722581337611!5m2!1sid!2sid"
             class="max-md:w-full w-1/2 h-[450px]" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <div class="w-1/2 lg:mx-6 max-md:w-full max-md:m-16">
+        <div class="w-1/2 lg:mx-6 max-md:w-full max-md:my-16 max-md:px-6">
             <div class=" ">
 
                 <dl class="space-y-10 md:space-y-12 md:block md:gap-x-8 md:gap-y-10">
