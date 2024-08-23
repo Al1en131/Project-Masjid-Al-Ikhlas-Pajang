@@ -105,7 +105,7 @@
                     @endif
                 
                 </div>
-                <div class="w-1/2 max-md:w-full flex my-4 justify-end">
+                <div class="w-1/2 max-md:w-full flex my-4 max-md:justify-center justify-end">
                     <img class="h-64 object-cover max-md:h-40  shadow-2xl md:shadow-[0_15px_30px_-10px_rgba(0,0,0,0.7)]" src="{{ asset('assets/image/profil1.jpeg') }}" alt="">
                 </div>
                 
