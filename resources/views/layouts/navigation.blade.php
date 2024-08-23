@@ -2,11 +2,11 @@
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
-            <div class="flex">
+            <div class="flex items-center">
                 <!-- Navigation Links -->
                 @role('admin')
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex items-center">
-                    <a href="{{route ('/')}}" class="text-3xl pr-6 text-[#40534C] font-bold max-md:pr-0">Al-Ikhlas</a>
+                <a href="{{route ('/')}}" class="text-3xl pr-6 text-[#40534C] font-bold max-md:pr-0">Al-Ikhlas</a>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex items-center">          
                     <x-nav-link :href="route('admin.resident.index')" :active="request()->routeIs(['admin.resident.index'])">
                         {{ __('Data KK') }}
                     </x-nav-link>
@@ -22,7 +22,7 @@
                 </div>
                 @elserole('user')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex items-center">
-                    <a href="{{route ('/')}}" class="text-3xl pr-6 text-[#40534C] font-bold max-md:pr-0">Al-Ikhlas</a>
+                    <a href="{{route ('/')}}" class="text-3xl pr-6 text-[#40534C] font-bold max-md:pr-0">Home</a>
                 </div>
                 @endrole
                 

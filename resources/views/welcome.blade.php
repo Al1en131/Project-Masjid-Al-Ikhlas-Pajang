@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Masjid Al-Ikhlas</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
@@ -39,7 +39,7 @@
             <span id="navbar-title" class="self-center text-2xl font-semibold whitespace-nowrap text-[#40534C] transition-colors">Al-Ikhlas</span>
           </a>
           <div class="flex md:hidden">
-            <button id="menu-toggle" type="button" class="inline-flex items-center w-10 h-10 justify-center text-sm text-gray-500 hover:text-[#C9DABF]">
+            <button id="menu-toggle" type="button" class="inline-flex items-center w-10 h-10 justify-center text-sm text-[#C9DABF] hover:text-[#80AF81]">
               <span class="sr-only">Open main menu</span>
               <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
@@ -101,11 +101,12 @@
                             @endif
                         </div>
                         @endauth
-                    </div> @endif
+                    </div> 
+                    @endif
                 
                 </div>
-                <div class="lg:inset-y-0 lg:right-0 lg:w-1/2 my-4">
-                    <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full shadow-2xl md:shadow-[0_15px_30px_-10px_rgba(0,0,0,0.7)]" src="{{ asset('assets/image/profil1.jpeg') }}" alt="">
+                <div class="w-1/2 max-md:w-full flex my-4 justify-end">
+                    <img class="h-64 object-cover max-md:h-40  shadow-2xl md:shadow-[0_15px_30px_-10px_rgba(0,0,0,0.7)]" src="{{ asset('assets/image/profil1.jpeg') }}" alt="">
                 </div>
                 
                 {{-- <div class="flex items-center justify-end w-1/2 max-md:hidden">
@@ -143,7 +144,7 @@
     </div>
 </div>
 @endrole
-    <div class="text-gray-700 body-font px-20 max-md:px-6 pt-10 max-md:pt-0" id="about">
+    <div class="text-gray-700 body-font px-20 max-md:px-6 pt-28 max-md:pt-0" id="about">
         <section>
             <div class=" mx-auto max-w-screen-xl flex flex-col lg:h-svh justify-center">
              <div class="flex flex-col ">
@@ -779,7 +780,7 @@
         </div>
     </div>
     <div class="px-20 max-md:px-8" id="contact">
-        <h1 class="text-3xl font-bold text-center text-[#40534C] mb-10">Kunjungi Masjid Al-Ikhlas Pajang</h1>
+        <h1 class="text-3xl font-bold text-center text-[#40534C] mb-20">Kunjungi Masjid Al-Ikhlas Pajang</h1>
     </div>
     <div class="w-full flex max-md:block items-center gap-16">
 
@@ -867,12 +868,9 @@
         </div>
     </div>
 
-
-
-
     <footer class="bg-[#40534C] px-20 py-4 shadow text-center">
         <div class="w-full">
-            <span class="text-sm text-white">© 2024 <a href="https://flowbite.com/" class="hover:underline">
+            <span class="text-sm text-white">© 2024 <a href="https://flowbite.com/" class="">
                     Masjid Al-Ikhlas Pajang</a>. All Rights Reserved.
             </span>
         </div>

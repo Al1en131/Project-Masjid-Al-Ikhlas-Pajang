@@ -365,7 +365,7 @@
     <footer class="bg-[#40534C]
         px-20 py-4 shadow text-center bottom-0">
         <div class="w-full">
-            <span class="text-sm text-white">© 2024 <a href="https://flowbite.com/" class="hover:underline">Masjid
+            <span class="text-sm text-white">© 2024 <a href="https://flowbite.com/" class="">Masjid
                     Al-Ikhlas Pajang</a>. All Rights Reserved.
             </span>
         </div>

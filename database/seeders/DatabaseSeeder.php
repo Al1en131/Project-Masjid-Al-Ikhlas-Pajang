@@ -19,11 +19,8 @@ class DatabaseSeeder extends Seeder
                 RoleSeeder::class,
                 AdminSeeder::class,
                 UserSeeder::class,
-                ResidentSeeder::class,
-                WifeSeeder::class,
-                ChildrenSeeder::class,
                 ProfileMasjidSeeder::class,
-                FinancialSeeder::class,
+
             ]);
         } else {
             // Seeder untuk non-production
