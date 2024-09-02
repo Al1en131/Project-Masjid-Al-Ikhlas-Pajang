@@ -250,7 +250,7 @@
     </svg>
 
     <div class="py-10
-        px-20 max-md:px-8 text-center text-[#40534C] bg-[#D6EFD8]" id="activities">
+        px-20 max-md:px-8 text-center text-[#40534C] bg-[#D6EFD8] dark:bg-[#D6EFD8]" id="activities">
         <h1 class="font-bold text-4xl mb-6">Kegiatan Masjid</h1>
         <p class="pb-10">
             @foreach ($profiles as $profile)
