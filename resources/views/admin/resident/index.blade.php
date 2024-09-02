@@ -53,28 +53,6 @@
                         </button>
                     </a>
                 </div>
-
-                <!-- Filter Panel -->
-                <!-- Modal Background -->
-                {{-- <div id="filter-modal" class="hidden">
-                    <button id="close-modal">Close</button>
-                    <div>
-                        <label for="status-filter">Status:</label>
-                        <input type="text" id="status-filter">
-                    </div>
-                    <div>
-                        <label for="orphan-filter">Orphan:</label>
-                        <input type="text" id="orphan-filter">
-                    </div>
-                    <div>
-                        <label for="blood-filter">Blood:</label>
-                        <input type="text" id="blood-filter">
-                    </div>
-                    <button id="reset-filter">Reset</button>
-                    <button id="apply-filter">Apply</button>
-                </div> --}}
-
-
             </div>
             <div class="text-gray-900">
                 <div class="relative sm:rounded-lg">
@@ -127,7 +105,8 @@
                                                     </svg>
                                                 </a>
                                                 <a href="{{ route('admin.resident.destroy', ['id' => $resident->id]) }}"
-                                                    method="POST" class="delete text-red-600" data-id="{{ $resident->id }}">
+                                                    method="POST" class="delete text-red-600"
+                                                    data-id="{{ $resident->id }}">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                                                         class="w-6 h-6">
@@ -150,35 +129,35 @@
     </div>
 </x-app-layout>
 @if (session('success'))
-<div align="center">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            function showSuccessAlert() {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Success!',
-                    text: '{{ session('success') }}',
-                    customClass: {
-                        confirmButton: 'btn-success'
-                    },
-                });
+    <div align="center">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                function showSuccessAlert() {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        text: '{{ session('success') }}',
+                        customClass: {
+                            confirmButton: 'btn-success'
+                        },
+                    });
+                }
+                showSuccessAlert();
+            });
+        </script>
+        <style>
+            .btn-success {
+                background-color: #40534C;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                border-color: #D6EFD8;
+                padding: 0.5em 1em;
+                font-size: 16px;
             }
-            showSuccessAlert();
-        });
-    </script>
-    <style>
-        .btn-success {
-            background-color: #40534C;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            border-color: #D6EFD8;
-            padding: 0.5em 1em;
-            font-size: 16px;
-        }
-    </style>
-</div>
+        </style>
+    </div>
 @endif
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -192,14 +171,14 @@
                 const id = this.getAttribute('data-id');
 
                 Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
+                    title: 'Apakah anda yakin ingin menghapus data ini?',
+                    text: "Anda tidak bisa mengubah ini kembali!",
                     icon: 'warning',
                     showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
+                    confirmButtonColor: '#40534C',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!',
-                    cancelButtonText: 'Cancel'
+                    confirmButtonText: 'Ya, Hapus!',
+                    cancelButtonText: 'Tidak'
                 }).then((result) => {
                     if (result.isConfirmed) {
                         window.location.href = url;

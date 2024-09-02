@@ -65,7 +65,7 @@
                     
                     <div class="block sm:col-span-2 sm:flex">
                         <label class="mb-1 block w-56 py-2.5 text-sm font-medium text-gray-900"
-                            for="detail_contact">Detail Kontak</label>
+                            for="detail_contact">Kontak Masjid</label>
                         <input
                             class="text-black border-[#40534C] bg-gray-100 rounded-md px-4 py-2.5 shadow-sm focus:border-[#40534C] focus:ring focus:ring-[#40534C] focus:ring-opacity-50 mb-1 w-full"
                             id="detail_contact" name="detail_contact" type="text"
@@ -107,8 +107,7 @@
 
                     </div>
                     <div class="block sm:col-span-2 sm:flex">
-                        <label class="mb-1 block w-56 py-2.5 text-sm font-medium text-gray-900" for="address">Alamat Masjid
-                            Masjid</label>
+                        <label class="mb-1 block w-56 py-2.5 text-sm font-medium text-gray-900" for="address">Alamat Masjid</label>
                         <textarea
                             class="text-black border-[#40534C] bg-gray-100 rounded-md px-4 py-2.5 shadow-sm focus:border-[#40534C] focus:ring focus:ring-[#40534C] focus:ring-opacity-50 mb-1 w-full"
                             id="address" name="address" rows="4" placeholder="Your description here" required>{{ old('address', $profile->address) }}</textarea>
