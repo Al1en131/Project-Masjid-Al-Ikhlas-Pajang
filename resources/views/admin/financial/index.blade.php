@@ -129,14 +129,14 @@
                 event.preventDefault();
 
                 Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
+                    title: 'Apakah anda yakin?',
+                    text: "Anda tidak bisa mengubah ini kembali!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!',
-                    cancelButtonText: 'Cancel'
+                    confirmButtonText: 'Ya, Hapus!',
+                    cancelButtonText: 'Tidak'
                 }).then((result) => {
                     if (result.isConfirmed) {
                         form.submit(); // Submitting the form if confirmed
